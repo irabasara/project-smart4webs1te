@@ -5,8 +5,10 @@ header {
   display: flex;
   align-items: center;
   gap: 20px;
-  background-color: rgb(18, 0, 46);
   height: 50px;
+  border-radius: 0px 0px 8px 8px;
+    border: 1.5px solid #111;
+    background: var(--white);
 }
 a {
   display: flex;
@@ -17,6 +19,4 @@ ul {
   justify-content: center;
   gap: 10px;
 }
-p {
-  color: aliceblue;
-}
+
