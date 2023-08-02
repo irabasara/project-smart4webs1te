@@ -1,21 +1,22 @@
-.header {
-  padding: 20px 0;
+img {
+  width: 22px;
 }
-
-.nav-list {
+header {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 40px;
+  gap: 20px;
+  background-color: rgb(18, 0, 46);
+  height: 50px;
 }
-
-.nav-link {
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  line-height: 1.5;
+a {
+  display: flex;
+  align-items: center;
 }
-
-.nav-link:hover,
-.nav-link:focus {
-  color: #747bff;
+ul {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+p {
+  color: aliceblue;
 }
