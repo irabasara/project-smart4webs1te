@@ -13,7 +13,7 @@
 @import url('./footer.css');
 @import url('./modal.css');
 @import url('./support-ukraine.css');
-/* @import url('./header.css'); */
+@import url('./all-category.css');
 /* @import url('./header.css'); */
 /* @import url('./header.css'); */
 /* @import url('./header.css'); */
@@ -31,3 +31,28 @@
   --accent-color: #eac645;
   ---animation: 250ms ease;
 }
+
+  .container {
+      max-width: 375px;
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-left: auto;
+      margin-right: auto;
+    margin-top: 40px;
+    }
+
+ @media screen and (min-width: 768px) {
+  .container {
+     max-width: 768px;
+     padding-left: 32px;
+     padding-right: 32px;
+     padding-top: 20px;
+   }}
+
+@media screen and (min-width: 1440px) {
+  .header-container {
+    max-width: 1440px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }}
+
