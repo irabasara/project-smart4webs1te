@@ -1,0 +1,30 @@
+.shopping-header {
+  line-height: 1.1188; /* 118.75% */
+  font-size: 32px;
+  letter-spacing: -1.28px;
+}
+.empty-list {
+  margin: 120px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.empty-list-text {
+  margin-bottom: 14px;
+  width: 244px;
+
+  color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  font-family: 'DMSans-Regular', sans-serif;
+  font-size: 14px;
+  line-height: 1.2857;
+  letter-spacing: -0.28px;
+}
+.empty-list-img {
+  width: 265px;
+  height: 198px;
+  background-image: url(../img/empty-shopping-list.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
