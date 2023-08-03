@@ -27,17 +27,21 @@
 }
 
 .support-ukraine-list-container {
-    overflow: hidden;
-    height: 100%;
-}
-
-.support-ukraine-list {
-    display: list-item;
+    overflow-y: scroll;
     height: 188px;
     transition: height 0.4s linear;
 }
 
-.support-ukraine-list.active {
+::-webkit-scrollbar {
+    visibility: hidden;
+}
+
+.support-ukraine-list {
+    display: list-item;
+    height: 448px;
+}
+
+.support-ukraine-list-container.active {
     height: 448px;
 }
 
@@ -50,8 +54,8 @@
 }
 
 .support-ukraine-item:last-child img {
-    width: 145px;
-    height: 22px;
+    width: 122px;
+    height: 16px;
 }
 
 .item-order-number {
@@ -90,4 +94,20 @@
 
 .support-ukraine-btn-icon.skroll-active {
     transform: rotate(0deg);
+}
+
+@media screen and (min-width: 768px) {
+    .support-ukraine-list-container {
+        height: 292px;
+        overflow-y: scroll;
+    }
+
+    .support-ukraine-list {
+        height: 448px;
+        transition: transform 1s linear;
+    }
+
+    ::-webkit-scrollbar {
+        visibility: hidden;
+    }
 }
