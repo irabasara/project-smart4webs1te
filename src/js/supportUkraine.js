@@ -43,7 +43,7 @@ const FONDS = [
     title: 'UNITED24',
     url: 'https://u24.gov.ua/uk',
     img: null,
-  },
+  }
 ];
 
 const el = {
@@ -80,8 +80,8 @@ function handleScrolldown(e) {
 };
     
 function handleViewportChange() {
-  console.log(window.innerWidth)
-  checkViewportSize()
+  console.log(window.innerWidth);
+  checkViewportSize();
 };
 
 function checkViewportSize() {
@@ -91,4 +91,5 @@ function checkViewportSize() {
       el.btn.removeEventListener('click', handleScrolldown)
     }
 };
+
 checkViewportSize();
