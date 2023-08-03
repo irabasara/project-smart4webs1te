@@ -91,5 +91,4 @@ function checkViewportSize() {
       el.btn.removeEventListener('click', handleScrolldown)
     }
 };
-
 checkViewportSize();
