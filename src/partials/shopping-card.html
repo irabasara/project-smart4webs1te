@@ -7,19 +7,26 @@
   </head>
   <body>
     <li class="book-card">
-      <button><img src="`{book_image}`" alt="" /></button>
-      <div>
-        <h2>`${title}`</h2>
-        <span class=""></span>
-        <p>`${}`</p>
-        <img src="`{}`" alt="" />
+      <div class="shopping-image-thumb">
+        <img src="${book_image}" alt="" />
       </div>
-      <div>
-        <p>`{author}`</p>
+      <div class="">
+      <div class="book-description">
+        <h2 class="book-title">${title}</h2>
+        <div class="book-genre">${list_name}</div>
+        <div class="book-description">${description}</div>
+        <svg class="book-card-icon">
+        <use src="../../../../../Downloads/trash-03.svg" alt="" />
+        </svg>
+      </div>
+      <div class="book-card-links">
+        <div class="book-author">${author}</div>
         <a href=""><img src="" alt="" /></a>
         <a href=""><img src="" alt="" /></a>
         <a href=""><img src="" alt="" /></a>
       </div>
+      </div>
+    </li>`;
     </li>
   </body>
 </html>
