@@ -1,0 +1,21 @@
+@media screen and (min-width: 375px){
+    .mob-menu {
+        display: none;
+    }
+}
+
+.mob-img {
+    width: 88px;
+}
+
+.mob-gallery {
+    width: 450px;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 32px;
+    column-gap: 24px;
+}
+
+.mob-list-item {
+    width: 88px;
+}
