@@ -2,6 +2,7 @@
   line-height: 1.1188;
   font-size: 32px;
   letter-spacing: -1.28px;
+  color: inherit;
 }
 .empty-list {
   margin: 120px 0px;
@@ -11,7 +12,7 @@
 }
 .empty-list-text {
   margin-bottom: 14px;
-  width: 244px;
+  width: 250px;
 
   color: rgba(0, 0, 0, 0.6);
   text-align: center;
@@ -27,4 +28,48 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+.book-card {
+  display: flex;
+  padding: 14px;
+  border-radius: 16px;
+  border: 2px solid rgba(79, 46, 232, 0.4);
+}
+.shopping-image-thumb {
+  height: 142px;
+  width: 100px;
+  margin-right: 14px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+.book-description {
+  width: 193px;
+}
+.book-title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.125; /* 112.5% */
+  letter-spacing: -0.64px;
+}
+.book-genre {
+  width: 165px;
+  height: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--light-text);
+  font-size: 12px;
+  line-height: 1.167; /* 116.667% */
+  letter-spacing: 0.36px;
+}
+.book-description {
+  width: 165px;
+  height: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dark-theme {
+  background-color: var(--background-dark);
+  color: var(--light-text);
 }

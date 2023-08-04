@@ -1,2 +1,2 @@
-import './js/getBoorkAPI'
+import './js/getBoorkAPI';
 // import './js/loader'
