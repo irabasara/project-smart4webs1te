@@ -1,0 +1,74 @@
+.home-title-book {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.19;
+    letter-spacing: -1.28px;
+}
+
+.books {
+    color: var(--main-color);
+}
+
+.img-bestBooks {
+    width: 335px;
+    height: auto;
+}
+
+.js-btn-bestBooks {
+    border-radius: 40px;
+    border: 2px solid #4F2EE8;    
+    margin-top: 8px;
+    margin-bottom: 40px;
+    display: inline-flex;
+    padding: 14px 28px;
+    align-items: flex-start;
+    gap: 10px
+}
+
+.js-container-bestBooks {
+    /* display: flex; */
+    flex-wrap: wrap;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.js-list-name {
+    color: #B4AFAF;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.29;
+    letter-spacing: 0.42px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    margin-top: 40px;
+}
+
+.js-named-bestBooks {
+    color: #111;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.13px;
+    letter-spacing: -0.64px;
+    text-transform: uppercase;
+    margin-top: 14px;
+}
+
+.js-autor-bestBooks {
+    color: #B4AFAF;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.17;
+    letter-spacing: -0.48px;
+    margin-top: 4px;
+}
+
+
+@media screen and (min-width: 768px) {
+    
+}
