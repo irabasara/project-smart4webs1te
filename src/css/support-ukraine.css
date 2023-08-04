@@ -1,6 +1,5 @@
 .support-ukraine-container {
     max-width: 335px;
-    height: 100%;
     background: radial-gradient(circle at top,
             rgba(79, 46, 232, 1) 11%,
             rgba(184, 170, 246, 1) 100%);
@@ -8,6 +7,7 @@
     padding: 24px 40px 68px;
     overflow: hidden;
     position: relative;
+    margin: 0 auto;
 }
 
 .title-container {
@@ -33,7 +33,22 @@
 }
 
 ::-webkit-scrollbar {
-    visibility: hidden;
+    width: 2px;
+}
+
+::-webkit-scrollbar-track {
+    background: #888;
+    /* Колір фону треку */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c9c5c5;
+    /* Колір скроллбара */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    /* Колір скроллбара при наведенні */
 }
 
 .support-ukraine-list {
@@ -105,9 +120,5 @@
     .support-ukraine-list {
         height: 448px;
         transition: transform 1s linear;
-    }
-
-    ::-webkit-scrollbar {
-        visibility: hidden;
     }
 }

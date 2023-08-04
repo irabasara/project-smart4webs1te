@@ -1,69 +1,12 @@
-const FONDS = [
-  {
-    title: 'Save the Children',
-    url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-    img: null,
-  },
-  {
-    title: 'Project HOPE',
-    url: 'https://www.projecthope.org/country/ukraine/',
-    img: null,
-  },
-  {
-    title: 'International Medical Corps',
-    url: 'https://internationalmedicalcorps.org/country/ukraine/',
-    img: null,
-  },
-  {
-    title: 'RAZOM',
-    url: 'https://www.razomforukraine.org/',
-    img: null,
-  },
-  {
-    title: 'Action against hunger',
-    url: 'https://www.actionagainsthunger.org/location/europe/ukraine/',
-    img: null,
-  },
-  {
-    title: 'Serhiy Prytula Charity Foundation',
-    url: 'https://prytulafoundation.org/en',
-    img: null,
-  },
-  {
-    title: 'Medicins Sans Frontieres',
-    url: 'https://www.msf.org/ukraine',
-    img: null,
-  },
-  {
-    title: 'World vision',
-    url: 'https://www.wvi.org/emergencies/ukraine',
-    img: null,
-  },
-  {
-    title: 'UNITED24',
-    url: 'https://u24.gov.ua/uk',
-    img: null,
-  },
-];
+import { FONDS } from './supportUkraineData';
 
 const el = {
-  container: document.querySelector('.support-ukraine-container'),
+  listContainer: document.querySelector('.support-ukraine-list-container'),
   list: document.querySelector('.support-ukraine-list'),
   btn: document.querySelector('.support-ukraine-btn'),
 };
 
-let options = {
-  root: el.list.parentElement,
-  rootMargin: '0px',
-  threshold: 1.0,
-};
-
-let observer = new IntersectionObserver(observerHandler, options);
-
-function observerHandler() {
-  el.list.parentElement.addEventListener('scroll', handleOnScroll);
-}
-function createMarcap() {
+function createMarkup() {
   return FONDS.map(
     (obj, i) =>
       `<li class="support-ukraine-item item"><a href="${
@@ -75,67 +18,46 @@ function createMarcap() {
         .padStart(
           2,
           'O'
-        )}</span><img class ="company-emblem"src="./img/supportUkraine-${
+        )}</span><img class ="company-emblem"src="./img/supportUkraine/supportUkraine-${
         i + 1
       }.png" alt="${obj.title}"></a></li>`
   ).join('');
-}
+};
 
-el.list.insertAdjacentHTML('beforeend', createMarcap());
+el.list.insertAdjacentHTML('beforeend', createMarkup());
 
-window.addEventListener('resize', handleViewportChange);
+el.btn.addEventListener('click', handleDown);
 
-function handleChangeHeight(e) {
-  el.list.parentElement.classList.toggle('active');
-  if (e.currentTarget.firstChild.classList.contains('skroll-active')) {
-    e.currentTarget.firstChild.classList.remove('skroll-active');
-  } else {
-    e.currentTarget.firstChild.classList.add('skroll-active');
-  }
-}
+const { height: listItemHeight } = el.list.firstElementChild.getBoundingClientRect();
 
-function handleScrolldown(e) {
-  if (!e.currentTarget.firstChild.classList.contains('skroll-active')) {
-    el.list.parentElement.removeEventListener('scroll', handleOnScroll);
-    e.currentTarget.firstChild.classList.toggle('skroll-active');
-    el.list.parentElement.scrollTo({
-      top: el.list.scrollHeight,
+function handleDown(e) {
+  if (!e.currentTarget.firstElementChild.classList.contains('skroll-active')) {
+    el.listContainer.scrollBy({
+      top: (listItemHeight + 20.1) * 3,
       behavior: 'smooth',
     });
   } else {
-    el.list.parentElement.scrollTo({
+    el.listContainer.scrollTo({
       top: 0,
       behavior: 'smooth',
     });
   }
-}
+};
+
+el.listContainer.addEventListener('scroll', handleOnScroll);
 
 function handleOnScroll() {
-  if (window.innerWidth >= 768 && window.innerWidth <= 1279) {
+  if (window.innerWidth >= 768) {
     if (el.list.getBoundingClientRect().top > 100) {
-      el.btn.firstChild.classList.remove('skroll-active');
+      el.btn.firstElementChild.classList.remove('skroll-active');
     } else {
-      el.btn.firstChild.classList.add('skroll-active');
+      el.btn.firstElementChild.classList.add('skroll-active');
+    }
+  } else {
+    if (el.list.getBoundingClientRect().top > 0) {
+      el.btn.firstElementChild.classList.remove('skroll-active');
+    } else {
+      el.btn.firstElementChild.classList.add('skroll-active');
     }
   }
-}
-
-function handleViewportChange() {
-  checkViewportSize();
-}
-
-function checkViewportSize() {
-  if (window.innerWidth < 768 || window.innerWidth > 1279) {
-    el.btn.firstChild.classList.remove('skroll-active');
-    el.list.parentElement.classList.remove('active');
-    el.btn.addEventListener('click', handleChangeHeight);
-    el.btn.removeEventListener('click', handleScrolldown);
-    observer.unobserve(el.list.children[el.list.children.length - 1]);
-  } else {
-    el.btn.removeEventListener('click', handleChangeHeight);
-    el.btn.addEventListener('click', handleScrolldown);
-    el.list.parentElement.addEventListener('scroll', handleOnScroll);
-    observer.observe(el.list.children[el.list.children.length - 1]);
-  }
-}
-checkViewportSize();
+};
