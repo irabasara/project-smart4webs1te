@@ -1,16 +1,12 @@
 
-import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { app } from "./firebase-app";
 
 const auth = getAuth(app);
-let user = {
+export let user = {
   name: '',
   email: '',
-  password: '',
-  photoUrl: '../../img/sprite.svg#icon-user',
   isSignedIn: false,
-  booksArr: [],
-  bookDataArr: [],
 };
 
 export async function authUser(email,password) {
@@ -19,7 +15,6 @@ export async function authUser(email,password) {
       const userCur = userCredential.user;
       updateProfile(auth.currentUser, {
         displayName: user.name,
-        photoURL: user.photoUrl,
       })
       user.userId = userCur.uid;
       user.isSignedIn = true;
@@ -35,7 +30,6 @@ export async function signInUser(email,password) {
     .then(userCredential => {
       const userCur = userCredential.user;
       user.name = userCur.displayName;
-      user.photoUrl = userCur.photoURL;
       user.userId = userCur.uid;
       user.isSignedIn = true;
     })
@@ -43,5 +37,6 @@ export async function signInUser(email,password) {
        alert(error.message)
     });
 }
+console.log('user', user)
 
 

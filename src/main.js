@@ -1,6 +1,5 @@
 import './js/getBoorkAPI'
 import './js/auth/authUser'
-import './js/auth/signIn'
 import './js/auth/submitForm'
 import './js/refs'
 import './js/supportUkraine'

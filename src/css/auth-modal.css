@@ -71,6 +71,7 @@
                 letter-spacing: -0.16px;
                 text-transform: uppercase;
         }
+                    
     
         .auth-modal input::placeholder {
             color: var(--light-text);
@@ -79,7 +80,10 @@
             letter-spacing: -0.16px;
             text-transform: uppercase;
         }
-    
+        .auth-modal input.none {
+        display: none;
+    }
+        
         .sign-up {
             /* margin-top: 24px; */
             border-radius: 40px;
@@ -126,6 +130,7 @@
             /* text-decoration: underline; */
             color: var(--accent-color);
         }
+        
 /* } */
 
 
