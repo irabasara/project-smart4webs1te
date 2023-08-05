@@ -41,7 +41,7 @@
   border: none;
 }
 .icon-menu-openburger {
-  fill: #111111;
+  stroke: #111111;
 }
 
 
@@ -142,7 +142,7 @@
   }
   
   .btn-user-click {
-    fill: var(--accent-color);
+    stroke: var(--accent-color);
   }
   }
 
@@ -231,6 +231,6 @@ letter-spacing: -0.56px;
 }
 
 .btn-user-click {
-  fill: var(--accent-color);
+  stroke: var(--accent-color);
 }
 }
