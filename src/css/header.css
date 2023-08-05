@@ -1,22 +1,236 @@
-img {
-  width: 22px;
+/**!-------------------------media-mobile----------------------------!*/
+
+.container {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 18px 20px;
 }
-header {
+.header {
   display: flex;
   align-items: center;
-  gap: 20px;
-  height: 50px;
+  height: 64px;
   border-radius: 0px 0px 8px 8px;
-    border: 1.5px solid #111;
-    background: var(--white);
+  border: 1.5px solid #111;
+  background: var(--white);
 }
-a {
+.header-logo {
   display: flex;
   align-items: center;
+  gap: 8px;
+  margin-right: 144px;
 }
-ul {
+.header-nav-list {
+  display: none;
+}
+.user-form {
+  display: none;
+}
+.btn-toggle {
+  background: none;
+  border: none;
+}
+.btns {
   display: flex;
-  justify-content: center;
-  gap: 10px;
+  align-items: center;
+  margin-left: auto;
 }
 
+.mobile-menu {
+  background: none;
+  border: none;
+}
+.icon-menu-openburger {
+  stroke: #111111;
+}
+
+
+/**!-------------------------media-tabl----------------------------!*/
+
+
+@media screen and (min-width: 768px){
+  .container {
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    height: 72px;
+    border-radius: 0px 0px 8px 8px;
+    border: 1.5px solid #111;
+    background: var(--white);
+  }
+
+  .header-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 40px;
+  }
+  .header-nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  .header-nav-link {
+    background: var(--accent-color);
+    color: #111;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.29;
+    letter-spacing: -0.56px;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 36px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  .header-nav-shop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    color: #111;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.29;
+    letter-spacing: -0.56px;
+    text-transform: uppercase;
+  }
+  .mobile-menu {
+    display: none;
+  }
+  .btns {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+  .btn-toggle {
+    background: none;
+    border: none;
+    
+  }
+  .btns {
+    gap: 24px;
+  }
+
+  .user-form {
+    display: grid;
+
+  }
+  .btn-user {
+    width: 184px;
+    height: 48px;
+    border-radius: 18px;
+    border: 1.5px solid #111;
+    background: var(--main-color);
+    gap: 90px;
+    padding: 14px;
+    display: flex;
+  }
+  
+  .text-btn {
+  color: #FFF;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.29;
+  letter-spacing: -0.56px;
+  }
+  
+  .btn-user-click {
+    stroke: var(--accent-color);
+  }
+  }
+
+  /**!-------------------------media-desktop----------------------------!*/
+
+@media screen and (min-width: 1440px){
+
+  .container {
+  max-width: 1440px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  height: 72px;
+  border-radius: 0px 0px 8px 8px;
+  border: 1.5px solid #111;
+  background: var(--white);
+}
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 76px;
+}
+
+.header-nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+.header-nav-link {
+  background: var(--accent-color);
+  color: #111;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.29;
+  letter-spacing: -0.56px;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 36px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.header-nav-shop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  color: #111;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.29;
+  letter-spacing: -0.56px;
+  text-transform: uppercase;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+.btn-toggle {
+  background: none;
+  border: none;
+}
+.btn-user {
+  width: 184px;
+  height: 48px;
+  border-radius: 18px;
+  border: 1.5px solid #111;
+  background: var(--main-color);
+  gap: 90px;
+  padding: 15px 14px 15px 14px;
+  display: flex;
+}
+
+.text-btn {
+color: #FFF;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 1.29;
+letter-spacing: -0.56px;
+}
+
+.btn-user-click {
+  stroke: var(--accent-color);
+}
+}
