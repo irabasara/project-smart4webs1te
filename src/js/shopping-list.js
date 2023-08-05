@@ -14,15 +14,20 @@ export function generateBookCardMarkup(booksArray) {
             ? description
             : "We don't have description for this book yet..."
         }</div>
+        
+        <button class="book-card-delete">
         <svg class="book-card-icon">
-        <use src="../img/sprite.svg#icon-trash" alt="" />
+        <use href="../img/sprite.svg#icon-trash"></use>
         </svg>
+        </button>
       </div>
-      <div>
+      <div class="book-card-refs">
         <div class="book-author">${author}</div>
-        <a href=""><img src="" alt="" /></a>
-        <a href=""><img src="" alt="" /></a>
-        <a href=""><img src="" alt="" /></a>
+        <a href="" >
+        <img src="../img/amazon.svg" alt="" / >
+        </a>
+        <a href="" ><img src="../img/applebook.svg" alt="" / ></a>
+        <a href="" ><img src="../img/bookshop.svg" alt="" /></a>
       </div>
       </div>
     </li>`;
