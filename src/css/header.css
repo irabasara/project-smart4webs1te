@@ -1,12 +1,10 @@
 /**!-------------------------media-mobile----------------------------!*/
 
-.container {
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 18px 20px;
-}
 .header {
+  max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 18px 20px;
   display: flex;
   align-items: center;
   height: 64px;
@@ -49,11 +47,10 @@
 
 
 @media screen and (min-width: 768px){
-  .container {
-    padding-right: 32px;
-    padding-left: 32px;
-  }
+
   .header {
+      padding-right: 32px;
+        padding-left: 32px;
     display: flex;
     align-items: center;
     height: 72px;
@@ -150,10 +147,8 @@
 
 @media screen and (min-width: 1440px){
 
-  .container {
-  max-width: 1440px;
-}
 .header {
+  max-width: 1440px;
   display: flex;
   align-items: center;
   height: 72px;
