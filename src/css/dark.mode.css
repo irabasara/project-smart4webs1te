@@ -1,0 +1,49 @@
+.theme-switch {
+  display: inline-block;
+  width: 46px;
+  height: 20px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(180deg, var(--main-color) 0%, #dcdcdc 100%);
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.1) inset;
+  position: relative;
+  cursor: pointer;
+  transition-duration: 300ms;
+}
+
+.theme-switch::before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--white);
+  top: 1px;
+  left: 1px;
+  transition-duration: 300ms;
+  z-index: 1;
+}
+
+.dark .logo-text,
+.dark .header-nav-link {
+  color: var(--white);
+}
+
+.dark header {
+  border-radius: 0px 0px 8px 8px;
+  border: 1.5px solid var(--white);
+  background-color: var(--main-textcolor);
+}
+
+.theme-switch.active {
+  background: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
+}
+
+.theme-switch.active::before {
+  transform: translateX(26px);
+  background-color: var(--white);
+}
+
+.dark {
+  background-color: var(--background-dark);
+}
