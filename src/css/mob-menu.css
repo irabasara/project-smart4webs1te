@@ -1,17 +1,13 @@
-:root {
-    --white: #fff;
-    --background-main: #f6f6f6;
-    --background-dark: #202024;
-    --main-textcolor: #111111;
-    --light-text: #b4afaf;
-    --main-color: #4f2ee8;
-    --accent-color: #eac645;
-    ---animation: 250ms ease;
-  }
 
-@media screen and (min-width: 375px){
+@media screen and (min-width: 768px){
     .mob-menu {
         display: none;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .mob-menu {
+        display: flex;
     }
 }
 
@@ -19,27 +15,28 @@
     /* width: 100%;
      */
      border: 1px solid #000;
-background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4F2EE8 18.03%, #FFF 100%);
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background-image:  url('../img/Group 6.png'), radial-gradient(189.32% 190.93% at 59.76% -23.42%, var(--main-color) 18.03%, #FFF 100%);
+    background-repeat: no-repeat;
+    background-position: bottom, center;
+    
+    
+    
+    min-height: 748px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     height: 100%;
     padding-top: 40px; 
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
+    
 }
 
-.mob-img {
+/* .mob-img {
     width: 88px;
     border-radius: 8px;
-}
+} */
 
-.mob-gallery {
- 
-    bottom: 0;
-    overflow: hidden;
-    
-    
-}
+
 
 /* .mob-list-item {
     width: 88px;
@@ -61,21 +58,22 @@ box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 height: 48px;
 flex-shrink: 0;
 border-radius: 18px;
-border: 1.5px solid #111;
-background: #4F2EE8;
+border: 1.5px solid var(--main-textcolor);
+background-color: var(--main-color);
 display: flex;
 align-items: center;
 padding-left: 14px;
 padding-right: 14px;
+justify-content: space-between;
 
-color: #FFF;
+color: var(--white);
 font-family: DM Sans;
 font-size: 14px;
 line-height: 1.28;
 letter-spacing: -0.56px;
 }
 
-.sign-btn::after {
+/* .sign-btn::after {
     display: inline-block;
     content: " ";
     background-image: url(../img/sprite.svg#icon-arrow-right);
@@ -84,4 +82,8 @@ letter-spacing: -0.56px;
     stroke: var(--accent-color);
     margin-left: 90px;
     
+} */
+
+.svg-arrow {
+    stroke: var(--accent-color);
 }
