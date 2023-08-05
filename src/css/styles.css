@@ -4,7 +4,7 @@
 | default @import url()
 |============================
 */
-@import url('./mob-menu.css');
+
 @import '../../node_modules/modern-normalize/modern-normalize.css';
 @import url('./fonts.css');
 @import url('./reset.css');
@@ -17,6 +17,7 @@
 @import url('./all-category.css');
 @import url('./loader.css');
 @import url('./scroll-top.css');
+@import url('./mob-menu.css');
 
 /* @import url('./header.css'); */
 /* @import url('./header.css'); */

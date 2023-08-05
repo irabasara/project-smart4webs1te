@@ -1,4 +1,13 @@
-
+:root {
+    --white: #fff;
+    --background-main: #f6f6f6;
+    --background-dark: #202024;
+    --main-textcolor: #111111;
+    --light-text: #b4afaf;
+    --main-color: #4f2ee8;
+    --accent-color: #eac645;
+    ---animation: 250ms ease;
+  }
 
 @media screen and (min-width: 375px){
     .mob-menu {
@@ -12,8 +21,11 @@
      border: 1px solid #000;
 background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4F2EE8 18.03%, #FFF 100%);
 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    height: calc(100% - 64px);
-    padding-top: 40px;
+    height: 100%;
+    padding-top: 40px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .mob-img {
@@ -22,21 +34,19 @@ box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .mob-gallery {
-    width: 450px;
-   
-    left: -15px;
-    
+ 
+    bottom: 0;
     overflow: hidden;
     
     
 }
 
-.mob-list-item {
+/* .mob-list-item {
     width: 88px;
     
-}
+} */
 
-.mob-list {
+/* .mob-list {
     transform: rotate(-15deg);
     display: flex;
     flex-wrap: wrap;
@@ -44,7 +54,7 @@ box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     column-gap: 32px;
     bottom: -120px;
     overflow-y: hidden;
-}
+} */
 
 .sign-btn {
     width: 184px;
@@ -53,6 +63,10 @@ flex-shrink: 0;
 border-radius: 18px;
 border: 1.5px solid #111;
 background: #4F2EE8;
+display: flex;
+align-items: center;
+padding-left: 14px;
+padding-right: 14px;
 
 color: #FFF;
 font-family: DM Sans;
@@ -67,6 +81,7 @@ letter-spacing: -0.56px;
     background-image: url(../img/sprite.svg#icon-arrow-right);
     width: 20px;
     height: 20px;
-    fill: #FFF;
+    stroke: var(--accent-color);
+    margin-left: 90px;
     
 }
