@@ -13,9 +13,9 @@ function handleFormAuth(event) {
     return console.log("Please fill in all the fields!");
     }
 
-    // localStorage.setItem('USER_NAME', JSON.stringify(name.value))
-    // authUser(email.value, password.value, name.value)
-    signInUser(email.value, password.value)
+    localStorage.setItem('USER_NAME', JSON.stringify(name.value))
+    authUser(email.value, password.value, name.value)
+    // signInUser(email.value, password.value)
     event.currentTarget.reset();
     
 }
