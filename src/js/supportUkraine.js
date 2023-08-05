@@ -18,7 +18,7 @@ function createMarkup() {
         .padStart(
           2,
           'O'
-        )}</span><img class ="company-emblem"src="../img/supportUkraine/supportUkraine-${
+        )}</span><img class ="company-emblem" src="./img/supportUkraine/supportUkraine-${
         i + 1
       }.png" alt="${obj.title}"></a></li>`
   ).join('');
