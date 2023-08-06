@@ -1,0 +1,29 @@
+
+.scroll{
+    position: fixed;
+    top: 80%;
+    right: 10%;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    box-shadow: 0px 0px 0px 5px #4f2ee84d;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    display: none;
+}
+
+.show{
+        display: flex;
+}
+
+.scroll svg{
+    fill: var(--white);
+}
+.scroll:hover svg,
+.scroll:focus svg{
+    fill: var(--accent-color);
+}
+
