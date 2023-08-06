@@ -1,7 +1,7 @@
 import { getBooksAPI } from "./getBoorkAPI";
 import Notiflix from 'notiflix';
 
-const bestBooks = document.querySelector('.home-title-book');
+const bestBooks = document.querySelector('.container-bestBooks');
 const container = document.querySelector('.js-container-bestBooks');
 
 
@@ -46,8 +46,26 @@ function markupBlock(data) {
 //   e.preventDefault();
 //   if (e.target.classList.contains('js-btn-bestBooks')) {
 //     const seeMoreCategory = e.target.dataset.js;
-//     container.innerHTML = '';
-//     container.insertAdjacentHTML('afterbegin', );
-//  
+//     container.insertAdjacentHTML('afterbegin', renderAllCategories(`${seeMoreCategory}`));
+//   }
+// }
+
+// async function renderAllCategories(data) {
+//   try {
+//     const { data } = await getBooksAPI('categoty-list');
+//     let markup = '';
+//     data.map(({ list_name }) => {
+//       data.map(({ list_name, category_list }) => {
+//         markup += `<li class="categories__item categories__item">
+// 					<a class="categories__link" href="books">
+// 					<a class="categories__link" href="${category_list}">
+// 						${list_name}
+// 					</a>
+// 				</li>`;
+//       })
+//     })
+//   }
+//   catch (error) {
+//     console.error(error)
 //   }
 // }
