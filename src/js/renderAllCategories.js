@@ -4,9 +4,9 @@ import { getBooksAPI } from './getBoorkAPI';
 export function renderAllCategories(allCategories) {
 
   let markup = '';
-  allCategories.map(({ list_name }) => {
+  allCategories.map(({ list_name, category_list }) => {
     markup += `<li class="categories__item categories__item">
-					<a class="categories__link" href="books">
+					<a class="categories__link" href="${category_list}">
 						${list_name}
 					</a>
 				</li>`;
