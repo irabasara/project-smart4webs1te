@@ -19,5 +19,6 @@ import './js/renderAllCategories'
 
 import './js/mob-menu'
 import './js/bestSellerBooks'
+import './js/header'
 
 
