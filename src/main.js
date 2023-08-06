@@ -8,7 +8,7 @@ import './js/scroll-top';
 import './js/modal';
 import './js/shopping-list';
 import './js/getBoorkAPI'
+import './js/mob-menu'
 import './js/bestSellerBooks'
-
 
 
