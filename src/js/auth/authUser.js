@@ -37,6 +37,6 @@ export async function signInUser(email,password) {
        alert(error.message)
     });
 }
-console.log('user', user)
+
 
 

@@ -48,5 +48,3 @@ function handleSignUpForm() {
   signInButton.classList.remove('active');
 
 }
-
-console.log('user', user)
