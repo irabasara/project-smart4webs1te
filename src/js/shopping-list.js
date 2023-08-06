@@ -69,14 +69,12 @@ function onRemoveBtnClick(evt) {
     el = el.parentNode;
   }
   el.remove();
-  // if (!document.querySelector('.shopping-list').children.length === 0) {
-  //   document.querySelector('.empty-list').hidden = true;
-  // }
   if (document.querySelector('.shopping-list').children.length < 1) {
     document.querySelector('.empty-list').style.display = 'flex';
   }
   removeBookFromStorage(el['id'], localStorage.getItem('shoppingList'));
 }
+
 function removeBookFromStorage(title, storageArr) {
   const newStorage = JSON.parse(storageArr).filter(element => {
     if (element.title === title) {
@@ -86,6 +84,7 @@ function removeBookFromStorage(title, storageArr) {
   });
   localStorage.setItem('shoppingList', JSON.stringify(newStorage));
 }
+
 // ------------------------------------------------------------------------------------------TEST BLOCK!!!!
 
 let test = new Array();
