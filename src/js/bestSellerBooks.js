@@ -1,26 +1,34 @@
 import { getBooksAPI } from "./getBoorkAPI";
 import Notiflix from 'notiflix';
+// import {renderAllCategories} from "./renderAllCategories"
 
-const bestBooks = document.querySelector('.container-bestBooks');
+const bestBooks = document.querySelector('.home-title-book');
 const container = document.querySelector('.js-container-bestBooks');
 
-
-bestBooks.addEventListener('click', onClickBooks);
 // container.addEventListener('click', onLoadSeeMore)
 
-async function onClickBooks() {
-  try {
-    const { data } = await getBooksAPI('top-books');
-    if (data === 0) {
-      Notiflix.Notify.failure('There are no books in this category');
-      console.log(data)
-    }
-    markupBlock(data)
-  }
-  catch (error) {
-    console.error(error)
+// async function onClickBooks() {
+//   try {
+//     const { data } = await getBooksAPI('top-books');
+//     if (data === 0) {
+//       Notiflix.Notify.failure('There are no books in this category');
+//       console.log(data)
+//     }
+//     markupBlock(data)
+//   }
+//   catch (error) {
+//     console.error(error)
+// }
+// }
+
+getBooksAPI('top-books')
+  .then(({ data }) => {
+    markupBlock(data);
+if (data === 0) {
+  Notiflix.Notify.failure('There are no books in this category');
 }
-}
+})
+   
 
 function markupList(books) {
   return books.map(({ book_image, title, author, _id }) => {
@@ -33,12 +41,9 @@ function markupList(books) {
 
 function markupBlock(data) {
    const markupBlock = data.map(({ list_name, books }) => {
-    return `<div class="js-container-homeBooks">
-        <h3 class="js-list-name">${list_name}</h3 >
+    return `<h3 class="js-list-name">${list_name}</h3 >
         <ul class="js-overlow-bestBooks">${markupList(books)}</ul>
-        <btn class="js-btn-bestBooks" data-js="${list_name}">See more</btn>
-        </div>`
-  }).join('')
+        <btn class="js-btn-bestBooks" data-js="${list_name}">See more</btn>`}).join('')
     container.insertAdjacentHTML('beforeend', markupBlock)
 }
 
@@ -46,26 +51,13 @@ function markupBlock(data) {
 //   e.preventDefault();
 //   if (e.target.classList.contains('js-btn-bestBooks')) {
 //     const seeMoreCategory = e.target.dataset.js;
-//     container.insertAdjacentHTML('afterbegin', renderAllCategories(`${seeMoreCategory}`));
+//     // console.log(seeMoreCategory)
+//     container.innerHTML = ""
+//     container.insertAdjacentHTML('beforeend', markupList(`${seeMoreCategory}`))
+//     if (!seeMoreCategory) {
+//       Notiflix.Notify.failure('There are no books in this category')
+//     }
+    
 //   }
 // }
 
-// async function renderAllCategories(data) {
-//   try {
-//     const { data } = await getBooksAPI('categoty-list');
-//     let markup = '';
-//     data.map(({ list_name }) => {
-//       data.map(({ list_name, category_list }) => {
-//         markup += `<li class="categories__item categories__item">
-// 					<a class="categories__link" href="books">
-// 					<a class="categories__link" href="${category_list}">
-// 						${list_name}
-// 					</a>
-// 				</li>`;
-//       })
-//     })
-//   }
-//   catch (error) {
-//     console.error(error)
-//   }
-// }

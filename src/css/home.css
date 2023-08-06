@@ -11,6 +11,19 @@
     overflow: hidden;
 }
 
+.container-bestBooks {
+    width: 335px;
+    margin: 40px 20px;
+}
+
+.js-overlow-bestBooks {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+}
+
 .home-title-book {
     font-size: 32px;
     font-weight: 700;
@@ -25,8 +38,8 @@
 }
 
 .img-bestBooks {
-    width: 335px;
-    height: 485px;
+    max-width: 335px;
+    height: 485;
 }
 
 .js-btn-bestBooks {
@@ -35,6 +48,7 @@
     border: 2px solid #4F2EE8;   
     margin-left: auto; 
     margin-top: 8px;
+    margin-bottom: 40px;
     padding: 14px 28px;
     align-items: center;
     width: 124px;
@@ -48,15 +62,6 @@
         white-space: nowrap;
         justify-content: center;
         overflow: hidden;
-}
-
-.js-container-bestBooks {
-    display: flex;
-    margin: 40px 20px 8px;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 18px;
 }
 
 .js-list-bestBooks {
@@ -95,6 +100,11 @@
 
 
 @media screen and (min-width: 768px) {
+
+.container-bestBooks {
+    width: 704px;
+    margin: 40px 32px;
+}
     
 .home-title-book {
     font-size: 48px;
@@ -104,18 +114,12 @@
 }
 
 .js-overlow-bestBooks {
-gap: 25px;
-}
-
-.js-container-bestBooks {
-    width: 704px;
-    margin: 40px 32px 20px;
     gap: 25px;
     flex-direction: row;
 }
 
 .img-bestBooks {
-    width: 218px;
+    max-width: 218px;
     height: 316px;
 }
 
@@ -134,19 +138,21 @@ gap: 25px;
 
 @media screen and (min-width: 1440px) {
 
+.container-bestBooks {
+    width: 996px;
+    margin: 40px 24px 40px 40px;
+}
 .home-title-book {
     margin-left: 40px;
 }
 
-.js-container-bestBooks {
-    width: 996px;
-    margin: 40px 24px 32px 40px;
+.js-overlow-bestBooks {
     gap: 24px;
     flex-direction: row;
 }
 
 .img-bestBooks {
-    width: 180px;
+    max-width: 180px;
     height: 256px;
 }
 
