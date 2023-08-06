@@ -5,7 +5,7 @@ export function renderAllCategories(allCategories) {
 
   let markup = '';
   allCategories.map(({ list_name }) => {
-    markup += `<li class="categories__item categories__item">
+    markup += `<li class="categories__item">
 					<a class="categories__link" href="books">
 						${list_name}
 					</a>
@@ -15,5 +15,5 @@ export function renderAllCategories(allCategories) {
   return markup;
 }
 
-const getAllCategory = getBooksAPI('category-list').then(response => response.data);
-renderAllCategories(getAllCategory)
+getBooksAPI('category-list').then(({ data }) => renderAllCategories(data));
+
