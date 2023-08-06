@@ -37,10 +37,10 @@ export function generateBookCardMarkup(booksArray) {
     .insertAdjacentHTML('beforeend', markup);
   return markup;
 }
-fetch('https://books-backend.p.goit.global/books/643282b1e85766588626a0dc')
+fetch('https://books-backend.p.goit.global/books/643282b1e85766588626a085')
   .then(response => response.json())
   .then(book => (localStorage['book'] = JSON.stringify(book)));
-console.log(generateBookCardMarkup([JSON.parse(localStorage['book'])]));
+generateBookCardMarkup([JSON.parse(localStorage['book'])]);
 
 if (!localStorage.getItem('book')) {
   document.querySelector('.empty-list').removeAttribute('display');

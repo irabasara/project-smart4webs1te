@@ -39,7 +39,7 @@
 }
 .shopping-image-thumb {
   height: 142px;
-  /* width: 100px; */
+  width: 100px;
   margin-right: 14px;
 }
 .shopping-image-thumb img {
@@ -48,12 +48,19 @@
   object-fit: cover;
 }
 .book-description {
-  /* width: 193px; */
-  height: 68px;
+  width: 193px;
+  /* height: 68px; */
 
   overflow: hidden;
   color: #111;
   text-overflow: ellipsis;
+  white-space: normal;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  white-space: pre-wrap;
+
   font-size: 14px;
   font-weight: 400;
   line-height: 1.286;
@@ -73,11 +80,15 @@
   fill: black;
 }
 .book-title {
+  width: 144px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 16px;
   font-weight: 700;
-  line-height: 1.125; /* 112.5% */
+  line-height: 1.125;
   letter-spacing: -0.64px;
-  margin-bottom: 4px;
+  /* margin-bottom: 4px; */
 }
 .book-genre {
   width: 165px;
@@ -115,9 +126,9 @@
   margin-right: auto;
   height: 14px;
 
-  overflow: hidden;
+  /* overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: nowrap; */
   color: var(--light-text);
   font-size: 12px;
   line-height: 1.167;
