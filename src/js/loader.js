@@ -1,11 +1,12 @@
-// import { getBooksAPI } from "./getBoorkAPI"
+import { getBooksAPI } from "./getBoorkAPI"
 
-// const loader = document.querySelector('.loader')
+const loader = document.querySelector('.loader')
 
-// const isLoading = () => {
-//     loader.hidden = false;
-//     if (getBooksAPI) {
-//     loader.hidden = true;
+const isLoading = () => {
+    loader.hidden = false;
+    if (getBooksAPI) {
+    loader.hidden = true;
         
-//     }
-// }
+    }
+}
+
