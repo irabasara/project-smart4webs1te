@@ -1,3 +1,6 @@
+.shopping-support {
+  display: none;
+}
 .shopping-header {
   margin-bottom: 40px;
   line-height: 1.1188;
@@ -51,7 +54,6 @@
 }
 .book-description {
   width: 193px;
-  /* height: 68px; */
 
   overflow: hidden;
   color: #111;
@@ -76,11 +78,9 @@
 .book-card-refs {
   display: flex;
   column-gap: 8px;
-  align-items: end;
+  align-items: center;
 }
-.book-card-refs img {
-  fill: black;
-}
+
 .book-title {
   width: 144px;
   white-space: nowrap;
@@ -90,7 +90,7 @@
   font-weight: 700;
   line-height: 1.125;
   letter-spacing: -0.64px;
-  /* margin-bottom: 4px; */
+  margin-bottom: 4px;
 }
 .book-genre {
   width: 165px;
@@ -108,6 +108,7 @@
 .book-card-icon {
   width: 16px;
   height: 16px;
+  pointer-events: none;
 }
 .book-card-delete {
   width: 28px;
@@ -117,6 +118,7 @@
   position: absolute;
   top: 14px;
   right: 14px;
+  padding: 6px;
 
   border-radius: 50%;
   border: var(--main-color);
@@ -128,9 +130,6 @@
   margin-right: auto;
   height: 14px;
 
-  /* overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; */
   color: var(--light-text);
   font-size: 12px;
   line-height: 1.167;
@@ -138,7 +137,81 @@
   font-style: italic;
 }
 
-.dark-theme {
-  background-color: var(--background-dark);
-  color: var(--light-text);
+@media screen and (min-width: 768px) {
+  .shopping-image-thumb {
+    height: 165px;
+    width: 116px;
+    margin-right: 14px;
+  }
+  .empty-list-text {
+    width: 349px;
+    font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: -0.36px;
+  }
+  .shopping-header {
+    font-size: 48px;
+    line-height: 52px;
+    letter-spacing: -1.92px;
+  }
+  .book-title {
+    width: auto;
+  }
+  .book-description {
+    width: 530px;
+  }
+  .book-genre {
+    margin-bottom: 12px;
+  }
+  .book-card {
+    padding: 24px;
+  }
+  .book-card-refs {
+    column-gap: 16px;
+  }
+  .book-card-refs a {
+    display: flex;
+    justify-content: center;
+  }
+  .book-card-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+  .book-card-delete {
+    width: 34px;
+    height: 34px;
+    padding: 8px;
+  }
+  .amazon-icon {
+    width: 48px;
+    height: 15px;
+  }
+  .other-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container.shopping {
+    margin: 0px 0px 0px 40px;
+    padding: 0px;
+
+    max-width: 100%;
+    width: 996px;
+  }
+  main {
+    padding: 24px;
+    display: flex;
+    align-items: start;
+  }
+
+  .shopping-support {
+    display: block;
+    width: 356px;
+  }
+  .book-description {
+    width: 808px;
+  }
 }
