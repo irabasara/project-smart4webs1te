@@ -15,5 +15,5 @@ export function renderAllCategories(allCategories) {
   return markup;
 }
 
-const getAllCategory = await getBooksAPI('category-list').then(response => response.data);
+const getAllCategory = getBooksAPI('category-list').then(response => response.data);
 renderAllCategories(getAllCategory)
