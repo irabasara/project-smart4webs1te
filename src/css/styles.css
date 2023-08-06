@@ -15,7 +15,9 @@
 @import url('./support-ukraine.css');
 @import url('./all-category.css');
 @import url('./loader.css');
-/* @import url('./header.css'); */
+@import url('./auth-modal.css');
+@import url('./scroll-top.css');
+
 /* @import url('./header.css'); */
 /* @import url('./header.css'); */
 /* @import url('./header.css'); */
@@ -29,7 +31,7 @@
   --light-text: #b4afaf;
   --main-color: #4f2ee8;
   --accent-color: #eac645;
-  ---animation: 250ms ease;
+  ---animation: 700ms ease;
 }
 
   .container {
