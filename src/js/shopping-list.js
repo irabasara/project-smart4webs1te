@@ -5,9 +5,9 @@ function generateBookCardMarkup(booksArray) {
   booksArray.map(element => {
     const { book_image, title, description, author, list_name, buy_links } =
       element;
-    const amazon = findBookUrl('Amazon', buy_links);
-    const appleBooks = findBookUrl('Apple Books', buy_links);
-    const Bookshop = findBookUrl('Bookshop', buy_links);
+    const amazon = getBookUrl('Amazon', buy_links);
+    const appleBooks = getBookUrl('Apple Books', buy_links);
+    const Bookshop = getBookUrl('Bookshop', buy_links);
 
     markup += ` <li class="book-card" id="${title}">
       <div class="shopping-image-thumb">
@@ -48,7 +48,7 @@ function generateBookCardMarkup(booksArray) {
     .addEventListener('click', onRemoveBtnClick);
 }
 
-function findBookUrl(key, array) {
+function getBookUrl(key, array) {
   const url = array.filter(site => {
     if (site.name === key) {
       return site.url;
