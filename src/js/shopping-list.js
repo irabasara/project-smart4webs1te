@@ -1,9 +1,5 @@
 import { app } from './auth/firebase-app';
 
-const refs = {
-  removeBtn: document.querySelector('.book-card-delete'),
-};
-
 function generateBookCardMarkup(booksArray) {
   let markup = '';
   booksArray.map(element => {
