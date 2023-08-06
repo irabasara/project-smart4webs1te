@@ -123,7 +123,7 @@ letter-spacing: -0.56px;
 }
 
 .mob-close-btn {
-    margin-left: 38px;
+    margin-left: 40px;
     position: absolute;
     background-color: transparent;
     border: none;
@@ -140,7 +140,7 @@ letter-spacing: -0.56px;
     pointer-events: none;
 }
 
-.mobile-menu {
+.mob-close-btn.is-hidden + .mobile-menu {
     opacity: 1;
     visibility: visible;
     pointer-events: all;
@@ -148,8 +148,10 @@ letter-spacing: -0.56px;
     visibility var(---animation);
 }
 
-.mobile-menu.is-hidden {
+.mobile-menu {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
 }
+
+
