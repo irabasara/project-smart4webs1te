@@ -15,12 +15,10 @@ function createMarkup() {
         i + 1
       )
         .toString()
-        .padStart(
-          2,
-          'O'
-        )}</span><img class ="company-emblem" src="./img/supportUkraine/supportUkraine-${
-        i + 1
-      }.png" alt="${obj.title}"></a></li>`
+        .padStart(2, 'O')}</span><picture class="company-emblem">
+        <source srcset="${obj.png} 1x, ${obj.png2x} 2x" type="image/png"/> 
+        <img src="${obj.png}" alt="${obj.title}" />
+        </picture></a></li>`
   ).join('');
 };
 
