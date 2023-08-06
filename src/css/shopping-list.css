@@ -31,6 +31,8 @@
   background-position: center;
 }
 .book-card {
+  margin-bottom: 20px;
+
   position: relative;
   display: flex;
   padding: 14px;

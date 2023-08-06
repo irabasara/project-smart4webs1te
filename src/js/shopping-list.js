@@ -1,7 +1,17 @@
+const refs = {
+  removeBtn: document.querySelector('.book-card-delete'),
+};
+
 export function generateBookCardMarkup(booksArray) {
   let markup = '';
-  booksArray.map(({ book_image, title, description, author, list_name }) => {
-    markup += ` <li class="book-card">
+  booksArray.map(element => {
+    const { book_image, title, description, author, list_name, buy_links } =
+      element;
+    const amazon = findBookUrl('Amazon', buy_links);
+    const appleBooks = findBookUrl('Apple Books', buy_links);
+    const barnesAndNoble = findBookUrl('Barnes and Noble', buy_links);
+
+    markup += ` <li class="book-card" id="${title}">
       <div class="shopping-image-thumb">
         <img src="${book_image}" alt="" />
       </div>
@@ -23,11 +33,11 @@ export function generateBookCardMarkup(booksArray) {
       </div>
       <div class="book-card-refs">
         <div class="book-author">${author}</div>
-        <a href="" >
+        <a href="${amazon}" >
         <img src="../img/amazon.svg" alt="" / >
         </a>
-        <a href="" ><img src="../img/applebook.svg" alt="" / ></a>
-        <a href="" ><img src="../img/bookshop.svg" alt="" /></a>
+        <a href="${appleBooks}" ><img src="../img/applebook.svg" alt="" / ></a>
+        <a href="${barnesAndNoble}" ><img src="../img/bookshop.svg" alt="" /></a>
       </div>
       </div>
     </li>`;
@@ -35,13 +45,60 @@ export function generateBookCardMarkup(booksArray) {
   document
     .querySelector('.shopping-list')
     .insertAdjacentHTML('beforeend', markup);
-  return markup;
 }
-fetch('https://books-backend.p.goit.global/books/643282b1e85766588626a085')
-  .then(response => response.json())
-  .then(book => (localStorage['book'] = JSON.stringify(book)));
-generateBookCardMarkup([JSON.parse(localStorage['book'])]);
 
-if (!localStorage.getItem('book')) {
-  document.querySelector('.empty-list').removeAttribute('display');
+export function findBookUrl(key, array) {
+  return array.map(site => {
+    if (site.name === key) {
+      return site.url;
+    }
+  });
+}
+
+export function onRemoveBtnClick(evt) {
+  let el = evt.target;
+  while (el) {
+    if (el.hasAttribute('id')) {
+      break;
+    }
+    el = el.parentNode;
+  }
+  el.remove();
+  if (document.querySelector('.shopping-list').children.length === 0) {
+    document.querySelector('.empty-list').removeAttribute('style');
+  }
+  removeBookFromStorage(el['id'], localStorage.getItem('books'));
+}
+
+// TEST BLOCK!!!!
+
+let test = new Array();
+const url = [
+  'https://books-backend.p.goit.global/books/643282b1e85766588626a085',
+  'https://books-backend.p.goit.global/books/643282b1e85766588626a0b2',
+];
+
+Promise.all(url.map(url => fetch(url).then(resp => resp.json())))
+  .then(text => {
+    test.push(text);
+  })
+  .then(() => localStorage.setItem('books', JSON.stringify(...test)))
+  .finally(e => {
+    generateBookCardMarkup(JSON.parse(localStorage['books']));
+  });
+
+// TEST BLOCK!!!
+
+document
+  .querySelector('.shopping-list')
+  .addEventListener('click', onRemoveBtnClick);
+
+function removeBookFromStorage(title, storageArr) {
+  const newStorage = JSON.parse(storageArr).filter(element => {
+    if (element.title === title) {
+      return;
+    }
+    return element;
+  });
+  localStorage.setItem('books', JSON.stringify(newStorage));
 }
