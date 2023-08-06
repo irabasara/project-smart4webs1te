@@ -5,5 +5,6 @@ import './js/refs'
 import './js/supportUkraine'
 import './js/scroll-top'
 import './js/modal'
+import './js/renderAllCategories'
 
 
