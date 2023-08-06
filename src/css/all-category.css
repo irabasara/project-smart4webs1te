@@ -17,12 +17,22 @@ a {
 	text-decoration: none;
 } */
 
+.categories-container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
 .categories {
+    margin-top: 40px;
+    margin-left: 24px;
 	padding: 0;
 	width: 356px;
 	height: 472px;
 	overflow-y: scroll;
 }
+
+
+
 .categories::-webkit-scrollbar {
     width: 8px;
 }
@@ -30,6 +40,10 @@ a {
 .categories::-webkit-scrollbar-thumb {
     background: #e0e0e0;
     border-radius: 12px;
+}
+
+.categories::-webkit-scrollbar-track {
+    background-color: #F6F6F6;
 }
 
 .categories__inner {
