@@ -3,5 +3,6 @@ export const refs = {
     openModalBtn: document.querySelector('#js-modal-open'),
     closeModalBtn: document.querySelector('#js-modal-close'),
     modal: document.querySelector('#js-modal'),
+    userLogOut: document.querySelector('.btn-user-out')
     
 }

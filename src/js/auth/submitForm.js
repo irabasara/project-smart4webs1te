@@ -17,14 +17,16 @@ function handleFormAuth(event) {
   const {
     elements: { name, email, password }
   } = event.currentTarget;
-user.name = name.value;
+
+  user.name = name.value;
   user.email = email.value;
+
   if (!email.value || !password.value ) {
     return console.log("Please fill in all the fields!");
     }
   if (submitButton.textContent === 'Sign up') {
-  localStorage.setItem('USER_NAME', JSON.stringify(name.value))
-    authUser(email.value, password.value, name.value)
+  // localStorage.setItem('USER_NAME', JSON.stringify(name.value))
+    authUser(email.value, password.value)
   }
   else {
     signInUser(email.value, password.value)
