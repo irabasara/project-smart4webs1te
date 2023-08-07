@@ -1,4 +1,5 @@
 
+
 .modal-backdrop.hi-backdrop {
     opacity: 0;
     pointer-events: none;
@@ -37,7 +38,7 @@
     max-width: 100%;
     border-radius: 18px;
     border: 2px solid var(--main-textcolor);
-    background: var(--white);
+    background-color: var(--white);
 
     padding-top: 40px;
     padding-left: 24px;
@@ -63,7 +64,7 @@
     height: 24px;
     position: absolute;
     top: 10px;
-    right: 5px;
+    right: 8px;
     padding: 0px;
     background-color: transparent;
 
@@ -78,10 +79,15 @@
     position: absolute;
     top: 0px;
     right: 0px;
+
+    stroke: var(--main-textcolor);
+
+    transition: var(---animation);
 }
 
-.modal-svg-close:hover {
-    color: var(--main-color);
+.modal-svg-close:hover, 
+.modal-svg-close:focus {
+    stroke: var(--main-color);
 }
 
 .modal-content-card {
@@ -145,7 +151,7 @@
 }
 
 .modal-link-icon {
-    transition: fill var(---animation) var(---animation);
+    transition: var(---animation);
 }
 
 .modal-link-icon:hover,
@@ -187,10 +193,16 @@
     margin: auto;
     /* min-width: 211px; */
     height: 46px;
+
+    white-space: nowrap;
+
+    transition: var(---animation);
 }
 
 .modal-add-btn:hover,
-.modal-add-btn:focus {
+.modal-add-btn:focus,
+.modal-remove-btn:hover,
+.modal-remove-btn:focus{
     background: var(--main-color);
     color: var(--white);
 }
@@ -214,6 +226,10 @@
     margin-bottom: 8px;
     min-width: 279px;
     height: 46px;
+
+    white-space: nowrap;
+    transition: var(---animation);
+    
 }
 
 .modal-text {
@@ -237,19 +253,10 @@
 .modal-wrap {
     width: 579px;
     max-width: 100%;
-    height: 465px;
+    max-height: 100%;
 
     padding-left: 40px; 
     padding-right: 40px;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.9);
-    transition: transform var(---animation);
-    background-color: var(--white);
-    border-radius: 18px;
-    
 }
 
 .modal-content-card {
@@ -263,7 +270,6 @@
 .modal-content-pict {
     width: 192px;
     height: 281px;
-    border-radius: 8px;
 }
 
 .modal-content-text {
@@ -283,7 +289,7 @@
 }
 
 .modal-content-autur {
-    font-size: 18px;
+    font-size: 14px;
     line-height: 1.28;
     letter-spacing: -0.56px;
     color: var(--light-text);
@@ -296,7 +302,7 @@
 }
 
 .modal-link {
-    height: 38px;
+    height: 36px;
     margin-bottom: 0;
 }  
 
@@ -331,15 +337,12 @@
 }
 
 .modal-text {
-    color: rgba(17, 17, 17, 0.50);
-    text-align: center;
-    font-family: DM Sans;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.2;
-    letter-spacing: -0.4px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: -0.48px;
 }
+
+
 
 }
 
@@ -347,4 +350,23 @@
 
 
 /*================== DESKTOP ================== */
-@media screen and (min-width: 1440px) {}
+@media screen and (min-width: 1440px) {
+
+.modal-wrap {
+    width: 579px;
+    max-width: 100%;
+    height: 465px;
+
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.modal-content-pict {
+    width: 192px;
+    height: 281px;
+}
+
+
+
+
+}
