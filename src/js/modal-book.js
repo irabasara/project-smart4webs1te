@@ -1,10 +1,8 @@
 import { getBooksAPI } from './getBoorkAPI';
-
-
-
 import amazon from '../img/amazon.png';
 import appleshop from '../img/appleshop.png';
 import boockshop from '../img/boockshop.png';
+
 
 
 let bookId;
@@ -23,8 +21,6 @@ const refs = {
 const btnTest = document.querySelector('.test');
 btnTest.addEventListener('click', openModal);
 
-// const bookClick = document.querySelector('.js-list-allBooks');
-// bookClick.addEventListener('click', openModal);
 
 async function openModal(evt) {
     bookId = evt.target.id;
@@ -74,6 +70,7 @@ async function openModal(evt) {
 			</div>
 		</div>`;
 }
+
 
 function closeModal() {
     refs.backdrop.classList.toggle("hi-backdrop");

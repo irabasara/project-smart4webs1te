@@ -4,6 +4,7 @@ import { refsBooks } from "./js/refs";
 import { onScrollTopClick } from "./js/scroll-top";
 
 
+
 refsBooks.container.addEventListener('click', onLoadSeeMore)
 
 getBooksAPI('top-books')
@@ -16,7 +17,7 @@ if (data === 0) {
 
 function markupList(books) {
   return books.map(({ book_image, title, author, _id }) => {
-    return `<li class="js-list-bestBooks id=${_id}">
+    return `<li class="js-list-bestBooks" id=${_id}>
             <img src="${book_image}" alt="${title}" loading="lazy" class="img-bestBooks"/>
             <h3 class="js-named-bestBooks">${title}</h3>
             <p class="js-autor-bestBooks">${author}</p>
@@ -41,7 +42,7 @@ function onLoadSeeMore(e) {
       .then(({ data }) => {
           refsBooks.nameCat.textContent = seeMoreCategory;
           const allBooks = data.map(({ book_image, title, author, _id }) => {
-            return `<li class="js-list-allBooks id=${_id}">
+            return `<li class="js-list-allBooks" id=${_id}>
             <img src="${book_image}" alt="${title}" loading="lazy" class="img-bestBooks"/>
             <h3 class="js-named-bestBooks">${title}</h3>
             <p class="js-autor-bestBooks">${author}</p>
