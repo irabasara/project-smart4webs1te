@@ -3,7 +3,7 @@
   opacity: 0;
   display: none;
 }
-.btn-user-out {
+button.btn-user-out {
   width: 118px;
   background: var(--white);
   height: 48px;
@@ -12,6 +12,12 @@
   gap: 4px;
   padding: 14px;
   display: flex;
+          color: #111;
+          font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 1.29;
+            letter-spacing: -0.56px;
 }
 .header-nav{
   display: none;

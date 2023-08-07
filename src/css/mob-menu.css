@@ -20,6 +20,65 @@
     .mob-menu {
         display: flex;
     }
+    .mob-user-nav.is-hidden{
+        display: none;
+    }
+    .sign-btn.is-hidden{
+        display: none;
+    }
+    .user-menu{
+        
+        display: flex;
+        gap: 9px;
+        align-items: center;
+        fill: #FFF;
+        display: none;
+    }
+    .user-name{
+        color: #FFF;
+            font-size: 22px;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: -0.44px;
+    }
+        .menu-nav{
+         margin-top: 20vh;
+        }
+        .menu-nav-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+    
+        .menu-nav-link {
+            background: var(--accent-color);
+            color: #111;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 1.29;
+            letter-spacing: -0.56px;
+            text-transform: uppercase;
+            padding: 8px 16px;
+            border-radius: 36px;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        }
+    
+        .menu-nav-shop {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+            color: #111;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 1.29;
+            letter-spacing: -0.56px;
+            text-transform: uppercase;
+        }
 }
 
 .mob-menu {
@@ -102,6 +161,8 @@ font-size: 14px;
 line-height: 1.28;
 letter-spacing: -0.56px;
 }
+
+/* .log-out-mob-btn{} */
 
 /* .sign-btn::after {
     display: inline-block;
