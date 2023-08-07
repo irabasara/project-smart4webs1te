@@ -41,7 +41,7 @@ function generateBookCardMarkup(booksArray) {
     </li>`;
   });
   markup += '</ul>';
-  document.querySelector('.empty-list').insertAdjacentHTML('afterend', markup);
+  document.querySelector('.container').insertAdjacentHTML('beforeend', markup);
   document
     .querySelector('.shopping-list')
     .addEventListener('click', onRemoveBtnClick);
