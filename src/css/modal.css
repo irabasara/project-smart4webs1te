@@ -49,6 +49,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    overflow: hidden;
     transform: translate(-50%, -50%) scale(0.9);
     transition: transform var(---animation);
 }
@@ -62,12 +63,18 @@
 .modal-close-btn {
     width: 24px;
     height: 24px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     position: absolute;
     top: 10px;
-    right: 8px;
-    padding: 0px;
-    background-color: transparent;
+    right: 12px;
 
+    padding: 0px;
+
+    background-color: transparent;
     border: none;
 
 }
@@ -77,8 +84,6 @@
     height: 24px;
     
     position: absolute;
-    top: 0px;
-    right: 0px;
 
     stroke: var(--main-textcolor);
 
@@ -241,6 +246,12 @@
     font-weight: 400;
     line-height: 1.2;
     letter-spacing: -0.4px;
+
+    width: 242px;
+
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 
@@ -310,11 +321,19 @@
 .modal-close-btn {
     width: 24px;
     height: 24px;
+
+    position: absolute;
+    top: 22px;
+    right: 26px;
 }
 
 .modal-svg-close {
     width: 28px;
     height: 28px;
+
+    position: absolute;
+    /* top: 11px;
+    right: 13px; */
 }
 
 
@@ -340,6 +359,8 @@
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: -0.48px;
+
+    width: 324px;
 }
 
 
