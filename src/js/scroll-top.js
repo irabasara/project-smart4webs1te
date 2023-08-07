@@ -14,7 +14,7 @@ function trackScroll() {
     }
 }
 
-function onScrollTopClick () {
+export function onScrollTopClick () {
     if (window.scrollY > 0) {
         window.scrollBy(0, -30)
         setTimeout(onScrollTopClick,0)
