@@ -84,7 +84,10 @@ function removeBookFromStorage(title, storageArr) {
   localStorage.setItem('shoppingList', JSON.stringify(newStorage));
 }
 
-if (localStorage['shoppingList'].length > 2) {
+if (
+  localStorage['shoppingList'].length > 2 &&
+  document.querySelector('.empty-list') != null
+) {
   document.querySelector('.empty-list').style.display = 'none';
 }
 generateBookCardMarkup(JSON.parse(localStorage['shoppingList']));
