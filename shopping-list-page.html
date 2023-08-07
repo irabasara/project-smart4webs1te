@@ -7,8 +7,8 @@
     <title>Bookshelf</title>
     
     <!-- <link rel="stylesheet" type="text/css" href="/node_modules/modern-normalize/modern-normalize.css"> -->
-    <script type="module" crossorigin src="/project-smart4webs1te/assets/bestSellerBooks-e21baf0a.js"></script>
-    <link rel="stylesheet" href="/project-smart4webs1te/assets/bestSellerBooks-3db338d7.css">
+    <script type="module" crossorigin src="/project-smart4webs1te/assets/main-a46d6d3c.js"></script>
+    <link rel="stylesheet" href="/project-smart4webs1te/assets/main-f7c59e2f.css">
   </head>
 
   <body>
@@ -30,6 +30,12 @@
       </li>
     </ul>
   </nav>
+
+  <!-- <use>
+    <svg href="../img/symbol-defs.svg#icon-pagination-right"></svg>
+  </use> -->
+</header>
+
   
 <div class="btns">
       <img src="/project-smart4webs1te/assets/switcher1-bf5a21e0.svg" alt="switcher1" width="40" height="24" class="switcher-btn">
@@ -37,13 +43,13 @@
   
     <button class="mobile-menu" type="button" data-menu-open>
       <svg class="icon-menu-openburger" width="28" height="28">
-      <use href="/project-smart4webs1te/assets/sprite-294cbcde.svg#icon-burger"></use>
+      <use href="/project-smart4webs1te/assets/sprite-577a1762.svg#icon-burger"></use>
       </svg>
     </button>
 
     <button type="button" class="mob-close-btn is-hidden" data-menu-close>
       <svg class="mob-close" width="28" height="28">
-        <use href="/project-smart4webs1te/assets/sprite-294cbcde.svg#icon-close"></use>
+        <use href="/project-smart4webs1te/assets/sprite-577a1762.svg#icon-close"></use>
       </svg>
     </button>
 
@@ -51,13 +57,13 @@
     <button id="js-modal-open" class="btn-user" type="button">
       <p class="text-btn">Sign up</p>
       <svg class="btn-user-click" width="20" height="20">
-      <use href="/project-smart4webs1te/assets/sprite-294cbcde.svg#icon-arrow-right"></use>
+      <use href="/project-smart4webs1te/assets/sprite-577a1762.svg#icon-arrow-right"></use>
       </svg>
     </button>
     <button class="btn-user-out is-hidden" type="button">
       <p class="text-btn-out">Log out</p>
       <svg class="btn-user-click" width="20" height="20">
-      <use href="/project-smart4webs1te/assets/sprite-294cbcde.svg#icon-arrow-right"></use>
+      <use href="/project-smart4webs1te/assets/sprite-577a1762.svg#icon-arrow-right"></use>
       </svg>
     </button>
      <!-- <button class="btn-user" type="button">
@@ -92,7 +98,7 @@
     </div>
     <button type="button" class="support-ukraine-btn">
         <svg class="support-ukraine-btn-icon" width="20" height="20">
-            <use href="/project-smart4webs1te/assets/sprite-294cbcde.svg#icon-scroll-top"></use>
+            <use href="/project-smart4webs1te/assets/sprite-577a1762.svg#icon-scroll-top"></use>
         </svg>
     </button>
 </div>
@@ -149,6 +155,29 @@
 
     
     
+
+
+<button type="button" class="test" id="643282b1e85766588626a0ca">click</button>
+<div class="modal-backdrop hi-backdrop" data-modal>
+    <div class="modal-wrap" id="modalWindow">
+        <button type="button" class="modal-close-btn" data-action="close-modal">
+            <svg class="modal-svg-close" width="24" height="24" class="modal-svg-close">
+                <use href="../img/sprite.svg#icon-x-close"></use>
+            </svg>
+        </button>
+        <div class="modal-content">
+            <!-- відомості про книгу -->
+
+        </div>
+
+        <button type='button' class="modal-add-btn is-hidden">Add to shopping list</button>
+        <button type='button' class="modal-remove-btn is-hidden" >remove from the shopping list</button>
+        <p class="modal-text is-hidden">Сongratulations! You have added the book to the shopping list. To delete, press the button
+            “Remove from the shopping
+            list”.</p>
+    </div>
+</div>
+
     <div class="scroll">
   <svg width="32" height="32">
     <use href="../img/sprite.svg#icon-scroll-top"></use>
