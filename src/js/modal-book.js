@@ -23,6 +23,9 @@ const refs = {
 const btnTest = document.querySelector('.test');
 btnTest.addEventListener('click', openModal);
 
+// const bookClick = document.querySelector('.js-list-allBooks');
+// bookClick.addEventListener('click', openModal);
+
 async function openModal(evt) {
     bookId = evt.target.id;
     setButtonsVisibility();
