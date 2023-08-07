@@ -36,9 +36,10 @@ import './js/supportUkraine';
 import './js/scroll-top';
 import './js/modal';
 import './js/renderAllCategories';
-
+import './js/footer';
 
 import './js/mob-menu';
 // import './bestSellerBooks';
 import './js/header';
+
 
