@@ -1,5 +1,21 @@
 /**!-------------------------media-mobile----------------------------!*/
-
+.is-hidden{
+  opacity: 0;
+  display: none;
+}
+.btn-user-out {
+  width: 118px;
+  background: var(--white);
+  height: 48px;
+  border-radius: 18px;
+  border: 1.5px solid #111;
+  gap: 4px;
+  padding: 14px;
+  display: flex;
+}
+.header-nav{
+  display: none;
+}
 .header {
   max-width: 100%;
     margin-left: auto;
@@ -128,6 +144,14 @@
     padding: 14px;
     display: flex;
   }
+
+    .btn-user-out{
+      width: 184px;
+        justify-content: space-between;
+    }
+        .text-btn-out {
+          color: #111;
+        }
   
   .text-btn {
   color: #FFF;

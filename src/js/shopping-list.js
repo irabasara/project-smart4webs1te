@@ -1,5 +1,6 @@
 // import { app } from './auth/firebase-app';
 
+
 // function generateBookCardMarkup(booksArray) {
 //   let markup = '';
 //   booksArray.map(element => {
@@ -8,6 +9,16 @@
 //     const amazon = getBookUrl('Amazon', buy_links);
 //     const appleBooks = getBookUrl('Apple Books', buy_links);
 //     const Bookshop = getBookUrl('Bookshop', buy_links);
+
+function generateBookCardMarkup(booksArray) {
+  let markup = '<ul class="shopping-list">';
+  booksArray.map(element => {
+    const { book_image, title, description, author, list_name, buy_links } =
+      element;
+    const amazon = getBookUrl('Amazon', buy_links);
+    const appleBooks = getBookUrl('Apple Books', buy_links);
+    const Bookshop = getBookUrl('Bookshop', buy_links);
+
 
 //     markup += ` <li class="book-card" id="${title}">
 //       <div class="shopping-image-thumb">
@@ -23,6 +34,7 @@
 //             : "We don't have description for this book yet..."
 //         }</div>
         
+
 //         <button class="book-card-delete">
 //         <svg class="book-card-icon">
 //         <use href="../img/sprite.svg#icon-trash"></use>
@@ -47,6 +59,31 @@
 //     .querySelector('.shopping-list')
 //     .addEventListener('click', onRemoveBtnClick);
 // }
+
+        <button class="book-card-delete">
+        <svg class="book-card-icon">
+        <use href="../img/sprite.svg#icon-trash"></use>
+        </svg>
+        </button>
+      </div>
+      <div class="book-card-refs">
+        <div class="book-author">${author}</div>
+        <a class="amazon-icon" href="${amazon}" target="_blank">
+        <img src="../img/amazon.svg" alt="" / >
+        </a>
+        <a class="other-icon" href="${appleBooks}" target="_blank"><img src="../img/applebook.svg" alt="" / ></a>
+        <a class="other-icon" href="${Bookshop}" target="_blank" ><img src="../img/bookshop.svg" alt="" /></a>
+      </div>
+      </div>
+    </li>`;
+  });
+  markup += '</ul>';
+  document.querySelector('.container').insertAdjacentHTML('beforeend', markup);
+  document
+    .querySelector('.shopping-list')
+    .addEventListener('click', onRemoveBtnClick);
+}
+
 
 // function getBookUrl(key, array) {
 //   const url = array.filter(site => {
@@ -85,6 +122,7 @@
 //   localStorage.setItem('shoppingList', JSON.stringify(newStorage));
 // }
 
+
 // // ------------------------------------------------------------------------------------------TEST BLOCK!!!!
 
 // let test = new Array();
@@ -108,3 +146,8 @@
 // if (localStorage['shoppingList'].length > 0) {
 //   document.querySelector('.empty-list').style.display = 'none';
 // }
+if (localStorage['shoppingList'].length > 2) {
+  document.querySelector('.empty-list').style.display = 'none';
+}
+generateBookCardMarkup(JSON.parse(localStorage['shoppingList']));
+
