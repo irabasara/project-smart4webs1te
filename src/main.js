@@ -41,4 +41,6 @@ import './js/renderAllCategories';
 import './js/mob-menu';
 // import './bestSellerBooks';
 import './js/header';
+// const LsUser = JSON.parse(localStorage.getItem('USER'))
 
+// JSON.parse(localStorage.getItem('USER'))
