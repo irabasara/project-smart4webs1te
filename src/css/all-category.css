@@ -53,9 +53,9 @@
 	text-transform: uppercase;
 }
 
-.categories__item a:hover,
-.categories__item a:focus,
-.categories__item a:active{
+.categories__item:hover,
+.categories__item:focus,
+.categories__item:active{
 	font-weight: 700;
 	color: #4F2EE8;
 	text-transform: uppercase;

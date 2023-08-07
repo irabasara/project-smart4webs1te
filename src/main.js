@@ -37,5 +37,5 @@ import './js/modal';
 import './js/renderAllCategories';
 
 import './js/mob-menu';
-// import './bestSellerBooks';
+import './js/bestSellerBooks';
 import './js/header';
