@@ -2,7 +2,8 @@
 
     <a class="header-logo" href=".index.html" >
       <img src="./img/logo.svg" alt="logo">
-      <img src="./img/bookshelf.svg" alt="logo1">
+      <img src="./img/bookshelf.svg" alt="bookshelf" class="bookshelf">
+      <img src="./img/bookshelf__dark-theme.svg" alt="bookshelf-dark" class="bookshelf-dark">
     </a>
 
   <nav class="header-nav" id="js-header-nav">
@@ -12,7 +13,9 @@
       </li>
       <li class="header-nav-item">
         <a href="./shopping-list-page.html" class="header-nav-shop link">shopping-list
-          <img src="./img/cart.svg" alt="cart"></a>
+          <img src="./img/cart.svg" alt="cart" class="cart-icon-dark">
+          <img src="./img/cart__dark-theme.svg" alt="cart" class="cart-icon-white">
+        </a>
       </li>
     </ul>
   </nav>
@@ -24,7 +27,11 @@
 
   
 <div class="btns">
-      <img src="./img/switcher1.svg" alt="switcher1" width="40" height="24" class="switcher-btn">
+    <button type="button" class="switcher-btn">
+      <!-- <img src="./img/switcher1.svg" alt="switcher1" width="40" height="24" class="switcher-btn"> -->
+      <svg class="switcher-btn-icon" width="40" height="24"> 
+        <!-- <use href="./img/switcher1.svg" class="switcher-btn-icon"></use> -->
+      </svg>
     </button>
   
     <button class="mobile-menu" type="button" data-menu-open>
