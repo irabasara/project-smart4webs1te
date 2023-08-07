@@ -7,28 +7,26 @@
     <title>Bookshelf</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
+
   <body>
     <load ="partials/header.html" />
-    <!-- <load="partials/home.html" /> -->
-
     <main>
-      <section class="container">
-        <aside>
-          <load ="partials/all-category.html" />
-
-          <load ="partials/support-ukraine.html" />
-        </aside>
+      <aside>
+        <load ="partials/all-category.html" />
+        <load ="partials/support-ukraine.html" />
+      </aside>
+      <section class="container-home">
         <load ="partials/home.html" />
       </section>
-      <div class="loader" hidden></div>
     </main>
-    <!-- <load="partials/home.html" /> -->
-    <!-- <load="partials/home.html" /> -->
-
+    <load ="partials/scroll-top.html" />
     <load ="partials/footer.html" />
     <load ="partials/modal.html" />
-    <load ="partials/scroll-top.html" />
+
+    <load ="partials/mob-menu.html" />
+    <load src="./partials/auth-modal.html" />
 
     <script type="module" src="/main.js"></script>
+    <script type="module" src="/bestSellerBooks.js"></script>
   </body>
 </html>
