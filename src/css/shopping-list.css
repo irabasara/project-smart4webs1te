@@ -205,6 +205,7 @@
     padding: 24px;
     display: flex;
     align-items: start;
+    max-width: 1440px;
   }
 
   .shopping-support {
