@@ -42,20 +42,19 @@ function handleDown(e) {
   }
 };
 
-el.listContainer.addEventListener('scroll', handleOnScroll);
-
-function handleOnScroll() {
-  if (window.innerWidth >= 768) {
-    if (el.list.getBoundingClientRect().top > 100) {
-      el.btn.firstElementChild.classList.remove('skroll-active');
-    } else {
-      el.btn.firstElementChild.classList.add('skroll-active');
-    }
-  } else {
-    if (el.list.getBoundingClientRect().top > 0) {
-      el.btn.firstElementChild.classList.remove('skroll-active');
-    } else {
-      el.btn.firstElementChild.classList.add('skroll-active');
-    }
-  }
+const options = {
+  root: el.listContainer,
+  rootMargin: '0px',
+  threshold: 0.5,
 };
+const callback = function (entries, observer) {
+  entries.forEach(element => {
+    if (element.isIntersecting) {
+      el.btn.firstElementChild.classList.add('skroll-active');
+    } else {
+      el.btn.firstElementChild.classList.remove('skroll-active');
+    }
+  });
+};
+const observer = new IntersectionObserver(callback, options);
+observer.observe(el.list.children[el.list.children.length - 1]);

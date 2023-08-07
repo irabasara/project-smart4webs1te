@@ -202,9 +202,11 @@
     width: 996px;
   }
   main {
+    margin: 0 auto;
     padding: 24px;
     display: flex;
     align-items: start;
+    max-width: 1440px;
   }
 
   .shopping-support {

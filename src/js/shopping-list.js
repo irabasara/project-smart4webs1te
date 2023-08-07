@@ -1,7 +1,7 @@
 import { app } from './auth/firebase-app';
 
 function generateBookCardMarkup(booksArray) {
-  let markup = '';
+  let markup = '<ul class="shopping-list">';
   booksArray.map(element => {
     const { book_image, title, description, author, list_name, buy_links } =
       element;
@@ -40,9 +40,8 @@ function generateBookCardMarkup(booksArray) {
       </div>
     </li>`;
   });
-  document
-    .querySelector('.shopping-list')
-    .insertAdjacentHTML('beforeend', markup);
+  markup += '</ul>';
+  document.querySelector('.container').insertAdjacentHTML('beforeend', markup);
   document
     .querySelector('.shopping-list')
     .addEventListener('click', onRemoveBtnClick);
@@ -85,26 +84,7 @@ function removeBookFromStorage(title, storageArr) {
   localStorage.setItem('shoppingList', JSON.stringify(newStorage));
 }
 
-// ------------------------------------------------------------------------------------------TEST BLOCK!!!!
-
-let test = new Array();
-const url = [
-  'https://books-backend.p.goit.global/books/643282b1e85766588626a085',
-  'https://books-backend.p.goit.global/books/643282b1e85766588626a0b2',
-  'https://books-backend.p.goit.global/books/643282b1e85766588626a087',
-  'https://books-backend.p.goit.global/books/643282b2e85766588626a15a',
-];
-
-Promise.all(url.map(url => fetch(url).then(resp => resp.json())))
-  .then(text => {
-    test.push(text);
-  })
-  .then(() => localStorage.setItem('shoppingList', JSON.stringify(...test)))
-  .finally(e => {
-    generateBookCardMarkup(JSON.parse(localStorage['shoppingList']));
-  });
-
-// ------------------------------------------------------------------------------------------TEST BLOCK!!!!
-if (localStorage['shoppingList'].length > 0) {
+if (localStorage['shoppingList'].length > 2) {
   document.querySelector('.empty-list').style.display = 'none';
 }
+generateBookCardMarkup(JSON.parse(localStorage['shoppingList']));
