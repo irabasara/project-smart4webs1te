@@ -7,8 +7,8 @@
     <title>Bookshelf</title>
     
     <!-- <link rel="stylesheet" type="text/css" href="/node_modules/modern-normalize/modern-normalize.css"> -->
-    <script type="module" crossorigin src="/project-smart4webs1te/assets/main-a46d6d3c.js"></script>
-    <link rel="stylesheet" href="/project-smart4webs1te/assets/main-f7c59e2f.css">
+    <script type="module" crossorigin src="/project-smart4webs1te/assets/main-4c74e1ef.js"></script>
+    <link rel="stylesheet" href="/project-smart4webs1te/assets/main-43d76478.css">
   </head>
 
   <body>
@@ -16,7 +16,8 @@
 
     <a class="header-logo" href=".index.html" >
       <img src="/project-smart4webs1te/assets/logo-00423362.svg" alt="logo">
-      <img src="/project-smart4webs1te/assets/bookshelf-6a7e95da.svg" alt="logo1">
+      <img src="/project-smart4webs1te/assets/bookshelf-6a7e95da.svg" alt="bookshelf" class="bookshelf">
+      <img src="/project-smart4webs1te/assets/bookshelf__dark-theme-eb65f487.svg" alt="bookshelf-dark" class="bookshelf-dark">
     </a>
 
   <nav class="header-nav" id="js-header-nav">
@@ -26,7 +27,9 @@
       </li>
       <li class="header-nav-item">
         <a href="./shopping-list-page.html" class="header-nav-shop link">shopping-list
-          <img src="/project-smart4webs1te/assets/cart-ae193ffb.svg" alt="cart"></a>
+          <img src="/project-smart4webs1te/assets/cart-ae193ffb.svg" alt="cart" class="cart-icon-dark">
+          <img src="/project-smart4webs1te/assets/cart__dark-theme-73cf4d39.svg" alt="cart" class="cart-icon-white">
+        </a>
       </li>
     </ul>
   </nav>
@@ -38,7 +41,11 @@
 
   
 <div class="btns">
-      <img src="/project-smart4webs1te/assets/switcher1-bf5a21e0.svg" alt="switcher1" width="40" height="24" class="switcher-btn">
+    <button type="button" class="switcher-btn">
+      <!-- <img src="./img/switcher1.svg" alt="switcher1" width="40" height="24" class="switcher-btn"> -->
+      <svg class="switcher-btn-icon" width="40" height="24"> 
+        <!-- <use href="./img/switcher1.svg" class="switcher-btn-icon"></use> -->
+      </svg>
     </button>
   
     <button class="mobile-menu" type="button" data-menu-open>
