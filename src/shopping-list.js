@@ -1,4 +1,4 @@
-import { app } from './auth/firebase-app';
+import { app } from './js/auth/firebase-app';
 
 function generateBookCardMarkup(booksArray) {
   let markup = '<ul class="shopping-list">';
@@ -25,17 +25,17 @@ function generateBookCardMarkup(booksArray) {
         
         <button class="book-card-delete">
         <svg class="book-card-icon">
-        <use href="../img/sprite.svg#icon-trash"></use>
+        <use href="./img/sprite.svg#icon-trash"></use>
         </svg>
         </button>
       </div>
       <div class="book-card-refs">
         <div class="book-author">${author}</div>
         <a class="amazon-icon" href="${amazon}" target="_blank">
-        <img src="../img/amazon.svg" alt="" / >
+        <img src="./img/amazon.svg" alt="" / >
         </a>
-        <a class="other-icon" href="${appleBooks}" target="_blank"><img src="../img/applebook.svg" alt="" / ></a>
-        <a class="other-icon" href="${Bookshop}" target="_blank" ><img src="../img/bookshop.svg" alt="" /></a>
+        <a class="other-icon" href="${appleBooks}" target="_blank"><img src="./img/applebook.svg" alt="" / ></a>
+        <a class="other-icon" href="${Bookshop}" target="_blank" ><img src="./img/bookshop.svg" alt="" /></a>
       </div>
       </div>
     </li>`;

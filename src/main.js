@@ -5,7 +5,7 @@ import './js/refs';
 import './js/supportUkraine';
 import './js/scroll-top';
 import './js/modal';
-import './js/shopping-list';
+// import './shopping-list';
 
 import './js/getBoorkAPI';
 import './js/theme-switcher';
@@ -37,5 +37,5 @@ import './js/modal';
 import './js/renderAllCategories';
 
 import './js/mob-menu';
-import './js/bestSellerBooks';
+// import './bestSellerBooks';
 import './js/header';

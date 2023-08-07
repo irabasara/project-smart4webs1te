@@ -9,6 +9,6 @@ import { refs } from "./refs";
 
 function toggleModal() {
     console.log('click')  
-    refs.modal.classList.toggle("is-hidden");
+    refs.modal.classList.toggle("is-hidden-auth");
     document.body.classList.toggle('no-scroll');
   }
