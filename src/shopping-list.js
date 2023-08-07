@@ -32,16 +32,15 @@ function generateBookCardMarkup(booksArray) {
       <div class="book-card-refs">
         <div class="book-author">${author}</div>
         <a class="amazon-icon" href="${amazon}" target="_blank">
-        <img src="./img/amazon.png" alt="" / >
+        <img src="./img/amazon.svg" alt="" / >
         </a>
-        <a class="other-icon" href="${appleBooks}" target="_blank"><img src="./img/appleshop.png" alt="" / ></a>
-        <a class="other-icon" href="${Bookshop}" target="_blank" ><img src="./img/boockshop.png" alt="" /></a>
+        <a class="other-icon" href="${appleBooks}" target="_blank"><img src="./img/applebook.svg" alt="" / ></a>
+        <a class="other-icon" href="${Bookshop}" target="_blank" ><img src="./img/bookshop.svg" alt="" /></a>
       </div>
       </div>
     </li>`;
   });
   markup += '</ul>';
-
   document.querySelector('.container').insertAdjacentHTML('beforeend', markup);
   document
     .querySelector('.shopping-list')
@@ -72,7 +71,7 @@ function onRemoveBtnClick(evt) {
   if (document.querySelector('.shopping-list').children.length < 1) {
     document.querySelector('.empty-list').style.display = 'flex';
   }
-  removeBookFromStorage(el['id'], localStorage.getItem('ShoppingList'));
+  removeBookFromStorage(el['id'], localStorage.getItem('shoppingList'));
 }
 
 function removeBookFromStorage(title, storageArr) {
@@ -82,14 +81,10 @@ function removeBookFromStorage(title, storageArr) {
     }
     return element;
   });
-  localStorage.setItem('ShoppingList', JSON.stringify(newStorage));
+  localStorage.setItem('shoppingList', JSON.stringify(newStorage));
 }
-if (
-  localStorage['ShoppingList']?.length > 2 &&
-  document.querySelector('.empty-list') != null
-) {
+
+if (localStorage['shoppingList'].length > 2) {
   document.querySelector('.empty-list').style.display = 'none';
 }
-if (localStorage['ShoppingList']) {
-  generateBookCardMarkup(JSON.parse(localStorage['ShoppingList']));
-}
+generateBookCardMarkup(JSON.parse(localStorage['shoppingList']));
