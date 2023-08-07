@@ -1,4 +1,4 @@
-import{r as a,g as i,N as l,o as b}from"./mob-menu-2286cea3.js";a.container.addEventListener("click",m);i("top-books").then(({data:s})=>{j(s),s===0&&l.Notify.failure("There are no books in this category")});function u(s){return s.map(({book_image:e,title:o,author:t,_id:n})=>`<li class="js-list-bestBooks id=${n}">
+import{r as a,g as i,N as l,o as b}from"./theme-switcher-ea79da83.js";a.container.addEventListener("click",m);i("top-books").then(({data:s})=>{j(s),s===0&&l.Notify.failure("There are no books in this category")});function u(s){return s.map(({book_image:e,title:o,author:t,_id:n})=>`<li class="js-list-bestBooks id=${n}">
             <img src="${e}" alt="${o}" loading="lazy" class="img-bestBooks"/>
             <h3 class="js-named-bestBooks">${o}</h3>
             <p class="js-autor-bestBooks">${t}</p>
