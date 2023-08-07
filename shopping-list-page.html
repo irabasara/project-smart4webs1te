@@ -7,8 +7,9 @@
     <title>Bookshelf</title>
     
     <!-- <link rel="stylesheet" type="text/css" href="/node_modules/modern-normalize/modern-normalize.css"> -->
-    <script type="module" crossorigin src="/project-smart4webs1te/assets/main-2b2ad48a.js"></script>
-    <link rel="stylesheet" href="/project-smart4webs1te/assets/main-21aab04c.css">
+    <script type="module" crossorigin src="/project-smart4webs1te/assets/shopping-list-page-ed9b6140.js"></script>
+    <link rel="modulepreload" crossorigin href="/project-smart4webs1te/assets/mob-menu-8394a373.js">
+    <link rel="stylesheet" href="/project-smart4webs1te/assets/mob-menu-3927cf40.css">
   </head>
 
   <body>
@@ -84,16 +85,32 @@
 
 </header>
 
-    <!-- 
-<div class="container-bestBooks">
-    <h2 class="home-title-book">Best Sellers <span class="books">Books</span></h2>
-    <ul class="js-container-bestBooks">
-    </ul>
+    <!-- <div class="container-bestBooks">
+  <h2 class="home-title-book">Best Sellers <span class="books">Books</span></h2>
+  <h3 class="js-add-name-category"></h3>
+  <div class="js-container-bestBooks">
+    <ul class="js-coverAllBooks"></ul>
+  </div>
 </div>
  -->
 
     <main>
       <aside class="shopping-support">
+        <div class="categories-container">
+    <section class="categories">
+	    <div class="categories__inner">
+		    <ul class="categories__list all-categories">
+                <li class="categories__item categories__item--active">
+					<a class="categories__link" href="index.html">
+						All categories
+					</a>
+				</li>
+		    </ul>
+	    </div>
+    </section>
+</div>
+
+
         <div class="support-ukraine-container">
     <div class="title-container">
         <p class="support-ukraine-title">Support Ukraine</p>
@@ -120,42 +137,47 @@
           <div class="empty-list-img"></div>
         </div>
 
-        <!-- 
-<div class="container-bestBooks">
-    <h2 class="home-title-book">Best Sellers <span class="books">Books</span></h2>
-    <ul class="js-container-bestBooks">
-    </ul>
+        <!-- <div class="container-bestBooks">
+  <h2 class="home-title-book">Best Sellers <span class="books">Books</span></h2>
+  <h3 class="js-add-name-category"></h3>
+  <div class="js-container-bestBooks">
+    <ul class="js-coverAllBooks"></ul>
+  </div>
 </div>
  -->
       </section>
 
-      <!-- 
-<div class="container-bestBooks">
-    <h2 class="home-title-book">Best Sellers <span class="books">Books</span></h2>
-    <ul class="js-container-bestBooks">
-    </ul>
+      <!-- <div class="container-bestBooks">
+  <h2 class="home-title-book">Best Sellers <span class="books">Books</span></h2>
+  <h3 class="js-add-name-category"></h3>
+  <div class="js-container-bestBooks">
+    <ul class="js-coverAllBooks"></ul>
+  </div>
 </div>
  -->
-      <!-- 
-<div class="container-bestBooks">
-    <h2 class="home-title-book">Best Sellers <span class="books">Books</span></h2>
-    <ul class="js-container-bestBooks">
-    </ul>
+      <!-- <div class="container-bestBooks">
+  <h2 class="home-title-book">Best Sellers <span class="books">Books</span></h2>
+  <h3 class="js-add-name-category"></h3>
+  <div class="js-container-bestBooks">
+    <ul class="js-coverAllBooks"></ul>
+  </div>
 </div>
  -->
     </main>
-    <!-- 
-<div class="container-bestBooks">
-    <h2 class="home-title-book">Best Sellers <span class="books">Books</span></h2>
-    <ul class="js-container-bestBooks">
-    </ul>
+    <!-- <div class="container-bestBooks">
+  <h2 class="home-title-book">Best Sellers <span class="books">Books</span></h2>
+  <h3 class="js-add-name-category"></h3>
+  <div class="js-container-bestBooks">
+    <ul class="js-coverAllBooks"></ul>
+  </div>
 </div>
  -->
-    <!-- 
-<div class="container-bestBooks">
-    <h2 class="home-title-book">Best Sellers <span class="books">Books</span></h2>
-    <ul class="js-container-bestBooks">
-    </ul>
+    <!-- <div class="container-bestBooks">
+  <h2 class="home-title-book">Best Sellers <span class="books">Books</span></h2>
+  <h3 class="js-add-name-category"></h3>
+  <div class="js-container-bestBooks">
+    <ul class="js-coverAllBooks"></ul>
+  </div>
 </div>
  -->
 
@@ -190,8 +212,77 @@
   </svg>
 </div>
 
+    <div class="mob-menu container is-hidden" data-menu>
+    <button type="button" class="sign-btn">Sign up
+        <svg class="svg-arrow" width="20" height="20">
+            <use href="../img/sprite.svg#icon-arrow-right"></use>
+        </svg>
+    </button>
+   
+    <!-- <div class="mob-gallery">
+        <ul class="mob-list">
+        <li class="mob-list-item"><img srcset="../img/1-90.jpg 90w,
+        ../img/1-180.jpg 180w" src="../img/1-90.jpg" alt="" class="mob-img"></li>
+        <li class="mob-list-item"><img srcset="../img/2-90.jpg 90w,
+        ../img/2-180.jpg 180w" src="../img/2-90.jpg" alt="" class="mob-img"></li>
+        <li class="mob-list-item"><img srcset="../img/3-90.jpg 90w,
+        ../img/3-180.jpg 180w" src="../img/3-90.jpg" alt="" class="mob-img"></li>
+        <li class="mob-list-item"><img srcset="../img/4-90.jpg 90w,
+        ../img/4-180.jpg 180w" src="../img/4-90.jpg" alt="" class="mob-img"></li>
+        <li class="mob-list-item"><img srcset="../img/5-90.jpg 90w,
+        ../img/5-180.jpg 180w" src="../img/5-90.jpg" alt="" class="mob-img"></li>
+        <li class="mob-list-item"><img srcset="../img/6-90.jpg 90w,
+        ../img/6-180.jpg 180w" src="../img/6-90.jpg" alt="" class="mob-img"></li>
+        <li class="mob-list-item"><img srcset="../img/7-90.jpg 90w,
+        ../img/7-180.jpg 180w" src="../img/7-90.jpg" alt="" class="mob-img"></li>
+        <li class="mob-list-item"><img srcset="../img/8-90.jpg 90w,
+        ../img/8-180.jpg 180w" src="../img/8-90.jpg" alt="" class="mob-img"></li>
+        <li class="mob-list-item"><img srcset="../img/9-90.jpg 90w,
+        ../img/9-180.jpg 180w" src="../img/9-90.jpg" alt="" class="mob-img"></li>
+        <li class="mob-list-item"><img srcset="../img/10-90.jpg 90w,
+        ../img/10-180.jpg 180w" src="../img/10-90.jpg" alt="" class="mob-img"></li>
+        <li class="mob-list-item"><img srcset="../img/11-90.jpg 90w,
+        ../img/11-180.jpg 180w" src="../img/11-90.jpg" alt="" class="mob-img"></li>
+        <li class="mob-list-item"><img srcset="../img/12-90.jpg 90w,
+        ../img/12-180.jpg 180w" src="../img/12-90.jpg" alt="" class="mob-img"></li>
+        </ul>
+    </div> -->
+
+
+</div>
+    <div id="js-modal" class="backdrop is-hidden-auth">
+  <div class="auth-modal-wrapper">
+    <button id="js-modal-close" type="button" class="auth-close-btn">
+      <svg width="20" height="20">
+        <use href="../img/sprite.svg#icon-close"></use>
+      </svg>
+    </button>
+    <form class="auth-modal">
+      <input
+        type="text"
+        id="input-name"
+        name="name"
+        placeholder="name"
+        autocomplete="off"
+      />
+      <input type="text" name="email" placeholder="email" autocomplete="off" />
+      <input
+        type="text"
+        name="password"
+        placeholder="password"
+        autocomplete="off"
+      />
+      <button type="submit" class="sign-up" id="submit-sign">Sign up</button>
+    </form>
+    <div class="auth-sign-btn">
+      <button class="active" id="sign-up">Sign up</button>
+      <button id="sign-in">Sign in</button>
+    </div>
+  </div>
+</div>
+
 
     
-    <!-- <script type="module" src="js/shopping-list.js"></script> -->
+    
   </body>
 </html>

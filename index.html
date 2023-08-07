@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bookshelf</title>
     
-    <script type="module" crossorigin src="/project-smart4webs1te/assets/main-2b2ad48a.js"></script>
-    <link rel="stylesheet" href="/project-smart4webs1te/assets/main-21aab04c.css">
+    <script type="module" crossorigin src="/project-smart4webs1te/assets/index-4a7f0daa.js"></script>
+    <link rel="modulepreload" crossorigin href="/project-smart4webs1te/assets/mob-menu-8394a373.js">
+    <link rel="stylesheet" href="/project-smart4webs1te/assets/mob-menu-3927cf40.css">
   </head>
 
   <body>
@@ -116,11 +117,12 @@
 </div>
       </aside>
       <section class="container">
-        
-<div class="container-bestBooks">
-    <h2 class="home-title-book">Best Sellers <span class="books">Books</span></h2>
-    <ul class="js-container-bestBooks">
-    </ul>
+        <div class="container-bestBooks">
+  <h2 class="home-title-book">Best Sellers <span class="books">Books</span></h2>
+  <h3 class="js-add-name-category"></h3>
+  <div class="js-container-bestBooks">
+    <ul class="js-coverAllBooks"></ul>
+  </div>
 </div>
 
       </section>
@@ -195,7 +197,7 @@
 
 
 </div>
-    <div id="js-modal" class="backdrop is-hidden">
+    <div id="js-modal" class="backdrop is-hidden-auth">
   <div class="auth-modal-wrapper">
     <button id="js-modal-close" type="button" class="auth-close-btn">
       <svg width="20" height="20">
@@ -227,6 +229,7 @@
 </div>
 
 
+    
     
   </body>
 </html>
