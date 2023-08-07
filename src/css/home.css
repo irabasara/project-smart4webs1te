@@ -11,6 +11,11 @@
     overflow: hidden;
 }
 
+.container-home {
+    margin-right: 0;
+    margin-left: 0;
+    padding: 0 24px;
+}
 .container-bestBooks {
     width: 335px;
     margin: 40px 20px;
@@ -32,7 +37,14 @@
 .home-title-book {
     font-size: 32px;
     font-weight: 700;
-    
+    line-height: 1.19;
+    letter-spacing: -1.28px;
+    margin-bottom: 40px;
+    margin-left: 20px;
+}
+
+.books {
+    color: var(--main-color);
 }
 
 .img-bestBooks {
@@ -41,6 +53,8 @@
 }
 
 .js-btn-bestBooks {
+    display: flex;
+    border-radius: 40px;
     border: 2px solid #4F2EE8;
     margin-left: auto;
     margin-top: 8px;
@@ -48,7 +62,20 @@
     padding: 14px 28px;
     align-items: center;
     width: 124px;
-   overflow: hidden;
+    height: 46px;
+    color: #111;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.29;
+    letter-spacing: -0.14px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.js-btn-bestBooks:hover {
+    cursor: pointer;
 }
 
 .js-list-bestBooks,
@@ -62,19 +89,48 @@
 }
 
 .js-list-name {
-   margin-top: 4px;
+    color: #B4AFAF;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.29;
+    letter-spacing: 0.42px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.js-named-bestBooks {
+    color: #111;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.13;
+    letter-spacing: -0.64px;
+    text-transform: uppercase;
+    margin-top: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.js-autor-bestBooks {
+    color: #B4AFAF;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.17;
+    letter-spacing: -0.48px;
+    margin-top: 4px;
 }
 
 .js-coverAllBooks {
     display: block;
     margin-bottom: 70px;
     gap: 40px;
-    /* flex-direction: column; */
 }
 
 .js-add-name-category {
     font-size: 26px;
-    font-weight: 700;
+    font-weight: 400;
+    font-style: italic;
     line-height: 1.19;
     letter-spacing: -1.28px;
     margin-bottom: 20px;
@@ -91,7 +147,9 @@
 
     .home-title-book {
         font-size: 48px;
-       margin-left: 32px;
+        line-height: 1.08;
+        letter-spacing: -1.92px;
+        margin-left: 32px;
     }
 
     .js-cover-block {
@@ -175,6 +233,12 @@
 
 @media screen and (max-width: 767px) {
 
+    .js-list-bestBooks:nth-of-type(n + 4) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1439px) {
     .js-list-bestBooks:nth-of-type(n + 4) {
         display: none;
     }
