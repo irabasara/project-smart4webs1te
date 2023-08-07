@@ -1,4 +1,4 @@
-import { app } from './auth/firebase-app';
+import { app } from './js/auth/firebase-app';
 
 function generateBookCardMarkup(booksArray) {
   let markup = '<ul class="shopping-list">';

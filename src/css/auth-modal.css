@@ -11,12 +11,12 @@
     transition: opacity var(--animation),
         visibility var(--animation);
 }
- .backdrop.is-hidden {
+ .backdrop.is-hidden-auth {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
 }
-.backdrop.is-hidden .auth-modal-wrapper {
+.backdrop.is-hidden-auth .auth-modal-wrapper {
     transform: translateX(-50%) scale(0.5);
 } 
     .auth-modal-wrapper {
