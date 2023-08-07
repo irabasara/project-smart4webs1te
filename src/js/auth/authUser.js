@@ -12,6 +12,11 @@ export let user = {
   isSignedIn: false,
 };
 
+// localStorage.setItem('USER', JSON.stringify(user))
+
+// JSON.parse(localStorage.getItem('USER'))
+//   console.log('LsUser', LsUser)
+
 export async function authUser(email,password) {
  await createUserWithEmailAndPassword(auth, email, password)
     .then(userCredential => {
@@ -21,10 +26,10 @@ export async function authUser(email,password) {
       })
       user.userId = userCur.uid;
       user.isSignedIn = true;
-  localStorage.setItem('USER_NAME', JSON.stringify(user))
+    localStorage.setItem('USER', JSON.stringify(user))
     Notify.success(`New user ${user.name} created`);
+    addNewMarkup(user.name)
     })
-      addNewMarkup(user.isSignedIn)
    
     .catch(error => {
        alert(error.message)
@@ -38,10 +43,13 @@ export async function signInUser(email,password) {
       user.name = userCur.displayName;
       user.userId = userCur.uid;
       user.isSignedIn = true;
-      addNewMarkup(user.isSignedIn)
+    // localStorage.setItem('USER', JSON.stringify(user))
+
+      addNewMarkup(user.name)
        Notify.success(`Sign in is succses, ${user.name} `);
     })
-    .catch(error => {
+   .catch(error => {
+      console.log('error', error)
        alert(error.message)
     });
 }
@@ -49,12 +57,11 @@ export async function signInUser(email,password) {
 export async function logOutUser() {
   await signOut(auth).then(() => {
       user.isSignedIn = false;
-      // menusToggleOnAuth();
-      // removeLS(LOGINKEY);
-      // removeLS(LOCALKEY);
+      localStorage.removeItem('USER')
       Notify.success(`Sign-out successful`);
       // return true;
-    }).catch((error) => {
+  }).catch((error) => {
+      console.log('error', error)
   alert(error.message)
 });
 }
