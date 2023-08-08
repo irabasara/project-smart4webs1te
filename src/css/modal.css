@@ -28,8 +28,7 @@
     background-color: rgba(17, 17, 17, 0.40);
     opacity: 1;
     overflow-y: auto;
-    transform: translateX(-50%);
-    transition: opacity var(---animation);
+    transition: var(---animation);
 }
 
 
@@ -50,8 +49,7 @@
     top: 50%;
     left: 50%;
     overflow: hidden;
-    transform: translate(-50%, -50%) scale(0.9);
-    transition: transform var(---animation);
+    transition: var(---animation);
 }
 
 .modal-content-card {
