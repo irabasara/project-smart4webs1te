@@ -202,8 +202,7 @@
     width: 996px;
   }
   main {
-    /* margin: 0 auto;
-    padding: 24px; */
+   margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: start;
