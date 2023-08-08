@@ -22,8 +22,10 @@ const refs = {
 // btnTest.addEventListener('click', openModal);
 
 
-export async function openModal(evt) {
-    bookId = evt.target.id;
+
+export async function openModal(bookId) {
+    console.log('openModal')
+    // bookId = evt.target.dataset.id;
     setButtonsVisibility();
     refs.backdrop.classList.toggle("hi-backdrop");
     document.body.classList.add('no-scroll')
@@ -119,3 +121,4 @@ window.addEventListener('keydown', (evt) => {
         closeModal()
     }
 });
+
