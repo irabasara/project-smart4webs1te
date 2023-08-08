@@ -1,10 +1,8 @@
 import { getBooksAPI } from './getBoorkAPI';
-
-
-
 import amazon from '../img/amazon.png';
 import appleshop from '../img/appleshop.png';
 import boockshop from '../img/boockshop.png';
+// import {js-list-bestBooks} from '../bestSellerBooks';
 
 
 let bookId;
@@ -20,18 +18,20 @@ const refs = {
     textUnderBtn: document.querySelector('.modal-text'),
 };
 
-const btnTest = document.querySelector('.test');
-btnTest.addEventListener('click', openModal);
+// const btnTest = document.querySelector('.test');
+// btnTest.addEventListener('click', openModal);
 
-async function openModal(evt) {
-    bookId = evt.target.id;
+
+
+export async function openModal(bookId) {
+    console.log('openModal')
+    // bookId = evt.target.dataset.id;
     setButtonsVisibility();
     refs.backdrop.classList.toggle("hi-backdrop");
     document.body.classList.add('no-scroll')
 
-    const response = await getBooksAPI(bookId);
+    const response = await getBooksAPI(`${bookId}`);
 	const book = response.data;
-	console.log(book);
 
     refs.modal.innerHTML = `
 		<div class="modal-content-card">
@@ -72,7 +72,8 @@ async function openModal(evt) {
 		</div>`;
 }
 
-function closeModal() {
+
+export function closeModal() {
     refs.backdrop.classList.toggle("hi-backdrop");
     document.body.classList.remove('no-scroll');
 };
@@ -119,3 +120,4 @@ window.addEventListener('keydown', (evt) => {
         closeModal()
     }
 });
+
