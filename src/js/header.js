@@ -2,6 +2,7 @@
 import { refs } from "./refs"
 
 const location = window.location.pathname
+console.log('location', location)
 if (location === '/index.html') {
     refs.homeLink.classList.toggle('active')
     refs.homeLinkMobile.classList.toggle('active')
