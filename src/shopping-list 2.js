@@ -3,13 +3,13 @@ import { app } from './js/auth/firebase-app';
 function generateBookCardMarkup(booksArray) {
   let markup = '<ul class="shopping-list">';
   booksArray.map(element => {
-    const { _id, book_image, title, description, author, list_name, buy_links } =
+    const { book_image, title, description, author, list_name, buy_links } =
       element;
     const amazon = getBookUrl('Amazon', buy_links);
     const appleBooks = getBookUrl('Apple Books', buy_links);
     const Bookshop = getBookUrl('Bookshop', buy_links);
 
-    markup += ` <li class="book-card" id="${_id}">
+    markup += ` <li class="book-card" id="${title}">
       <div class="shopping-image-thumb">
         <img src="${book_image}" alt="" />
       </div>
@@ -22,7 +22,7 @@ function generateBookCardMarkup(booksArray) {
             ? description
             : "We don't have description for this book yet..."
         }</div>
-
+        
         <button class="book-card-delete">
         <svg class="book-card-icon">
         <use href="/img/sprite.svg#icon-trash"></use>
@@ -71,24 +71,20 @@ function onRemoveBtnClick(evt) {
   if (document.querySelector('.shopping-list').children.length < 1) {
     document.querySelector('.empty-list').style.display = 'flex';
   }
-  removeBookFromStorage(el['id']);
+  removeBookFromStorage(el['id'], localStorage.getItem('shoppingList'));
 }
 
-function removeBookFromStorage(bookId) {
-  const newStorage = getShoppingList().filter(element => {
-    if (element._id === bookId) {
+function removeBookFromStorage(title, storageArr) {
+  const newStorage = JSON.parse(storageArr).filter(element => {
+    if (element.title === title) {
       return;
     }
     return element;
   });
-  localStorage.setItem('ShoppingList', JSON.stringify(newStorage));
+  localStorage.setItem('shoppingList', JSON.stringify(newStorage));
 }
-
-function getShoppingList() {
-  return JSON.parse(window.localStorage.getItem("ShoppingList") || "[]");
-}
-
-if (getShoppingList().length > 0) {
-   document.querySelector('.empty-list').style.display = 'none';
-}
-generateBookCardMarkup(getShoppingList());
+ 
+// if (localStorage.getItem('shoppingList').length > 2) {
+//   document.querySelector('.empty-list').style.display = 'none';
+// }
+// generateBookCardMarkup(JSON.parse(localStorage.getItem('shoppingList')));
