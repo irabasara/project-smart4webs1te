@@ -1,14 +1,7 @@
-import { getBooksAPI } from "./js/getBoorkAPI";
+import { getBooksAPI } from "./getBoorkAPI";
 import Notiflix from 'notiflix';
+import { refsBooks } from "./refs";
 import { openModal } from "./js/modal-book";
-// import { refsBooks } from "./refs";
-
-export const refsBooks = {
-bestBooks: document.querySelector('.home-title-book'),
-container: document.querySelector('.js-container-bestBooks'),
-cover: document.querySelector('.js-coverAllBooks'),
-nameCat: document.querySelector('.js-add-name-category')
-}
 
 refsBooks.container.addEventListener('click', onLoadSeeMore)
 
