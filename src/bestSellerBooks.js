@@ -1,6 +1,5 @@
 import { getBooksAPI } from "./js/getBoorkAPI";
 import Notiflix from 'notiflix';
-import { refsBooks } from "./js/refs";
 import { openModal } from "./js/modal-book";
 
 refsBooks.container.addEventListener('click', onLoadSeeMore)
