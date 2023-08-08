@@ -11,6 +11,11 @@ formAuthorization.addEventListener('submit', handleFormAuth)
 signInButton.addEventListener('click', handleSignInForm)
 signUpButton.addEventListener('click', handleSignUpForm)
 
+// export let user = {
+//   name: '',
+//   email: '',
+//   isSignedIn: false,
+// };
 
 function handleFormAuth(event) {
   event.preventDefault();
@@ -21,11 +26,17 @@ function handleFormAuth(event) {
   user.name = name.value;
   user.email = email.value;
 
+//  user = {
+//   name: name.value,
+//   email: email.value,
+//   isSignedIn: true,
+// }
+
   if (!email.value || !password.value ) {
     return console.log("Please fill in all the fields!");
     }
   if (submitButton.textContent === 'Sign up') {
-  // localStorage.setItem('USER_NAME', JSON.stringify(name.value))
+  // localStorage.setItem('USER', JSON.stringify(user))
     authUser(email.value, password.value)
   }
   else {

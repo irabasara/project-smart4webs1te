@@ -136,14 +136,6 @@
   letter-spacing: -0.48px;
   font-style: italic;
 }
-.amazon-icon {
-  width: 32px;
-  height: 11px;
-}
-.other-icon {
-  width: 16px;
-  height: 16px;
-}
 
 @media screen and (min-width: 768px) {
   .shopping-image-thumb {
@@ -204,15 +196,16 @@
 @media screen and (min-width: 1440px) {
   .container.shopping {
     margin: 0px 0px 0px 40px;
-    padding: 0px;
+    padding: 24px;
 
     max-width: 100%;
     width: 996px;
   }
   main {
-    margin: 0 auto;
-    padding: 24px;
+    /* margin: 0 auto;
+    padding: 24px; */
     display: flex;
+    justify-content: center;
     align-items: start;
     max-width: 1440px;
   }

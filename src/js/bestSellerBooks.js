@@ -1,7 +1,6 @@
 import { getBooksAPI } from "./getBoorkAPI";
 import Notiflix from 'notiflix';
-import { refsBooks } from "./refs";
-import { onScrollTopClick } from "./scroll-top";
+import { refsBooks } from "./js/refs";
 
 
 refsBooks.container.addEventListener('click', onLoadSeeMore)
@@ -47,7 +46,6 @@ function onLoadSeeMore(e) {
             <p class="js-autor-bestBooks">${author}</p>
         </li>`}).join('')
         refsBooks.cover.innerHTML = allBooks;
-        onScrollTopClick()
         if (data === 0) {
   Notiflix.Notify.failure('There are no books in this category');
 }

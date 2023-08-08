@@ -3,7 +3,7 @@
   opacity: 0;
   display: none;
 }
-.btn-user-out {
+button.btn-user-out {
   width: 118px;
   background: var(--white);
   height: 48px;
@@ -12,11 +12,19 @@
   gap: 4px;
   padding: 14px;
   display: flex;
+          color: #111;
+          font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 1.29;
+            letter-spacing: -0.56px;
 }
 .header-nav{
   display: none;
 }
 .header {
+  position: relative;
+  z-index: 100;
   max-width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -145,10 +153,10 @@
     display: flex;
   }
 
-    .btn-user-out{
+    /* .btn-user-out{
       width: 184px;
         justify-content: space-between;
-    }
+    } */
         .text-btn-out {
           color: #111;
         }

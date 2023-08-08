@@ -1,10 +1,6 @@
+import { refs } from "./refs";
+
 (() => {
-    const refs = {
-      openMenuBtn: document.querySelectorAll('[data-menu-open]'),
-      closeMenuBtn: document.querySelector('[data-menu-close]'),
-      menu: document.querySelector('[data-menu]'),
-    };
-  
     refs.openMenuBtn.forEach((el) => {
       el.addEventListener('click', toggleMenu);
     });

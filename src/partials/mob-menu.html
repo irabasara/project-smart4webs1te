@@ -1,37 +1,35 @@
-<div class="mob-menu container is-hidden" data-menu>
-  <button type="button" class="sign-btn">
+<div class="mob-menu is-hidden" data-menu>
+  <button type="button" id="js-mobile-modal-open" class="sign-btn">
     Sign up
     <svg class="svg-arrow" width="20" height="20">
       <use href="./img/sprite.svg#icon-arrow-right"></use>
     </svg>
   </button>
 
-  <!-- <div class="mob-gallery">
-        <ul class="mob-list">
-        <li class="mob-list-item"><img srcset="../img/1-90.jpg 90w,
-        ../img/1-180.jpg 180w" src="../img/1-90.jpg" alt="" class="mob-img"></li>
-        <li class="mob-list-item"><img srcset="../img/2-90.jpg 90w,
-        ../img/2-180.jpg 180w" src="../img/2-90.jpg" alt="" class="mob-img"></li>
-        <li class="mob-list-item"><img srcset="../img/3-90.jpg 90w,
-        ../img/3-180.jpg 180w" src="../img/3-90.jpg" alt="" class="mob-img"></li>
-        <li class="mob-list-item"><img srcset="../img/4-90.jpg 90w,
-        ../img/4-180.jpg 180w" src="../img/4-90.jpg" alt="" class="mob-img"></li>
-        <li class="mob-list-item"><img srcset="../img/5-90.jpg 90w,
-        ../img/5-180.jpg 180w" src="../img/5-90.jpg" alt="" class="mob-img"></li>
-        <li class="mob-list-item"><img srcset="../img/6-90.jpg 90w,
-        ../img/6-180.jpg 180w" src="../img/6-90.jpg" alt="" class="mob-img"></li>
-        <li class="mob-list-item"><img srcset="../img/7-90.jpg 90w,
-        ../img/7-180.jpg 180w" src="../img/7-90.jpg" alt="" class="mob-img"></li>
-        <li class="mob-list-item"><img srcset="../img/8-90.jpg 90w,
-        ../img/8-180.jpg 180w" src="../img/8-90.jpg" alt="" class="mob-img"></li>
-        <li class="mob-list-item"><img srcset="../img/9-90.jpg 90w,
-        ../img/9-180.jpg 180w" src="../img/9-90.jpg" alt="" class="mob-img"></li>
-        <li class="mob-list-item"><img srcset="../img/10-90.jpg 90w,
-        ../img/10-180.jpg 180w" src="../img/10-90.jpg" alt="" class="mob-img"></li>
-        <li class="mob-list-item"><img srcset="../img/11-90.jpg 90w,
-        ../img/11-180.jpg 180w" src="../img/11-90.jpg" alt="" class="mob-img"></li>
-        <li class="mob-list-item"><img srcset="../img/12-90.jpg 90w,
-        ../img/12-180.jpg 180w" src="../img/12-90.jpg" alt="" class="mob-img"></li>
-        </ul>
-    </div> -->
+  <div id="#js-menu-user is-hidden" class="nav-user-menu">
+    <div class="user-menu">
+      <svg width="30" height="30">
+        <use href="../img/sprite.svg#icon-user"></use>
+      </svg>
+      <p class="user-name"></p>
+    </div>
+    <nav class="menu-nav is-hidden">
+      <ul class="menu-nav-list">
+        <li class="menu-nav-item">
+          <a href="./index.html" class="menu-nav-link link">home</a>
+        </li>
+        <li class="menu-nav-item">
+          <a href="./shopping-list-page.html" class="menu-nav-shop link"
+            >shopping-list
+            <img src="./img/cart.svg" alt="cart" class="cart-icon-dark" />
+            <img
+              src="./img/cart__dark-theme.svg"
+              alt="cart"
+              class="cart-icon-white"
+            />
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </div>
