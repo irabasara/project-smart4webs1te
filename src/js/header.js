@@ -7,6 +7,7 @@ const additionalNavForUser = document.querySelector('#js-header-nav')
 const additionalNavForUserMobile = document.querySelector('#js-menu-user')
 
 const userIcon = document.querySelector('.user-menu')
+const userMobNav = document.querySelector('.menu-nav')
 
 localStorage.setItem('USER', JSON.stringify({}))
 
@@ -18,6 +19,7 @@ export function addNewMarkup(name) {
         refs.modal.classList.add("is-hidden");
         additionalNavForUser.style.display = 'block'
     refs.openMobileModalBtn.classList.add('is-hidden')
+    userMobNav.classList.remove('is-hidden')
     userIcon.style.display = 'flex'
         refs.userName.textContent = name
     }
@@ -29,6 +31,7 @@ export function addNewMarkup(name) {
         refs.userLogOut.classList.add('is-hidden')
         additionalNavForUser.style.display = 'none'
         refs.openMobileModalBtn.classList.remove('is-hidden')
+    userMobNav.classList.add('is-hidden')
         userIcon.style.display = 'none'
         
 }
