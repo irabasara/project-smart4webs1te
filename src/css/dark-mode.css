@@ -42,9 +42,7 @@
 .dark .header-nav-shop,
 .dark .home-title-book,
 .dark .js-named-bestBooks,
-.dark .js-btn-bestBooks,
-.dark .menu-nav-shop,
-.dark .shopping-header {
+.dark .js-btn-bestBooks {
   color: var(--white);
 }
 
@@ -52,19 +50,10 @@
   color: #fff9;
 }
 
-.dark .empty-list-text {
-  color: rgba(255, 255, 255, 0.6);
-}
-
 .dark header {
   border-radius: 0px 0px 8px 8px;
   border: 1.5px solid var(--white);
   /* background-color: var(--main-textcolor); */
-}
-
-.dark .mob-close,
-.dark .icon-menu-openburger {
-  stroke: var(--white);
 }
 
 .theme-switch.active {
@@ -82,13 +71,8 @@
 
 .dark .categories__item--active a {
   font-weight: 700;
-  color: var(--accent-color);
+  color: var(--main-color);
   text-transform: uppercase;
-}
-.dark .categories__link:hover,
-.dark .categories__link:focus,
-.dark .categories__link:active {
-  color: var(--accent-color);
 }
 
 .dark .catefories::-webkit-scrollbar {
