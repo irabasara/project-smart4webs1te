@@ -2,7 +2,6 @@
 import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword, updateProfile, signOut } from "firebase/auth";
 import { app } from "./firebase-app";
 import { Notify } from "notiflix";
-import { addNewMarkup } from "../header";
 
 const auth = getAuth(app);
 
@@ -11,11 +10,6 @@ export let user = {
   email: '',
   isSignedIn: false,
 };
-
-// localStorage.setItem('USER', JSON.stringify(user))
-
-// JSON.parse(localStorage.getItem('USER'))
-//   console.log('LsUser', LsUser)
 
 export async function authUser(email,password) {
  await createUserWithEmailAndPassword(auth, email, password)
@@ -28,7 +22,7 @@ export async function authUser(email,password) {
       user.isSignedIn = true;
     localStorage.setItem('USER', JSON.stringify(user))
     Notify.success(`New user ${user.name} created`);
-    addNewMarkup(user.name)
+    // addNewMarkup(user.name)
     })
    
     .catch(error => {
@@ -45,7 +39,7 @@ export async function signInUser(email,password) {
       user.isSignedIn = true;
     // localStorage.setItem('USER', JSON.stringify(user))
 
-      addNewMarkup(user.name)
+      // addNewMarkup(user.name)
        Notify.success(`Sign in is succses, ${user.name} `);
     })
    .catch(error => {
