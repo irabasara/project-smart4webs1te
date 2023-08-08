@@ -123,7 +123,8 @@
 
 .js-coverAllBooks {
     display: block;
-    margin-bottom: 40px;
+    margin-bottom: 70px;
+    gap: 40px;
 }
 
 .js-add-name-category {
@@ -183,6 +184,7 @@
         display: flex;
         flex-wrap: wrap;
         gap: 25px;
+        margin-bottom: 50px;
     }
 
     .js-add-name-category {

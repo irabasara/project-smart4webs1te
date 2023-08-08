@@ -35,22 +35,22 @@ function renderAllCategories(data) {
 function onOpenCategory(e) {
   e.preventDefault();
     if (e.target.classList.contains('categories__item')) {
-      let renderCategory = e.target.dataset.category;
-      console.log(renderCategory)
+    let renderCategory = e.target.dataset.category;
     refsBooks.container = "";
-      if (!renderCategory) {
-      getBooksAPI('top-books')
-  .then(({ data }) => {
-    markupBlock(data);
-if (data === 0) {
+    if (renderCategory === 'All categories') {
+    getBooksAPI('top-books')
+      .then(({ data }) => {
+        markupBlock(data);
+      })
+      if (data === 0) {
   Notiflix.Notify.failure('There are no books in this category');
 }
-})
+
     } else {
       getBooksAPI(`category?category=${renderCategory}`)
         .then(({ data }) => {
+          refsBooks.container = "";
           refsBooks.bestBooks.textContent = renderCategory;
-          refsBooks.nameCat.classList.add('is-hidden')
           const allBooks = data.map(({ book_image, title, author, _id }) => {
             return `<li class="js-list-allBooks id=${_id}">
               <img src="${book_image}" alt="${title}" data-id="${_id}" loading="lazy" class="img-bestBooks"/>
