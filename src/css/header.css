@@ -19,9 +19,9 @@ button.btn-user-out {
             line-height: 1.29;
             letter-spacing: -0.56px;
 }
-.header-nav{
+/* .header-nav{
   display: none;
-}
+} */
 .header {
   position: relative;
   z-index: 100;
@@ -42,9 +42,9 @@ button.btn-user-out {
   gap: 8px;
   margin-right: 144px;
 }
-.header-nav-list {
+/* .header-nav-list {
   display: none;
-}
+} */
 .user-form {
   display: none;
 }
