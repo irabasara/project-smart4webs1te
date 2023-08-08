@@ -1,7 +1,7 @@
 
 import { getBooksAPI } from './getBoorkAPI';
-import { refsBooks } from './refs';
-import { markupBlock, markupList } from './bestSellerBooks';
+// import { refsBooks } from './refs';
+import { markupBlock, markupList, refsBooks } from '../bestSellerBooks';
 
 
 const containerAll = document.querySelector('.all-categories')
