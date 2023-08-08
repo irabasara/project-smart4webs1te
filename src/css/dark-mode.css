@@ -85,6 +85,11 @@
   color: var(--accent-color);
   text-transform: uppercase;
 }
+.dark .categories__link:hover,
+.dark .categories__link:focus,
+.dark .categories__link:active {
+  color: var(--accent-color);
+}
 
 .dark .catefories::-webkit-scrollbar {
   background-color: var(--white);
