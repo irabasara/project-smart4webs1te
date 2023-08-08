@@ -83,8 +83,8 @@ function removeBookFromStorage(title, storageArr) {
   });
   localStorage.setItem('shoppingList', JSON.stringify(newStorage));
 }
-
-if (localStorage['shoppingList'].length > 2) {
-  document.querySelector('.empty-list').style.display = 'none';
-}
-generateBookCardMarkup(JSON.parse(localStorage['shoppingList']));
+ 
+// if (localStorage.getItem('shoppingList').length > 2) {
+//   document.querySelector('.empty-list').style.display = 'none';
+// }
+// generateBookCardMarkup(JSON.parse(localStorage.getItem('shoppingList')));
