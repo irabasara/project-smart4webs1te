@@ -1,5 +1,6 @@
 import { getBooksAPI } from "./js/getBoorkAPI";
 import Notiflix from 'notiflix';
+import { openModal } from "./js/modal-book";
 // import { refsBooks } from "./refs";
 
 export const refsBooks = {
@@ -22,7 +23,7 @@ if (data === 0) {
 export function markupList(books) {
   return books.map(({ book_image, title, author, _id }) => {
     return `<li class="js-list-bestBooks" id=${_id}>
-            <img src="${book_image}" alt="${title}" data-id="${_id} loading="lazy" class="img-bestBooks"/>
+            <img src="${book_image}" alt="${title}" data-id="${_id}" loading="lazy" class="img-bestBooks"/>
             <h3 class="js-named-bestBooks">${title}</h3>
             <p class="js-autor-bestBooks">${author}</p>
         </li>`}).join('');
@@ -41,6 +42,7 @@ function onLoadSeeMore(e) {
   e.preventDefault();
   if (e.target.classList.contains('img-bestBooks')) {
     const id = e.target.dataset.id;
+    console.log('id', id)
     e.target.addEventListener('click', openModal(id));
       }
   

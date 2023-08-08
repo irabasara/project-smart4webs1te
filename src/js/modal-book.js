@@ -30,9 +30,8 @@ export async function openModal(bookId) {
     refs.backdrop.classList.toggle("hi-backdrop");
     document.body.classList.add('no-scroll')
 
-    const response = await getBooksAPI(`/books/${bookId}`);
+    const response = await getBooksAPI(`${bookId}`);
 	const book = response.data;
-	console.log(book);
 
     refs.modal.innerHTML = `
 		<div class="modal-content-card">
