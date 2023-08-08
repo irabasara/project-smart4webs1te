@@ -1,7 +1,3 @@
-
-
-</html>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,16 +8,27 @@
     <link rel="stylesheet" href="./css/styles.css" />
     <!-- <link rel="stylesheet" type="text/css" href="/node_modules/modern-normalize/modern-normalize.css"> -->
   </head>
+
   <body>
     <load ="partials/header.html" />
     <!-- <load="partials/home.html" /> -->
 
     <main>
-      <aside>
+      <aside class="shopping-support">
         <load ="partials/support-ukraine.html" />
       </aside>
-      <section class="container">
-        <load ="partials/home.html" />
+      <section class="container shopping">
+        <h1 class="shopping-header">
+          Shopping <span style="color: var(--main-color)">List</span>
+        </h1>
+        <div class="empty-list">
+          <p class="empty-list-text">
+            This page is empty, add some books and proceed to order.
+          </p>
+          <div class="empty-list-img"></div>
+        </div>
+
+        <!-- <load ="partials/home.html" /> -->
       </section>
 
       <!-- <load="partials/home.html" /> -->
@@ -33,8 +40,10 @@
     <load ="partials/footer.html" />
     <load ="partials/modal.html" />
     <load ="partials/scroll-top.html" />
-
+    <load ="partials/mob-menu.html" />
+    <load src="./partials/auth-modal.html" />
 
     <script type="module" src="/main.js"></script>
+    <script type="module" src="/shopping-list.js"></script>
   </body>
 </html>

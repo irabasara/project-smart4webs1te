@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://books-backend.p.goit.global/books';
+axios.defaults.baseURL = 'https://books-backend.p.goit.global/books/';
 
 export async function getBooksAPI(endPoint) {
   try {

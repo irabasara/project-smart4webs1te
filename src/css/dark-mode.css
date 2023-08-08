@@ -1,0 +1,111 @@
+.theme-switch {
+  display: inline-block;
+  width: 46px;
+  height: 20px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(180deg, var(--main-color) 0%, #dcdcdc 100%);
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.1) inset;
+  position: relative;
+  cursor: pointer;
+  transition-duration: 300ms;
+}
+
+.theme-switch::before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--white);
+  top: 1px;
+  left: 1px;
+  transition-duration: 300ms;
+  z-index: 1;
+}
+
+.theme-switcher,
+.switcher-btn {
+  width: 42px;
+  height: 27px;
+  border: none;
+  /* transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); */
+  background: url(/img/switcher-left.svg);
+}
+.theme-switcher.active,
+.switcher-btn.active {
+  background: url(/img/switcher-right.svg);
+}
+
+.dark .logo-text,
+.dark .header-nav-link,
+.dark .header-nav-shop,
+.dark .home-title-book,
+.dark .js-named-bestBooks,
+.dark .js-btn-bestBooks {
+  color: var(--white);
+}
+
+.dark .categories__link {
+  color: #fff9;
+}
+
+.dark header {
+  border-radius: 0px 0px 8px 8px;
+  border: 1.5px solid var(--white);
+  /* background-color: var(--main-textcolor); */
+}
+
+.theme-switch.active {
+  background: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
+}
+
+.theme-switch.active::before {
+  transform: translateX(26px);
+  background-color: var(--white);
+}
+
+.dark {
+  background-color: var(--background-dark);
+}
+
+.dark .categories__item--active a {
+  font-weight: 700;
+  color: var(--main-color);
+  text-transform: uppercase;
+}
+
+.dark .catefories::-webkit-scrollbar {
+  background-color: var(--white);
+}
+
+.dark .catefories::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+}
+
+.dark .categories::-webkit-scrollbar-track {
+  /* background: 0 0; */
+  background-color: var(--background-dark);
+}
+
+.dark .bookshelf {
+  display: none;
+}
+
+.bookshelf-dark {
+  display: none;
+}
+.dark .bookshelf-dark {
+  display: block;
+}
+
+.cart-icon-white {
+  display: none;
+}
+.dark .cart-icon-white {
+  display: block;
+}
+
+.dark .cart-icon-dark {
+  display: none;
+}

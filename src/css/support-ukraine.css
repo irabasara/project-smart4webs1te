@@ -1,0 +1,134 @@
+.support-ukraine-container {
+    max-width: 335px;
+    background: radial-gradient(circle at top,
+            rgba(79, 46, 232, 1) 11%,
+            rgba(184, 170, 246, 1) 100%);
+    border-radius: 16px;
+    padding: 24px 40px 68px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+}
+
+.title-container {
+    display: flex;
+    gap: 12px;
+}
+
+.support-ukraine-title {
+    font-size: 24px;
+    color: var(--white);
+}
+
+.emblem {
+    width: 20px;
+    height: 32px;
+    margin-bottom: 40px;
+}
+
+.support-ukraine-list-container {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 188px;
+    transition: height 0.4s linear;
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-track {
+    background: #888;
+    /* Колір фону треку */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c9c5c5;
+    /* Колір скроллбара */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    /* Колір скроллбара при наведенні */
+}
+
+.support-ukraine-list {
+    display: list-item;
+    height: 448px;
+}
+
+.support-ukraine-list-container.active {
+    height: 448px;
+}
+
+.support-ukraine-item {
+    margin-bottom: 20px;
+}
+
+.support-ukraine-item a {
+    display: flex;
+    align-items: center;
+}
+
+.support-ukraine-item:last-child {
+    margin-bottom: 0;
+}
+
+.support-ukraine-item:last-child img {
+    width: 122px;
+    height: 16px;
+}
+
+.item-order-number {
+    font-family: 'DMSans-Regular', sans-serif;
+    color: var(--white);
+    margin-right: 16px;
+    line-height: 18px;
+}
+
+.company-emblem {
+    height: 32px;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+.support-ukraine-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--white);
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.support-ukraine-btn-icon {
+    fill: black;
+    transform: rotate(180deg);
+    transition: transform 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.support-ukraine-btn-icon.skroll-active {
+    transform: rotate(0deg);
+}
+
+@media screen and (min-width: 768px) {
+    .support-ukraine-list-container {
+        height: 292px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+.support-ukraine-container{
+    margin: 0;
+}
+    .support-ukraine-list {
+        height: 448px;
+        transition: transform 1s linear;
+    }
+}
+
