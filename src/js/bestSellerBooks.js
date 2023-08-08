@@ -1,6 +1,6 @@
 import { getBooksAPI } from "./getBoorkAPI";
 import Notiflix from 'notiflix';
-import { refsBooks } from "./js/refs";
+import { refsBooks } from "./refs";
 
 
 refsBooks.container.addEventListener('click', onLoadSeeMore)
