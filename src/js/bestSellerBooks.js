@@ -1,6 +1,6 @@
-import { getBooksAPI } from "./js/getBoorkAPI";
+import { getBooksAPI } from "./getBoorkAPI";
 import Notiflix from 'notiflix';
-import { refsBooks } from "./js/refs";
+import { refsBooks } from "./refs";
 
 
 refsBooks.container.addEventListener('click', onLoadSeeMore)
@@ -13,7 +13,7 @@ if (data === 0) {
 }
 })
 
-function markupList(books) {
+export function markupList(books) {
   return books.map(({ book_image, title, author, _id }) => {
     return `<li class="js-list-bestBooks id=${_id}">
             <img src="${book_image}" alt="${title}" loading="lazy" class="img-bestBooks"/>
@@ -22,7 +22,7 @@ function markupList(books) {
         </li>`}).join('');
 }
 
- function markupBlock(data) {
+export function markupBlock(data) {
     const markupBlock= data.map(({ list_name, books }) => {
       return `<h3 class="js-list-name">${list_name}</h3 >
         <ul class="js-overlow-bestBooks">${markupList(books)}</ul>
