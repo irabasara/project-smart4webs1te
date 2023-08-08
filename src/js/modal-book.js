@@ -2,7 +2,7 @@ import { getBooksAPI } from './getBoorkAPI';
 import amazon from '../img/amazon.png';
 import appleshop from '../img/appleshop.png';
 import boockshop from '../img/boockshop.png';
-
+// import {js-list-bestBooks} from '../bestSellerBooks';
 
 
 let bookId;
@@ -18,11 +18,11 @@ const refs = {
     textUnderBtn: document.querySelector('.modal-text'),
 };
 
-const btnTest = document.querySelector('.test');
-btnTest.addEventListener('click', openModal);
+// const btnTest = document.querySelector('.test');
+// btnTest.addEventListener('click', openModal);
 
 
-async function openModal(evt) {
+export async function openModal(evt) {
     bookId = evt.target.id;
     setButtonsVisibility();
     refs.backdrop.classList.toggle("hi-backdrop");
@@ -72,7 +72,7 @@ async function openModal(evt) {
 }
 
 
-function closeModal() {
+export function closeModal() {
     refs.backdrop.classList.toggle("hi-backdrop");
     document.body.classList.remove('no-scroll');
 };

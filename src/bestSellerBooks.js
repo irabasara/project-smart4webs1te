@@ -3,6 +3,7 @@ import Notiflix from 'notiflix';
 import { refsBooks } from "./js/refs";
 import { onScrollTopClick } from "./js/scroll-top";
 
+import { openModal } from "./js/modal-book";
 
 
 refsBooks.container.addEventListener('click', onLoadSeeMore)
@@ -22,9 +23,13 @@ function markupList(books) {
             <h3 class="js-named-bestBooks">${title}</h3>
             <p class="js-autor-bestBooks">${author}</p>
         </li>`}).join('');
+  
+document.querySelectorAll(".js-list-allBooks").forEach(el => el.addEventListener("click", openModal()));
 }
 
- function markupBlock(data) {
+
+
+function markupBlock(data) {
     const markupBlock= data.map(({ list_name, books }) => {
       return `<h3 class="js-list-name">${list_name}</h3 >
         <ul class="js-overlow-bestBooks">${markupList(books)}</ul>
