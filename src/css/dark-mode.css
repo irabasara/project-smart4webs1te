@@ -37,6 +37,10 @@
   background: url(/img/switcher-right.svg);
 }
 
+.menu-nav-shop {
+  color: var(--white);
+}
+
 .dark .logo-text,
 .dark .header-nav-link,
 .dark .header-nav-shop,
