@@ -13,8 +13,8 @@ containerAll.addEventListener('click', onOpenCategory)
 
 //   let markup = '';
 //   allCategories.map(({ list_name }) => {
-//     markup += `<li class="categories__item">
-// 					<a class="categories__link" href="books">
+//     markup += `<li class="categories__item" data-category="${list_name}">
+// 					<a class="categories__link" >
 // 						${list_name}
 // 					</a>
 // 				</li>`;
@@ -27,8 +27,8 @@ getBooksAPI('category-list').then(({ data }) => renderAllCategories(data));
 
 function renderAllCategories(data) {
   let markup = data.map(({ list_name }) => {
-    return `<li class="categories__item" data-category="${list_name}">${list_name}</li>`
-  })
+    return `<li class="categories__item categories__link" data-category="${list_name}">${list_name}</li>`
+  }).join('')
   containerAll.insertAdjacentHTML('beforeend', markup)
 }
 

@@ -38,6 +38,11 @@
 	margin: 0;
 	padding-left: 0;
 }
+.categories__list:first-child{
+	/* font-weight: 500; */
+		color: #4F2EE8;
+		/* text-transform: uppercase; */
+}
 
 .categories__item + .categories__item {
 	margin-top: 32px;
@@ -53,11 +58,12 @@
 	text-transform: uppercase;
 }
 
-.categories__item:hover,
-.categories__item:focus,
-.categories__item:active{
-	font-weight: 700;
+.categories__link:hover,
+.categories__link:focus,
+.categories__link:active{
 	color: #4F2EE8;
+	cursor: pointer;
+	font-weight: 700;
 	text-transform: uppercase;
 }
 
