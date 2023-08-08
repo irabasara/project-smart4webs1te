@@ -2,6 +2,8 @@ import { getBooksAPI } from "./getBoorkAPI";
 import Notiflix from 'notiflix';
 import { refsBooks } from "./refs";
 
+import { openModal } from "./js/modal-book";
+
 
 refsBooks.container.addEventListener('click', onLoadSeeMore)
 
@@ -15,11 +17,13 @@ if (data === 0) {
 
 export function markupList(books) {
   return books.map(({ book_image, title, author, _id }) => {
-    return `<li class="js-list-bestBooks id=${_id}">
+    return `<li class="js-list-bestBooks" id=${_id}>
             <img src="${book_image}" alt="${title}" loading="lazy" class="img-bestBooks"/>
             <h3 class="js-named-bestBooks">${title}</h3>
             <p class="js-autor-bestBooks">${author}</p>
         </li>`}).join('');
+  
+document.querySelectorAll(".js-list-allBooks").forEach(el => el.addEventListener("click", openModal()));
 }
 
 export function markupBlock(data) {
@@ -40,7 +44,7 @@ function onLoadSeeMore(e) {
       .then(({ data }) => {
           refsBooks.nameCat.textContent = seeMoreCategory;
           const allBooks = data.map(({ book_image, title, author, _id }) => {
-            return `<li class="js-list-allBooks id=${_id}">
+            return `<li class="js-list-allBooks" id=${_id}>
             <img src="${book_image}" alt="${title}" loading="lazy" class="img-bestBooks"/>
             <h3 class="js-named-bestBooks">${title}</h3>
             <p class="js-autor-bestBooks">${author}</p>
