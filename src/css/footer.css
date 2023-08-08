@@ -58,7 +58,7 @@
 }
 
 .heard-container.active {
-    top: -450%;
+    top: -420%;
     transform: translate(-50%, -50%);
     width: calc(500px - 2%);
     height: 500px;
@@ -106,8 +106,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 4px;
-    height: 4px;
+    width: 1px;
+    height: 1px;
     font-size: 1em;
     overflow: hidden;
     transition: 0.3s linear;
@@ -115,10 +115,10 @@
 }
 
 .center.active {
-    width: 400px;
-    height: 400px;
+    width: 450px;
+    height: 450px;
     transition: 0.2s linear 0.5s;
-    padding-top: 25px;
+    padding-top: 32px;
 }
 
 .center h2 {
@@ -131,14 +131,28 @@
 
 .center li {
     text-align: center;
-    margin-bottom: 14px;
+    margin-bottom: 18px;
     color: white;
     letter-spacing: 2px;
+    transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 @media screen and (max-width: 768px) {
     .heard-container.active {
-        width: calc(320px - 2%);
+        width: calc(84vw - 2%);
+        top: -370%;
+    }
+
+    .rigthpart.active {
+        width: 42vw;
+    }
+
+    .leftpart.active {
+        width: 42vw;
+    }
+
+    .center.active {
+        width: 78vw;
     }
 }
 
@@ -146,13 +160,11 @@
     position: fixed;
     top: 0;
     left: 0;
-
     width: 100%;
     height: 100%;
     background-color: rgba(17, 17, 17, 0.4);
     opacity: 1;
     overflow-y: auto;
-
     transition: opacity var(---animation);
 }
 
@@ -165,17 +177,13 @@
 .heard-btn {
     width: 24px;
     height: 24px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     position: absolute;
     top: 0;
     right: 12px;
-
     padding: 0px;
-
     background-color: transparent;
     border: none;
 }
@@ -187,4 +195,9 @@
 
 .heard-btn:hover .heard-close {
     stroke: white;
+}
+
+.team-list li:hover {
+    transform: scale(1.2);
+    color: rgb(223, 194, 141);
 }
