@@ -22,7 +22,6 @@ export async function authUser(email,password) {
       user.isSignedIn = true;
     localStorage.setItem('USER', JSON.stringify(user))
     Notify.success(`New user ${user.name} created`);
-    // addNewMarkup(user.name)
     })
    
     .catch(error => {
@@ -37,9 +36,6 @@ export async function signInUser(email,password) {
       user.name = userCur.displayName;
       user.userId = userCur.uid;
       user.isSignedIn = true;
-    // localStorage.setItem('USER', JSON.stringify(user))
-
-      // addNewMarkup(user.name)
        Notify.success(`Sign in is succses, ${user.name} `);
     })
    .catch(error => {
@@ -48,17 +44,16 @@ export async function signInUser(email,password) {
     });
 }
 
-export async function logOutUser() {
-  await signOut(auth).then(() => {
-      user.isSignedIn = false;
-      localStorage.removeItem('USER')
-      Notify.success(`Sign-out successful`);
-      // return true;
-  }).catch((error) => {
-      console.log('error', error)
-  alert(error.message)
-});
-}
+// export async function logOutUser() {
+//   await signOut(auth).then(() => {
+//       user.isSignedIn = false;
+//       localStorage.removeItem('USER')
+//       Notify.success(`Sign-out successful`);
+//   }).catch((error) => {
+//       console.log('error', error)
+//   alert(error.message)
+// });
+// }
 
 
 

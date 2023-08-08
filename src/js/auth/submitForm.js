@@ -1,63 +1,49 @@
+
+import { closeModal } from "../modal";
+import { refs } from "../refs";
 import { authUser, signInUser,user } from "./authUser";
 
-const formAuthorization = document.querySelector('.auth-modal')
-const signInButton = document.querySelector('#sign-in')
-const signUpButton = document.querySelector('#sign-up')
-const nameInput = document.querySelector('#input-name')
-const submitButton = document.querySelector('#submit-sign')
-const body = document.body
+refs.formAuthorization.addEventListener('submit', handleFormAuth)
+refs.signInButton.addEventListener('click', handleSignInForm)
+refs.signUpButton.addEventListener('click', handleSignUpForm)
 
-formAuthorization.addEventListener('submit', handleFormAuth)
-signInButton.addEventListener('click', handleSignInForm)
-signUpButton.addEventListener('click', handleSignUpForm)
-
-// export let user = {
-//   name: '',
-//   email: '',
-//   isSignedIn: false,
-// };
 
 function handleFormAuth(event) {
   event.preventDefault();
-  const {
-    elements: { name, email, password }
-  } = event.currentTarget;
+  const {elements: { name, email, password }} = event.currentTarget;
 
   user.name = name.value;
   user.email = email.value;
 
-//  user = {
-//   name: name.value,
-//   email: email.value,
-//   isSignedIn: true,
-// }
-
   if (!email.value || !password.value ) {
     return console.log("Please fill in all the fields!");
-    }
+  }
+  
   if (submitButton.textContent === 'Sign up') {
-  // localStorage.setItem('USER', JSON.stringify(user))
     authUser(email.value, password.value)
   }
+
   else {
     signInUser(email.value, password.value)
-}
-    event.currentTarget.reset();
+  }
+  
+  event.currentTarget.reset();
+  closeModal()
 }
 
 
 function handleSignInForm() {
-  nameInput.hidden = true;
-  submitButton.textContent = 'sign in';
-  signUpButton.classList.remove('active');
-  signInButton.classList.add('active');
+  refs.nameInput.hidden = true;
+  refs.submitButton.textContent = 'sign in';
+  refs.signUpButton.classList.remove('active');
+  refs.signInButton.classList.add('active');
 
 }
 
 function handleSignUpForm() {
-  nameInput.hidden = false;
-  submitButton.textContent = 'Sign up';
-  signUpButton.classList.add('active');
-  signInButton.classList.remove('active');
+  refs.nameInput.hidden = false;
+  refs.submitButton.textContent = 'Sign up';
+  refs.signUpButton.classList.add('active');
+  refs.signInButton.classList.remove('active');
 
 }
