@@ -23,6 +23,8 @@ button.btn-user-out {
   display: none;
 }
 .header {
+  position: relative;
+  z-index: 100;
   max-width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -151,10 +153,10 @@ button.btn-user-out {
     display: flex;
   }
 
-    .btn-user-out{
+    /* .btn-user-out{
       width: 184px;
         justify-content: space-between;
-    }
+    } */
         .text-btn-out {
           color: #111;
         }
