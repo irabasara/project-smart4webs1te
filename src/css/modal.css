@@ -28,7 +28,7 @@
     background-color: rgba(17, 17, 17, 0.40);
     opacity: 1;
     overflow-y: auto;
-transform: translateX(-50%);
+    transform: translateX(-50%);
     transition: opacity var(---animation);
 }
 

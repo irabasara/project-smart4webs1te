@@ -30,7 +30,7 @@ export async function openModal(bookId) {
     refs.backdrop.classList.toggle("hi-backdrop");
     document.body.classList.add('no-scroll')
 
-    const response = await getBooksAPI(bookId);
+    const response = await getBooksAPI(`/books/${bookId}`);
 	const book = response.data;
 	console.log(book);
 
