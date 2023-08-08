@@ -7,15 +7,15 @@
     <title>Bookshelf</title>
     
     <!-- <link rel="stylesheet" type="text/css" href="/node_modules/modern-normalize/modern-normalize.css"> -->
-    <script type="module" crossorigin src="/project-smart4webs1te/assets/shopping-list-page-c36dad0d.js"></script>
-    <link rel="modulepreload" crossorigin href="/project-smart4webs1te/assets/theme-switcher-c2b9109a.js">
-    <link rel="stylesheet" href="/project-smart4webs1te/assets/theme-switcher-d9025988.css">
+    <script type="module" crossorigin src="/project-smart4webs1te/assets/shopping-list-page-e19f26f7.js"></script>
+    <link rel="modulepreload" crossorigin href="/project-smart4webs1te/assets/theme-switcher-acd222a2.js">
+    <link rel="stylesheet" href="/project-smart4webs1te/assets/theme-switcher-1e575e60.css">
   </head>
 
   <body>
     <header class="header">
 
-    <a class="header-logo" href=".index.html" >
+    <a class="header-logo" href="./" >
       <img src="/project-smart4webs1te/assets/logo-00423362.svg" alt="logo">
       <img src="/project-smart4webs1te/assets/bookshelf-6a7e95da.svg" alt="bookshelf" class="bookshelf">
       <img src="/project-smart4webs1te/assets/bookshelf__dark-theme-eb65f487.svg" alt="bookshelf-dark" class="bookshelf-dark">
@@ -96,14 +96,6 @@
 
     <main>
       <aside class="shopping-support">
-        <section class="categories">
-  <ul class="categories__list all-categories">
-    <li class="categories__item categories__item--active">
-      <a class="categories__link" href="index.html"> All categories </a>
-    </li>
-  </ul>
-</section>
-
         <div class="support-ukraine-container">
     <div class="title-container">
         <p class="support-ukraine-title">Support Ukraine</p>
@@ -263,12 +255,19 @@
         placeholder="name"
         autocomplete="off"
       />
-      <input type="text" name="email" placeholder="email" autocomplete="off" />
       <input
-        type="text"
+        type="email"
+        name="email"
+        placeholder="email"
+        autocomplete="off"
+        required
+      />
+      <input
+        type="password"
         name="password"
         placeholder="password"
         autocomplete="off"
+        required
       />
       <button type="submit" class="sign-up" id="submit-sign">Sign up</button>
     </form>
