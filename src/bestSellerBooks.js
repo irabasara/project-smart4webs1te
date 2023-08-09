@@ -1,17 +1,28 @@
-import { getBooksAPI } from "./getBoorkAPI";
+import { getBooksAPI } from "./js/getBoorkAPI";
 import Notiflix from 'notiflix';
-import { refsBooks } from "./refs";
 import { openModal } from "./js/modal-book";
+
+export const refsBooks = {
+bestBooks: document.querySelector('.home-title-book'),
+container: document.querySelector('.js-container-bestBooks'),
+nameCat: document.querySelector('.js-add-name-category'),
+cover: document.querySelector('.js-coverAllBooks'),
+}
 
 refsBooks.container.addEventListener('click', onLoadSeeMore)
 
+homeStart()
+
+export function homeStart() {
 getBooksAPI('top-books')
   .then(({ data }) => {
-    markupBlock(data);
-if (data === 0) {
+    refsBooks.container.insertAdjacentHTML('afterbegin', `<h2 class="home-title-book">Best  Sellers <span class="books">Books</span></h2>`)
+    refsBooks.container.insertAdjacentHTML('beforeend', markupBlock(data))
+    if (data === 0) {
   Notiflix.Notify.failure('There are no books in this category');
 }
 })
+}
 
 export function markupList(books) {
   return books.map(({ book_image, title, author, _id }) => {
@@ -23,12 +34,11 @@ export function markupList(books) {
 }
 
 export function markupBlock(data) {
-    const markupBlock= data.map(({ list_name, books }) => {
-      return `<h3 class="js-list-name">${list_name}</h3 >
+     return data.map(({ list_name, books }) => {
+       return `<div class="wrapper"><h3 class="js-list-name">${list_name}</h3 >
         <ul class="js-overlow-bestBooks">${markupList(books)}</ul>
-        <btn class="js-btn-bestBooks" data-js="${list_name}">See more</btn>`
+        <btn class="js-btn-bestBooks" data-js="${list_name}">See more</btn></div>`
     }).join('')
-    refsBooks.container.insertAdjacentHTML('beforeend', markupBlock)
 }
   
 function onLoadSeeMore(e) {
@@ -37,27 +47,31 @@ function onLoadSeeMore(e) {
     const id = e.target.dataset.id;
     console.log('id', id)
     e.target.addEventListener('click', openModal(id));
-      }
+  }
   
   if (e.target.classList.contains('js-btn-bestBooks')) {
-      let seeMoreCategory = e.target.dataset.js;
-      refsBooks.container = "";
-      getBooksAPI(`category?category=${seeMoreCategory}`)
-        .then(({ data }) => {
-          refsBooks.nameCat.textContent = seeMoreCategory;
-          const allBooks = data.map(({ book_image, title, author, _id }) => {
-            return `<li class="js-list-allBooks" id=${_id}>
-            <img src="${book_image}" alt="${title}" loading="lazy" class="img-bestBooks"/>
-            <h3 class="js-named-bestBooks">${title}</h3>
-            <p class="js-autor-bestBooks">${author}</p>
-        </li>`}).join('')
-          refsBooks.cover.innerHTML = allBooks;
+    let seeMoreCategory = e.target.dataset.js;
+    refsBooks.container.innerHTML = "";
+    getBooksAPI(`category?category=${seeMoreCategory}`)
+      .then(({ data }) => {
+        const allBooks = data.map(({ book_image, title, author, _id}) => {
+          return `<li class="js-list-allBooks id=${_id}">
+          <img src="${book_image}" alt="${title}" loading="lazy" class="img-bestBooks"/>
+          <h3 class="js-named-bestBooks">${title}</h3>
+          <p class="js-autor-bestBooks">${author}</p>
+          </li>`}).join('')
+    //     return `<div class="wrapper_2">
+    //     <ul class="js-cover-AllBooks">${markupList(books)}</ul>
+    //     <btn class="js-btn-bestBooks">Back</btn></div>`
+    // }).join('')
+
+          refsBooks.container.insertAdjacentHTML('afterbegin', `<h2 class="home-title-book">${seeMoreCategory}<span class="books">Books</span></h2>`)
+          refsBooks.container.insertAdjacentHTML('beforeend', allBooks);
           if (data === 0) {
             Notiflix.Notify.failure('There are no books in this category');
-          }
+        }
         })
-        .catch(error => console.error(error))
-  
-    }
-
+          .catch(error => console.error(error))
+      
   }
+}

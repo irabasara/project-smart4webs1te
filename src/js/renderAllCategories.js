@@ -1,11 +1,12 @@
 
 import { getBooksAPI } from './getBoorkAPI';
 // import { refsBooks } from './refs';
-import { markupBlock, markupList, refsBooks } from '../bestSellerBooks';
+import { markupBlock, markupList, refsBooks, homeStart } from '../bestSellerBooks';
 
 
 const containerAll = document.querySelector('.all-categories')
-const bookCategory = document.querySelector('.categories__item')
+const bookCategory = document.querySelector('.categories__list')
+console.log(bookCategory.firstChild)
 
 containerAll.addEventListener('click', onOpenCategory)
 
@@ -36,28 +37,28 @@ function onOpenCategory(e) {
   e.preventDefault();
     if (e.target.classList.contains('categories__item')) {
       let renderCategory = e.target.dataset.category;
-      console.log(renderCategory)
-    refsBooks.container = "";
-      if (!renderCategory) {
-      getBooksAPI('top-books')
+    refsBooks.container.innerHTML = "";
+      if (bookCategory.firstChild.value) {
+      console.log(bookCategory)
+       getBooksAPI('top-books')
   .then(({ data }) => {
-    markupBlock(data);
-if (data === 0) {
+    refsBooks.container.insertAdjacentHTML('afterbegin', `<h2 class="home-title-book">Best  Sellers <span class="books">Books</span></h2>`)
+    refsBooks.container.insertAdjacentHTML('beforeend', markupBlock(data))
+    if (data === 0) {
   Notiflix.Notify.failure('There are no books in this category');
 }
 })
     } else {
       getBooksAPI(`category?category=${renderCategory}`)
         .then(({ data }) => {
-          refsBooks.bestBooks.textContent = renderCategory;
-          refsBooks.nameCat.classList.add('is-hidden')
           const allBooks = data.map(({ book_image, title, author, _id }) => {
             return `<li class="js-list-allBooks id=${_id}">
               <img src="${book_image}" alt="${title}" data-id="${_id}" loading="lazy" class="img-bestBooks"/>
               <h3 class="js-named-bestBooks">${title}</h3>
               <p class="js-autor-bestBooks">${author}</p>
           </li>`}).join('')
-          refsBooks.cover.innerHTML = allBooks;
+          refsBooks.container.insertAdjacentHTML('afterbegin', `<h2 class="home-title-book">${renderCategory}<span class="books">Books</span></h2>`)
+          refsBooks.container.insertAdjacentHTML('beforeend', allBooks);
           if (data === 0) {
   Notiflix.Notify.failure('There are no books in this category');
 }
