@@ -1,5 +1,9 @@
 import { app } from './js/auth/firebase-app';
 
+import amazon from './img/amazon.png';
+import appleshop from './img/appleshop.png';
+import boockshop from './img/boockshop.png';
+
 function generateBookCardMarkup(booksArray) {
   let markup = '<ul class="shopping-list">';
   booksArray.map(element => {
@@ -12,9 +16,9 @@ function generateBookCardMarkup(booksArray) {
       list_name,
       buy_links,
     } = element;
-    const amazon = getBookUrl('Amazon', buy_links);
-    const appleBooks = getBookUrl('Apple Books', buy_links);
-    const Bookshop = getBookUrl('Bookshop', buy_links);
+    const amazonURL = getBookUrl('Amazon', buy_links);
+    const appleBooksURL = getBookUrl('Apple Books', buy_links);
+    const bookshopURL = getBookUrl('Bookshop', buy_links);
 
     markup += ` <li class="book-card" id="${_id}">
       <div class="shopping-image-thumb">
@@ -32,18 +36,18 @@ function generateBookCardMarkup(booksArray) {
 
         <button class="book-card-delete">
         <svg class="book-card-icon">
-        <use href="/img/sprite.svg#icon-trash"></use>
+        <use href="img/sprite.svg#icon-trash"></use>
         </svg>
         </button>
       </div>
       <div class="book-additional-info">
         <div class="book-author">${author}</div>
         <ul class="book-card-refs">
-        <li class="amazon-icon"><a  href="${amazon}" target="_blank">
-        <img src="/img/amazon.png" alt="" / >
+        <li class="amazon-icon"><a  href="${amazonURL}" target="_blank">
+        <img src="${amazon}" alt="" / >
         </a></li>
-        <li class="other-icon"><a  href="${appleBooks}" target="_blank"><img src="/img/appleshop.png" alt="" / ></a></li>
-        <li class="other-icon"><a  href="${Bookshop}" target="_blank" ><img src="/img/boockshop.png" alt="" /></a></li>
+        <li class="other-icon"><a  href="${appleBooksURL}" target="_blank"><img src="${appleshop}" alt="" / ></a></li>
+        <li class="other-icon"><a  href="${bookshopURL}" target="_blank" ><img src="${boockshop}" alt="" /></a></li>
         </ul>
         
       </div>
