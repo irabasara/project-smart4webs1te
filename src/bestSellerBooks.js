@@ -36,6 +36,7 @@ export function markupList(books) {
             <img src="${book_image}" alt="${title}" data-id="${_id}" loading="lazy" class="img-bestBooks"/>
             <h3 class="js-named-bestBooks">${title}</h3>
             <p class="js-autor-bestBooks">${author}</p>
+            <div class="card-hover-categories"><p class="card-text-hover">quick view</p></div>
         </li>`}).join('');
 }
 
@@ -68,6 +69,7 @@ function onLoadSeeMore(e) {
           <img src="${book_image}" alt="${title}" data-id="${_id}" loading="lazy" class="img-bestBooks"/>
           <h3 class="js-named-bestBooks">${title}</h3>
           <p class="js-autor-bestBooks">${author}</p>
+          <div class="card-hover-categories"><p class="card-text-hover">quick view</p></div>
           </li>`}).join('')
     //     return `<div class="wrapper_2">
     //     <ul class="js-cover-AllBooks">${markupList(books)}</ul>

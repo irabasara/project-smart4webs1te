@@ -44,6 +44,7 @@ function onOpenCategory(e) {
           <img src="${book_image}" alt="${title}" data-id="${_id}" loading="lazy" class="img-bestBooks"/>
           <h3 class="js-named-bestBooks">${title}</h3>
           <p class="js-autor-bestBooks">${author}</p>
+          <div class="card-hover-categories"><p class="card-text-hover">quick view</p></div>
           </li>`}).join('')
           // refsBooks.container.insertAdjacentHTML('beforebegin', `<h2 class="home-title-book">${titleCat.slice(0, titleCat.length - 1).join(" ")} <span class="books">${titleCat.pop()}
           // </span></h2> `)

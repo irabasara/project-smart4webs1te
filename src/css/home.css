@@ -261,3 +261,44 @@
     }
     
 }
+
+.card-hover-categories {
+    width: 95.5%;
+    height: 70px;
+    background-color: var(--accent-color);
+    border-radius: 0px 0px 8px 8px;
+    position: relative;
+    bottom: 50px;
+    left: 0;
+    transform: translateY(0);   
+    transition: transform var(---animation), visibility var(---animation), opacity var(---animation);
+    visibility: hidden; 
+    opacity: 0;
+    pointer-events: none;
+
+
+    color: var(--main-textcolor);
+    font-family: DM Sans;
+    font-size: 14px;
+    line-height: 1.28;
+    letter-spacing: -0.56px;
+    text-transform: uppercase;
+    
+}
+
+.js-list-bestBooks:hover .card-hover-categories {
+  
+    transform: translateY(-70px);
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+}
+
+.js-list-bestBooks {
+    overflow: hidden;
+}
+
+.card-text-hover {
+    text-align: center;
+    padding-top: 26px;
+}
