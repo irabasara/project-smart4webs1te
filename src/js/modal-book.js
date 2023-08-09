@@ -24,7 +24,10 @@ export async function openModal(bookId) {
     document.body.classList.add('no-scroll')
 
     const response = await getBooksAPI(`${bookId}`);
-	book = response.data;
+    book = response.data;
+    if (!book) {
+    return;
+    }
 
     refs.modal.innerHTML = `
 		<div class="modal-content-card">

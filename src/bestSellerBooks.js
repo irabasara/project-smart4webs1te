@@ -32,7 +32,7 @@ return getBooksAPI('top-books')
 
 export function markupList(books) {
   return books.map(({ book_image, title, author, _id }) => {
-    return `<li class="js-list-bestBooks" id=${_id}>
+    return `<li class="js-list-bestBooks" id="${_id}">
             <img src="${book_image}" alt="${title}" data-id="${_id}" loading="lazy" class="img-bestBooks"/>
             <h3 class="js-named-bestBooks">${title}</h3>
             <p class="js-autor-bestBooks">${author}</p>
@@ -64,8 +64,8 @@ function onLoadSeeMore(e) {
         const titleCat = seeMoreCategory.split(" ");
         const allBooks = data.map(({ book_image, title, author, _id }) => {
           return `
-          <li class="js-list-allBooks id=${_id}">
-          <img src="${book_image}" alt="${title}" loading="lazy" class="img-bestBooks"/>
+          <li class="js-list-allBooks" id="${_id}">
+          <img src="${book_image}" alt="${title}" data-id="${_id}" loading="lazy" class="img-bestBooks"/>
           <h3 class="js-named-bestBooks">${title}</h3>
           <p class="js-autor-bestBooks">${author}</p>
           </li>`}).join('')
@@ -86,6 +86,7 @@ function onLoadSeeMore(e) {
           .catch(error => console.error(error))
           
   } return
+
 }
 
 export function onHome(e) {
