@@ -56,7 +56,7 @@ if (data === 0) {
               <img src="${book_image}" alt="${title}" data-id="${_id}" loading="lazy" class="img-bestBooks"/>
               <h3 class="js-named-bestBooks">${title}</h3>
               <p class="js-autor-bestBooks">${author}</p>
-          </li>`}).join('')
+              <div class="card-hover-categories" id=${_id}>quick view</div></li>`}).join('')
           refsBooks.cover.innerHTML = allBooks;
           if (data === 0) {
   Notiflix.Notify.failure('There are no books in this category');
