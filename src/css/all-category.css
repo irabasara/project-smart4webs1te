@@ -38,12 +38,12 @@
 	margin: 0;
 	padding-left: 0;
 }
-/* 
+
 .categories__list:first-child{
 	/* font-weight: 500; */
-		/* color: #4F2EE8; */
+		color: #4F2EE8;
 		/* text-transform: uppercase; */
-/* } */ */
+} 
 
 .categories__item + .categories__item {
 	margin-top: 32px;

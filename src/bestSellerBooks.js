@@ -18,9 +18,9 @@ refsBooks.btnBack.addEventListener('click', onHome)
 homeStart()
 
 export function homeStart() {
-getBooksAPI('top-books')
+return getBooksAPI('top-books')
   .then(({ data }) => {
-    // refsBooks.container.insertAdjacentHTML('afterbegin', `<h2 class="home-title-book">Best  Sellers <span class="books">Books</span></h2>`)
+    refsBooks.container.insertAdjacentHTML('afterbegin', `<h2 class="home-title-book">Best  Sellers <span class="books">Books</span></h2>`)
     refsBooks.container.insertAdjacentHTML('beforeend', markupBlock(data))
     if (data === 0) {
   Notiflix.Notify.failure('There are no books in this category');
@@ -56,7 +56,6 @@ function onLoadSeeMore(e) {
   if (e.target.classList.contains('js-btn-bestBooks')) {
     let seeMoreCategory = e.target.dataset.js;
     refsBooks.container.innerHTML = "";
-    refsBooks.bestBooks = ""
     getBooksAPI(`category?category=${seeMoreCategory}`)
       .then(({ data }) => {
         const titleCat = seeMoreCategory.split(" ");
@@ -71,11 +70,11 @@ function onLoadSeeMore(e) {
     //     <ul class="js-cover-AllBooks">${markupList(books)}</ul>
     //     <btn class="js-btn-bestBooks">Back</btn></div>`
     // }).join('')
-        refsBooks.container.insertAdjacentHTML('beforebegin', `<h2 class="home-title-book">${titleCat.slice(0, titleCat.length - 2).join(" ")}<span class="books">${titleCat.pop()}
+        refsBooks.container.insertAdjacentHTML('beforebegin', `<h2 class="home-title-book">${titleCat.slice(0, titleCat.length - 1).join(" ")} <span class="books">${titleCat.pop()}
           </span></h2> `)
         refsBooks.container.insertAdjacentHTML('beforeend', allBooks);
         refsBooks.btnBack.classList.remove('is-hidden')
-        refsBooks.bestBooks.classList.add('is-hidden')
+        // refsBooks.bestBooks.classList.add('is-hidden')
           if (data === 0) {
             Notiflix.Notify.failure('There are no books in this category');
         }
@@ -89,7 +88,6 @@ export function onHome(e) {
   e.preventDefault();
   refsBooks.btnBack.classList.add('is-hidden')
   refsBooks.container.innerHTML = "";
-  // refsBooks.bestBooks.classList.add('is-hidden')
-  homeStart()
+  window.location.assign('./')
 }
 
