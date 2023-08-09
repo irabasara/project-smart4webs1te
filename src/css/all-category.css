@@ -38,11 +38,12 @@
 	margin: 0;
 	padding-left: 0;
 }
+/* 
 .categories__list:first-child{
 	/* font-weight: 500; */
-		color: #4F2EE8;
+		/* color: #4F2EE8; */
 		/* text-transform: uppercase; */
-}
+/* } */ */
 
 .categories__item + .categories__item {
 	margin-top: 32px;
@@ -52,7 +53,7 @@
 	color: rgba(17,17,17,0.6);
 }
 
-.categories__item--active a{
+.categories__item--active {
 	font-weight: 700;
 	color: #4F2EE8;
 	text-transform: uppercase;
