@@ -21,6 +21,10 @@
     margin: 40px auto;
 }
 
+.js-container-bestBooks {
+    margin: 40px 20px 80px;
+}
+
 .js-cover-block {
     display: flex;
     flex-direction: column;
@@ -43,6 +47,7 @@
     line-height: 1.19;
     letter-spacing: -1.28px;
     margin-bottom: 40px;
+    width: 335px;
 }
 
 .books {
@@ -126,14 +131,14 @@
     margin-top: 4px;
 }
 
-.js-coverAllBooks {
+/* .js-coverAllBooks {
     display: block;
     margin-bottom: 40px;
 }
 
 .js-coverAllBooks:last-child {
     margin-bottom: 0;
-}
+} */
 
 .js-add-name-category {
     font-size: 26px;
@@ -150,7 +155,7 @@
 
     .container-bestBooks {
         width: 704px;
-        margin: 40px auto;
+        margin: 0 auto;
     }
 
     .home-title-book {
@@ -158,6 +163,7 @@
         line-height: 1.08;
         letter-spacing: -1.92px;
         margin-bottom: 0;
+        width: 704px;
     }
 
     .js-cover-block {
@@ -189,12 +195,12 @@
         margin-top: 20px;
     }
 
-    .js-coverAllBooks {
+    /* .js-coverAllBooks {
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
         margin-bottom: 0;
-    }
+    } */
 
     .js-add-name-category {
         font-size: 40px;
@@ -207,12 +213,14 @@
         display: flex;
         flex-wrap: wrap;
         gap: 40px 25px;
-        margin-top: 40px;
-    }
+        margin: 100px 32px;
+        width: 704px;
+    }    
 
     .wrapper {
         margin-bottom: 0;
         width: 704px;
+        
     }
 
 }
@@ -220,14 +228,17 @@
 @media screen and (min-width: 1440px) {
 
     .container-bestBooks {
-        width: 996px;
-        margin: 40px 24px 40px 40px;
+        min-width: 996px;
     }
 
     .js-overlow-bestBooks {
         gap: 24px;
         flex-direction: row;
     }
+
+    .home-title-book {                
+        width: 996px;
+}
 
     .img-bestBooks {
         max-width: 180px;
@@ -240,8 +251,10 @@
     }
 
     .js-container-bestBooks {
+        width: 996px;
         gap: 40px 24px;
-        }
+        margin: 40px 24px 72px 40px;
+}
 
     .wrapper {
         width: 996px;
