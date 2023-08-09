@@ -19,7 +19,7 @@ const refs = {
 
 export async function openModal(bookId) {
     setButtonsVisibility(bookId);
-    // refs.modal.innerHTML = "";
+    refs.modal.innerHTML = "<div class='modal-skeleton'></div>";
     refs.backdrop.classList.toggle("hi-backdrop");
     document.body.classList.add('no-scroll')
 
