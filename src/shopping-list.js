@@ -3,8 +3,15 @@ import { app } from './js/auth/firebase-app';
 function generateBookCardMarkup(booksArray) {
   let markup = '<ul class="shopping-list">';
   booksArray.map(element => {
-    const { _id, book_image, title, description, author, list_name, buy_links } =
-      element;
+    const {
+      _id,
+      book_image,
+      title,
+      description,
+      author,
+      list_name,
+      buy_links,
+    } = element;
     const amazon = getBookUrl('Amazon', buy_links);
     const appleBooks = getBookUrl('Apple Books', buy_links);
     const Bookshop = getBookUrl('Bookshop', buy_links);
@@ -29,13 +36,16 @@ function generateBookCardMarkup(booksArray) {
         </svg>
         </button>
       </div>
-      <div class="book-card-refs">
+      <div class="book-additional-info">
         <div class="book-author">${author}</div>
-        <a class="amazon-icon" href="${amazon}" target="_blank">
-        <img src="/img/amazon.svg" alt="" / >
-        </a>
-        <a class="other-icon" href="${appleBooks}" target="_blank"><img src="/img/applebook.svg" alt="" / ></a>
-        <a class="other-icon" href="${Bookshop}" target="_blank" ><img src="/img/bookshop.svg" alt="" /></a>
+        <ul class="book-card-refs">
+        <li class="amazon-icon"><a  href="${amazon}" target="_blank">
+        <img src="./img/amazon.png" alt="" / >
+        </a></li>
+        <li class="other-icon"><a  href="${appleBooks}" target="_blank"><img src="./img/appleshop.png" alt="" / ></a></li>
+        <li class="other-icon"><a  href="${Bookshop}" target="_blank" ><img src="./img/boockshop.png" alt="" /></a></li>
+        </ul>
+        
       </div>
       </div>
     </li>`;
@@ -85,10 +95,10 @@ function removeBookFromStorage(bookId) {
 }
 
 function getShoppingList() {
-  return JSON.parse(window.localStorage.getItem("ShoppingList") || "[]");
+  return JSON.parse(window.localStorage.getItem('ShoppingList') || '[]');
 }
 
 if (getShoppingList().length > 0) {
-   document.querySelector('.empty-list').style.display = 'none';
+  document.querySelector('.empty-list').style.display = 'none';
 }
 generateBookCardMarkup(getShoppingList());
