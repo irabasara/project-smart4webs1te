@@ -11,3 +11,5 @@ import './js/scroll-top'
 import './js/supportUkraine'
 import './js/theme-switcher'
 
+import './js/footer';
+
