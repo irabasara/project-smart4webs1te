@@ -2,6 +2,7 @@
 import { getBooksAPI } from './getBoorkAPI';
 // import { refsBooks } from './refs';
 import { markupBlock, markupList, refsBooks } from '../bestSellerBooks';
+import { Loading } from 'notiflix';
 
 
 const containerAll = document.querySelector('.all-categories')
@@ -23,7 +24,9 @@ containerAll.addEventListener('click', onOpenCategory)
 //   return markup;
 // }
 
-getBooksAPI('category-list').then(({ data }) => renderAllCategories(data));
+getBooksAPI('category-list').then(({ data }) => {
+  renderAllCategories(data);
+});
 
 function renderAllCategories(data) {
   let markup = data.map(({ list_name }) => {
@@ -58,6 +61,7 @@ if (data === 0) {
               <p class="js-autor-bestBooks">${author}</p>
           </li>`}).join('')
           refsBooks.cover.innerHTML = allBooks;
+    Loading.remove()
           if (data === 0) {
   Notiflix.Notify.failure('There are no books in this category');
 }

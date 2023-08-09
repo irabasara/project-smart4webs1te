@@ -1,5 +1,5 @@
 import { getBooksAPI } from "./js/getBoorkAPI";
-import Notiflix from 'notiflix';
+import Notiflix, { Loading } from 'notiflix';
 import { openModal } from "./js/modal-book";
 
 
@@ -15,6 +15,7 @@ refsBooks.container.addEventListener('click', onLoadSeeMore)
 getBooksAPI('top-books')
   .then(({ data }) => {
     markupBlock(data);
+    Loading.remove()
 if (data === 0) {
   Notiflix.Notify.failure('There are no books in this category');
 }
@@ -35,7 +36,8 @@ export function markupBlock(data) {
         <ul class="js-overlow-bestBooks">${markupList(books)}</ul>
         <btn class="js-btn-bestBooks" data-js="${list_name}">See more</btn>`
     }).join('')
-    refsBooks.container.insertAdjacentHTML('beforeend', markupBlock)
+  refsBooks.container.insertAdjacentHTML('beforeend', markupBlock)
+  
 }
   
 function onLoadSeeMore(e) {
@@ -44,6 +46,7 @@ function onLoadSeeMore(e) {
     const id = e.target.dataset.id;
     console.log('id', id)
     e.target.addEventListener('click', openModal(id));
+     Loading.remove()
       }
   
   if (e.target.classList.contains('js-btn-bestBooks')) {
@@ -59,6 +62,7 @@ function onLoadSeeMore(e) {
             <p class="js-autor-bestBooks">${author}</p>
         </li>`}).join('')
           refsBooks.cover.innerHTML = allBooks;
+           Loading.remove()
           if (data === 0) {
             Notiflix.Notify.failure('There are no books in this category');
           }
