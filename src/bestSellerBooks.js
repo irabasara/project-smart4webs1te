@@ -17,6 +17,7 @@ refsBooks.btnBack.addEventListener('click', onHome)
 
 homeStart()
 
+
 export function homeStart() {
 return getBooksAPI('top-books')
   .then(({ data }) => {
