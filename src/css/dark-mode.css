@@ -132,3 +132,7 @@
 .dark .cart-icon-dark {
   display: none;
 }
+
+.dark .amazon-icon img {
+  filter: invert(1);
+}
