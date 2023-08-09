@@ -40,10 +40,10 @@ function generateBookCardMarkup(booksArray) {
         <div class="book-author">${author}</div>
         <ul class="book-card-refs">
         <li class="amazon-icon"><a  href="${amazon}" target="_blank">
-        <img src="./img/amazon.png" alt="" / >
+        <img src="/img/amazon.png" alt="" / >
         </a></li>
-        <li class="other-icon"><a  href="${appleBooks}" target="_blank"><img src="./img/appleshop.png" alt="" / ></a></li>
-        <li class="other-icon"><a  href="${Bookshop}" target="_blank" ><img src="./img/boockshop.png" alt="" /></a></li>
+        <li class="other-icon"><a  href="${appleBooks}" target="_blank"><img src="/img/appleshop.png" alt="" / ></a></li>
+        <li class="other-icon"><a  href="${Bookshop}" target="_blank" ><img src="/img/boockshop.png" alt="" /></a></li>
         </ul>
         
       </div>
