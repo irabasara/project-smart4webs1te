@@ -3,6 +3,7 @@ import { app } from './js/auth/firebase-app';
 import amazon from './img/amazon.png';
 import appleshop from './img/appleshop.png';
 import boockshop from './img/boockshop.png';
+import trash from '/img/sprite.svg#trash';
 
 function generateBookCardMarkup(booksArray) {
   let markup = '<ul class="shopping-list">';
@@ -35,9 +36,9 @@ function generateBookCardMarkup(booksArray) {
         }</div>
 
         <button class="book-card-delete">
-        <svg class="book-card-icon">
-        <use href="/project-smart4webs1te/src/img/sprite.svg#icon-trash"></use>
-        </svg>
+          <svg class="book-card-icon"  width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 2H10M2 4H14M12.6667 4L12.1991 11.0129C12.129 12.065 12.0939 12.5911 11.8667 12.99C11.6666 13.3412 11.3648 13.6235 11.0011 13.7998C10.588 14 10.0607 14 9.00623 14H6.99377C5.93927 14 5.41202 14 4.99889 13.7998C4.63517 13.6235 4.33339 13.3412 4.13332 12.99C3.90607 12.5911 3.871 12.065 3.80086 11.0129L3.33333 4M6.66667 7V10.3333M9.33333 7V10.3333" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </button>
       </div>
       <div class="book-additional-info">
