@@ -48,12 +48,6 @@
 .dark .home-title-book,
 .dark .js-named-bestBooks,
 .dark .js-btn-bestBooks,
-
-.dark .menu-nav-shop,
-.dark .shopping-header,
-.dark .book-description,
-.dark .book-title {
-
 /* .dark .menu-nav-shop, */
 .dark .shopping-header {
   color: var(--white);
@@ -143,14 +137,6 @@
   display: none;
 }
 
-
-.dark .amazon-icon img {
-  filter: invert(1);
-}
-.dark .book-card {
-  background-color: #000;
-}
-
 /* mob menu cart icons */
 .active .menu-cart-white {
   display: none;
@@ -177,4 +163,3 @@
 .dark .header-nav-shop.active {
   color: var(--main-textcolor);
 } */
-
