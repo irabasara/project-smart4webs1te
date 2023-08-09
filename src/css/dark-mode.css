@@ -37,7 +37,8 @@
   background: url(/img/switcher-right.svg);
 }
 
-.menu-nav-shop {
+.menu-nav-shop,
+.menu-nav-link {
   color: var(--white);
 }
 
@@ -47,9 +48,14 @@
 .dark .home-title-book,
 .dark .js-named-bestBooks,
 .dark .js-btn-bestBooks,
-.dark .menu-nav-shop,
+/* .dark .menu-nav-shop, */
 .dark .shopping-header {
   color: var(--white);
+}
+
+.dark .header-nav-link.active,
+.dark .header-nav-shop.active {
+  color: var(--main-textcolor);
 }
 
 .dark .categories__link {
@@ -130,3 +136,30 @@
 .dark .cart-icon-dark {
   display: none;
 }
+
+/* mob menu cart icons */
+.active .menu-cart-white {
+  display: none;
+}
+.menu-cart-white {
+  display: block;
+}
+
+.active .menu-cart-dark {
+  display: block;
+}
+.menu-cart-dark {
+  display: none;
+}
+
+.active .cart-icon-dark {
+  display: block;
+}
+.active .cart-icon-white {
+  display: none;
+}
+
+/* .dark .header-nav-link.active,
+.dark .header-nav-shop.active {
+  color: var(--main-textcolor);
+} */
