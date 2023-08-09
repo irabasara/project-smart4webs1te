@@ -48,7 +48,9 @@
 .dark .js-named-bestBooks,
 .dark .js-btn-bestBooks,
 .dark .menu-nav-shop,
-.dark .shopping-header {
+.dark .shopping-header,
+.dark .book-description,
+.dark .book-title {
   color: var(--white);
 }
 
