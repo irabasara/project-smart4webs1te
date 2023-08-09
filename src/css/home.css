@@ -18,7 +18,7 @@
 }
 .container-bestBooks {
     width: 335px;
-    margin: 40px 20px;
+    margin: 40px auto;
 }
 
 .js-cover-block {
@@ -39,8 +39,8 @@
     font-weight: 700;
     line-height: 1.19;
     letter-spacing: -1.28px;
-    margin-bottom: 40px;
-    margin-left: 20px;
+    /* margin-bottom: 40px;
+    margin-left: 20px; */
 }
 
 .books {
@@ -123,8 +123,7 @@
 
 .js-coverAllBooks {
     display: block;
-    margin-bottom: 70px;
-    gap: 40px;
+    margin-bottom: 40px;
 }
 
 .js-add-name-category {
@@ -142,14 +141,14 @@
 
     .container-bestBooks {
         width: 704px;
-        margin: 40px 32px;
+        margin: 40px auto;
     }
 
     .home-title-book {
         font-size: 48px;
         line-height: 1.08;
         letter-spacing: -1.92px;
-        margin-left: 32px;
+        /* margin-left: 32px; */
     }
 
     .js-cover-block {
@@ -184,7 +183,6 @@
         display: flex;
         flex-wrap: wrap;
         gap: 25px;
-        margin-bottom: 50px;
     }
 
     .js-add-name-category {
@@ -201,10 +199,10 @@
         width: 996px;
         margin: 40px 24px 40px 40px;
     }
-
+/* 
     .home-title-book {
         margin-left: 40px;
-    }
+    } */
 
     .js-overlow-bestBooks {
         gap: 24px;
@@ -242,4 +240,5 @@
     .js-list-bestBooks:nth-of-type(n + 4) {
         display: none;
     }
+    
 }

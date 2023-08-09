@@ -1,14 +1,9 @@
 import { getBooksAPI } from './getBoorkAPI';
-
-
-
 import amazon from '../img/amazon.png';
 import appleshop from '../img/appleshop.png';
 import boockshop from '../img/boockshop.png';
 
-
-let bookId;
-let shoppingList = JSON.parse(window.localStorage.getItem("ShoppingList") || "[]");
+let book;
 
 const refs = {
     backdrop: document.querySelector('.modal-backdrop'),
@@ -20,18 +15,16 @@ const refs = {
     textUnderBtn: document.querySelector('.modal-text'),
 };
 
-const btnTest = document.querySelector('.test');
-btnTest.addEventListener('click', openModal);
 
-async function openModal(evt) {
-    bookId = evt.target.id;
-    setButtonsVisibility();
+
+export async function openModal(bookId) {
+    setButtonsVisibility(bookId);
+    refs.modal.innerHTML = "<div class='modal-skeleton'></div>";
     refs.backdrop.classList.toggle("hi-backdrop");
     document.body.classList.add('no-scroll')
 
-    const response = await getBooksAPI(bookId);
-	const book = response.data;
-	console.log(book);
+    const response = await getBooksAPI(`${bookId}`);
+	book = response.data;
 
     refs.modal.innerHTML = `
 		<div class="modal-content-card">
@@ -72,13 +65,15 @@ async function openModal(evt) {
 		</div>`;
 }
 
-function closeModal() {
+
+export function closeModal() {
     refs.backdrop.classList.toggle("hi-backdrop");
     document.body.classList.remove('no-scroll');
 };
 
-function setButtonsVisibility() {
-    if (shoppingList.indexOf(bookId) > -1) {
+function setButtonsVisibility(bookId) {
+    const shoppingList = getShoppingList();
+    if (shoppingList.findIndex(e => e._id === bookId) > -1) {
         refs.btnAdd.classList.add('is-hidden');
         refs.btnRemove.classList.remove('is-hidden');
         refs.textUnderBtn.classList.remove('is-hidden');
@@ -90,18 +85,25 @@ function setButtonsVisibility() {
 }
 
 function onAddBtnClick() {
-	shoppingList.push(bookId);
-    setButtonsVisibility();
+    const shoppingList = getShoppingList();
+	shoppingList.push(book);
     window.localStorage.setItem("ShoppingList", JSON.stringify(shoppingList));
+    setButtonsVisibility(book._id);
 }
 
 function onRemoveBtnClick() {
-    const position = shoppingList.indexOf(bookId);
-    if (position > -1) {
-        shoppingList.splice(position, 1);
-    }
-    setButtonsVisibility();
+    const shoppingList = getShoppingList().filter(el => {
+        if (el._id === book._id) {
+            return;
+        }
+        return el;
+    });
     window.localStorage.setItem("ShoppingList", JSON.stringify(shoppingList));
+    setButtonsVisibility(book._id);
+}
+
+function getShoppingList() {
+    return JSON.parse(window.localStorage.getItem("ShoppingList") || "[]");
 }
 
 refs.closeModalBtn.addEventListener('click', closeModal);
@@ -119,3 +121,4 @@ window.addEventListener('keydown', (evt) => {
         closeModal()
     }
 });
+

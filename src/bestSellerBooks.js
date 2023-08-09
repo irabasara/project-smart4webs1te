@@ -1,8 +1,14 @@
 import { getBooksAPI } from "./js/getBoorkAPI";
 import Notiflix from 'notiflix';
-import { refsBooks } from "./js/refs";
-import { onScrollTopClick } from "./js/scroll-top";
+import { openModal } from "./js/modal-book";
 
+
+export const refsBooks = {
+bestBooks: document.querySelector('.home-title-book'),
+container: document.querySelector('.js-container-bestBooks'),
+cover: document.querySelector('.js-coverAllBooks'),
+nameCat: document.querySelector('.js-add-name-category')
+}
 
 refsBooks.container.addEventListener('click', onLoadSeeMore)
 
@@ -14,16 +20,16 @@ if (data === 0) {
 }
 })
 
-function markupList(books) {
+export function markupList(books) {
   return books.map(({ book_image, title, author, _id }) => {
-    return `<li class="js-list-bestBooks id=${_id}">
-            <img src="${book_image}" alt="${title}" loading="lazy" class="img-bestBooks"/>
+    return `<li class="js-list-bestBooks" id=${_id}>
+            <img src="${book_image}" alt="${title}" data-id="${_id}" loading="lazy" class="img-bestBooks"/>
             <h3 class="js-named-bestBooks">${title}</h3>
             <p class="js-autor-bestBooks">${author}</p>
         </li>`}).join('');
 }
 
- function markupBlock(data) {
+export function markupBlock(data) {
     const markupBlock= data.map(({ list_name, books }) => {
       return `<h3 class="js-list-name">${list_name}</h3 >
         <ul class="js-overlow-bestBooks">${markupList(books)}</ul>
@@ -34,26 +40,31 @@ function markupList(books) {
   
 function onLoadSeeMore(e) {
   e.preventDefault();
+  if (e.target.classList.contains('img-bestBooks')) {
+    const id = e.target.dataset.id;
+    console.log('id', id)
+    e.target.addEventListener('click', openModal(id));
+      }
+  
   if (e.target.classList.contains('js-btn-bestBooks')) {
-    let seeMoreCategory = e.target.dataset.js;
-    refsBooks.container = "";
-    getBooksAPI(`category?category=${seeMoreCategory}`)
-      .then(({ data }) => {
+      let seeMoreCategory = e.target.dataset.js;
+      refsBooks.container = "";
+      getBooksAPI(`category?category=${seeMoreCategory}`)
+        .then(({ data }) => {
           refsBooks.nameCat.textContent = seeMoreCategory;
           const allBooks = data.map(({ book_image, title, author, _id }) => {
-            return `<li class="js-list-allBooks id=${_id}">
+            return `<li class="js-list-allBooks" id=${_id}>
             <img src="${book_image}" alt="${title}" loading="lazy" class="img-bestBooks"/>
             <h3 class="js-named-bestBooks">${title}</h3>
             <p class="js-autor-bestBooks">${author}</p>
         </li>`}).join('')
-        refsBooks.cover.innerHTML = allBooks;
-        onScrollTopClick()
-        if (data === 0) {
-  Notiflix.Notify.failure('There are no books in this category');
-}
-      })
-      .catch(error => console.error(error))
-}
-}
+          refsBooks.cover.innerHTML = allBooks;
+          if (data === 0) {
+            Notiflix.Notify.failure('There are no books in this category');
+          }
+        })
+        .catch(error => console.error(error))
+  
+    }
 
-
+  }

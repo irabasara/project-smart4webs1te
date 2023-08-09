@@ -123,9 +123,12 @@
         overflow-y: scroll;
         overflow-x: hidden;
     }
-
+.support-ukraine-container{
+    margin: 0;
+}
     .support-ukraine-list {
         height: 448px;
         transition: transform 1s linear;
     }
 }
+

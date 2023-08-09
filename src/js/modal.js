@@ -1,14 +1,16 @@
 import { refs } from "./refs";
 
-// const openModalBtn = document.querySelector('#js-modal-open');
-// const closeModalBtn = document.querySelector('#js-modal-close');
-// const modal = document.querySelector('#js-modal');
+refs.openModalBtn.addEventListener('click', openModal);
+refs.openMobileModalBtn.addEventListener('click', openModal);
+refs.closeModalBtn.addEventListener('click', closeModal);
 
-  refs.openModalBtn.addEventListener('click', toggleModal);
-  refs.closeModalBtn.addEventListener('click', toggleModal);
-
-function toggleModal() {
-    console.log('click')  
-    refs.modal.classList.toggle("is-hidden-auth");
-    document.body.classList.toggle('no-scroll');
+ function openModal() {
+   refs.menu.classList.add('is-hidden');
+   refs.closeMenuBtn.classList.add('is-hidden');
+   refs.modal.classList.remove('is-hidden-auth');
+   document.body.classList.add('no-scroll');
+}
+  export function closeModal() {
+     refs.modal.classList.add('is-hidden-auth');
+     document.body.classList.remove('no-scroll');
   }
