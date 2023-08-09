@@ -1,4 +1,4 @@
-import"./theme-switcher-53ff945f.js";function k(e){let o='<ul class="shopping-list">';e.map(t=>{const{_id:i,book_image:l,title:c,description:n,author:d,list_name:g,buy_links:s}=t,u=r("Amazon",s),p=r("Apple Books",s),m=r("Bookshop",s);o+=` <li class="book-card" id="${i}">
+import"./theme-switcher-b4f9cd24.js";function k(e){let o='<ul class="shopping-list">';e.map(t=>{const{_id:i,book_image:l,title:c,description:n,author:d,list_name:g,buy_links:s}=t,u=r("Amazon",s),p=r("Apple Books",s),m=r("Bookshop",s);o+=` <li class="book-card" id="${i}">
       <div class="shopping-image-thumb">
         <img src="${l}" alt="" />
       </div>
