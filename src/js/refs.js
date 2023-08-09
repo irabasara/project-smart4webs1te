@@ -5,7 +5,9 @@ export const refs = {
   closeModalBtn: document.querySelector('#js-modal-close'),
   modal: document.querySelector('#js-modal'),
   userLogOut: document.querySelector('.btn-user-out'),
-  userName: document.querySelector('.user-name'),
+  userNameMob: document.querySelector('.user-name'),
+  userName: document.querySelector('#user-sign-name'),
+  userProfileBtn: document.querySelector('.btn-user-sign'),
   formAuthorization: document.querySelector('.auth-modal'),
   signInButton: document.querySelector('#sign-in'),
   signUpButton: document.querySelector('#sign-up'),
@@ -18,9 +20,11 @@ export const refs = {
   menu: document.querySelector('[data-menu]'),
   homeLinkMobile: document.querySelector('.menu-nav-link'),
   shopLinkMobile: document.querySelector('.menu-nav-shop'),
+  menuNav: document.querySelector('.nav-user-menu'),
     // header
   homeLink: document.querySelector('.header-nav-link'),
   shopLink: document.querySelector('.header-nav-shop'),
+  headerNav: document.querySelector('.header-nav'),
   
 }
 
