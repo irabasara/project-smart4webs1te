@@ -2,6 +2,7 @@
 import { getBooksAPI } from './getBoorkAPI';
 import { refsBooks, onHome } from '../bestSellerBooks';
 import { all } from 'axios';
+import { Loading } from 'notiflix';
 
 
 const containerAll = document.querySelector('.all-categories')
@@ -13,13 +14,17 @@ allCat.addEventListener('click', onHome)
 
 allCat.classList.add('categories__item--active');
 
-getBooksAPI('category-list').then(({ data }) => renderAllCategories(data));
+getBooksAPI('category-list').then(({ data }) => {
+  renderAllCategories(data);
+    // Loading.remove()
+});
 
 function renderAllCategories(data) {
   let markup = data.map(({ list_name }) => {
     return `<li class="categories__item categories__link" data-category="${list_name}">${list_name}</li>`
   }).join('')
   containerAll.insertAdjacentHTML('beforeend', markup)
+
 }
 
 function onOpenCategory(e) {
@@ -43,10 +48,14 @@ function onOpenCategory(e) {
           // refsBooks.container.insertAdjacentHTML('beforebegin', `<h2 class="home-title-book">${titleCat.slice(0, titleCat.length - 1).join(" ")} <span class="books">${titleCat.pop()}
           // </span></h2> `)
           refsBooks.container.insertAdjacentHTML('beforeend', allBooks);
+
+
           refsBooks.bestBooks.textContent = renderCategory;
           refsBooks.bestBooks.classList.remove('is-hidden')
 
           refsBooks.btnBack.classList.add('is-hidden')
+  Loading.remove();
+
           if (data === 0) {
   Notiflix.Notify.failure('There are no books in this category');
 }

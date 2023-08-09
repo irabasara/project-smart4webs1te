@@ -1,5 +1,5 @@
 import { getBooksAPI } from "./js/getBoorkAPI";
-import Notiflix from 'notiflix';
+import Notiflix, { Loading } from 'notiflix';
 import { openModal } from "./js/modal-book";
 
 export const refsBooks = {
@@ -23,6 +23,7 @@ return getBooksAPI('top-books')
   .then(({ data }) => {
     refsBooks.container.insertAdjacentHTML('afterbegin', `<h2 class="home-title-book">Best  Sellers <span class="books">Books</span></h2>`)
     refsBooks.container.insertAdjacentHTML('beforeend', markupBlock(data))
+    Loading.remove()
     if (data === 0) {
   Notiflix.Notify.failure('There are no books in this category');
 }
@@ -43,15 +44,16 @@ export function markupBlock(data) {
        return `<div class="wrapper"><h3 class="js-list-name">${list_name}</h3 >
         <ul class="js-overlow-bestBooks">${markupList(books)}</ul>
         <btn class="js-btn-bestBooks" data-js="${list_name}">See more</btn></div>`
-    }).join('')
+  }).join('')
+  
 }
   
 function onLoadSeeMore(e) {
   e.preventDefault();
   if (e.target.classList.contains('img-bestBooks')) {
     const id = e.target.dataset.id;
-    console.log('id', id)
     e.target.addEventListener('click', openModal(id));
+    Loading.remove()
   }
   
   if (e.target.classList.contains('js-btn-bestBooks')) {
@@ -76,6 +78,7 @@ function onLoadSeeMore(e) {
         refsBooks.container.insertAdjacentHTML('beforeend', allBooks);
         refsBooks.btnBack.classList.remove('is-hidden')
         // refsBooks.bestBooks.classList.add('is-hidden')
+    Loading.remove()
           if (data === 0) {
             Notiflix.Notify.failure('There are no books in this category');
         }
