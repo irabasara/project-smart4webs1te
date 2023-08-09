@@ -6,29 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bookshelf</title>
     
-    <script type="module" crossorigin src="/project-smart4webs1te/assets/index-43862fad.js"></script>
-    <link rel="modulepreload" crossorigin href="/project-smart4webs1te/assets/footer-91d621a9.js">
-    <link rel="stylesheet" href="/project-smart4webs1te/assets/footer-80ac6c2d.css">
+    <script type="module" crossorigin src="/project-smart4webs1te/assets/index-9c477158.js"></script>
+    <link rel="modulepreload" crossorigin href="/project-smart4webs1te/assets/footer-eb9947bd.js">
+    <link rel="stylesheet" href="/project-smart4webs1te/assets/footer-03fa2083.css">
   </head>
 
   <body>
     <header class="header">
+  <a class="header-logo" href="./">
+    <img src="/project-smart4webs1te/assets/logo-00423362.svg" alt="logo" />
+    <img src="/project-smart4webs1te/assets/bookshelf-6a7e95da.svg" alt="bookshelf" class="bookshelf" />
+    <img
+      src="/project-smart4webs1te/assets/bookshelf__dark-theme-eb65f487.svg"
+      alt="bookshelf-dark"
+      class="bookshelf-dark"
+    />
+  </a>
 
-    <a class="header-logo" href="./" >
-      <img src="/project-smart4webs1te/assets/logo-00423362.svg" alt="logo">
-      <img src="/project-smart4webs1te/assets/bookshelf-6a7e95da.svg" alt="bookshelf" class="bookshelf">
-      <img src="/project-smart4webs1te/assets/bookshelf__dark-theme-eb65f487.svg" alt="bookshelf-dark" class="bookshelf-dark">
-    </a>
-
-  <nav class="header-nav" id="js-header-nav">
+  <nav class="header-nav is-hidden" id="js-header-nav">
     <ul class="header-nav-list">
       <li class="header-nav-item">
         <a href="./index.html" class="header-nav-link">home</a>
       </li>
       <li class="header-nav-item">
-        <a href="./shopping-list-page.html" class="header-nav-shop">shopping-list
-          <img src="/project-smart4webs1te/assets/cart-ae193ffb.svg" alt="cart" class="cart-icon-dark">
-          <img src="/project-smart4webs1te/assets/cart__dark-theme-73cf4d39.svg" alt="cart" class="cart-icon-white">
+        <a href="./shopping-list-page.html" class="header-nav-shop"
+          >shopping-list
+          <img src="/project-smart4webs1te/assets/cart-ae193ffb.svg" alt="cart" class="cart-icon-dark" />
+          <img
+            src="/project-smart4webs1te/assets/cart__dark-theme-73cf4d39.svg"
+            alt="cart"
+            class="cart-icon-white"
+          />
         </a>
       </li>
     </ul>
@@ -38,16 +46,13 @@
     <svg href="../img/symbol-defs.svg#icon-pagination-right"></svg>
   </use> -->
 
-  
-<div class="btns">
+  <div class="btns">
     <button type="button" class="switcher-btn">
       <!-- <img src="./img/switcher1.svg" alt="switcher1" width="40" height="24" class="switcher-btn"> -->
-      <svg class="switcher-btn-icon" width="40" height="24"> 
+      <svg class="switcher-btn-icon" width="40" height="24">
         <!-- <use href="./img/switcher1.svg" class="switcher-btn-icon"></use> -->
       </svg>
     </button>
-  
-   
 
     <button type="button" class="mob-close-btn is-hidden" data-menu-close>
       <svg class="mob-close" width="28" height="28">
@@ -56,32 +61,34 @@
     </button>
     <button class="mobile-menu" type="button" data-menu-open>
       <svg class="icon-menu-openburger" width="28" height="28">
-      <use href="/project-smart4webs1te/assets/sprite-577a1762.svg#icon-burger"></use>
+        <use href="/project-smart4webs1te/assets/sprite-577a1762.svg#icon-burger"></use>
       </svg>
     </button>
-  <div class="user-form">
-    <button id="js-modal-open" class="btn-user" type="button">
-      <p class="text-btn">Sign up</p>
-      <svg class="btn-user-click" width="20" height="20">
-      <use href="/project-smart4webs1te/assets/sprite-577a1762.svg#icon-arrow-right"></use>
-      </svg>
-    </button>
-    <button class="btn-user-out is-hidden" type="button">
-      <p class="text-btn-out">Log out</p>
-      <svg class="btn-user-click" width="20" height="20">
-      <use href="/project-smart4webs1te/assets/sprite-577a1762.svg#icon-arrow-right"></use>
-      </svg>
-    </button>
-     <!-- <button class="btn-user" type="button">
-       <svg class="btn-user-click" width="20" height="20">
-         <use href="./img/sprite.svg#icon-user"></use>
+    <div class="user-form">
+      <button id="js-modal-open" class="btn-user" type="button">
+        <p class="text-btn">Sign up</p>
+        <svg class="btn-user-click" width="20" height="20">
+          <use href="/project-smart4webs1te/assets/sprite-577a1762.svg#icon-arrow-right"></use>
+        </svg>
+      </button>
+
+      <button class="btn-user-sign is-hidden" type="button">
+        <svg width="20" height="20">
+          <use href="/project-smart4webs1te/assets/sprite-577a1762.svg#icon-user"></use>
         </svg>
         <p class="text-btn" id="user-sign-name"></p>
-    </button> -->
-    </select>
+        <svg class="icon-scroll-top" width="20" height="20">
+          <use href="/project-smart4webs1te/assets/sprite-577a1762.svg#icon-scroll-top"></use>
+        </svg>
+      </button>
+      <button class="btn-user-out is-hidden" type="button">
+        <p class="text-btn-out">Log out</p>
+        <svg class="btn-user-click" width="20" height="20">
+          <use href="/project-smart4webs1te/assets/sprite-577a1762.svg#icon-arrow-right"></use>
+        </svg>
+      </button>
+    </div>
   </div>
-</div>
-
 </header>
 
     <main>
@@ -194,13 +201,13 @@
     </svg>
   </button>
 
-  <div id="#js-menu-user" class="nav-user-menu">
-    <!-- <div class="user-menu">
+  <div id="#js-menu-user" class="nav-user-menu is-hidden">
+    <div class="user-menu">
       <svg width="30" height="30">
         <use href="../img/sprite.svg#icon-user"></use>
       </svg>
       <p class="user-name"></p>
-    </div> -->
+    </div>
     <nav class="menu-nav">
       <ul class="menu-nav-list">
         <li class="menu-nav-item">
@@ -219,6 +226,12 @@
         </li>
       </ul>
     </nav>
+    <button class="btn-user-out btn-user-out-mob" type="button">
+      <p class="text-btn-out">Log out</p>
+      <svg class="btn-user-click" width="20" height="20">
+        <use href="/project-smart4webs1te/assets/sprite-577a1762.svg#icon-arrow-right"></use>
+      </svg>
+    </button>
   </div>
 </div>
 
