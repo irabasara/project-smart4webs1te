@@ -6,7 +6,6 @@ export const refsBooks = {
 bestBooks: document.querySelector('.home-title-book'),
 container: document.querySelector('.js-container-bestBooks'),
 nameCat: document.querySelector('.js-add-name-category'),
-cover: document.querySelector('.js-coverAllBooks'),
 btnBack: document.querySelector('.back')
 }
 
@@ -73,7 +72,7 @@ function onLoadSeeMore(e) {
     //     <ul class="js-cover-AllBooks">${markupList(books)}</ul>
     //     <btn class="js-btn-bestBooks">Back</btn></div>`
     // }).join('')
-        refsBooks.container.insertAdjacentHTML('beforebegin', `<h2 class="home-title-book">${titleCat.slice(0, titleCat.length - 1).join(" ")} <span class="books">${titleCat.pop()}
+        refsBooks.container.insertAdjacentHTML('afterbegin', `<h2 class="home-title-book">${titleCat.slice(0, titleCat.length - 1).join(" ")} <span class="books">${titleCat.pop()}
           </span></h2> `)
         refsBooks.container.insertAdjacentHTML('beforeend', allBooks);
         refsBooks.btnBack.classList.remove('is-hidden')
