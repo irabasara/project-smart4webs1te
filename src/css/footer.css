@@ -3,6 +3,7 @@
     max-width: 1440px;
     height: 72px;
     margin: 0 auto;
+    border-top: 1px #888 solid;
 }
 
 .heard-container {
@@ -14,7 +15,7 @@
     height: 70px;
     overflow: hidden;
     transition: 0.4s linear 0.3s, box-shadow 0.01s linear;
-    animation: anime 0.5s infinite;
+    animation: anime 0.65s infinite;
 }
 
 .leftpart {
@@ -123,8 +124,9 @@
 
 .center h2 {
     text-align: center;
-    margin-bottom: 28px;
-    font-size: 32px;
+    margin-bottom: 32px;
+    font-size: 36px;
+    letter-spacing: 2px;
     line-height: 28px;
     color: white;
 }
@@ -134,25 +136,25 @@
     margin-bottom: 18px;
     color: white;
     letter-spacing: 2px;
-    transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 560px) {
     .heard-container.active {
-        width: calc(84vw - 2%);
-        top: -370%;
+        width: calc(90vw - 2%);
     }
 
     .rigthpart.active {
-        width: 42vw;
+        width: 45vw;
     }
 
     .leftpart.active {
-        width: 42vw;
+        width: 45vw;
     }
 
     .center.active {
-        width: 78vw;
+        width: 82vw;
     }
 }
 
@@ -162,10 +164,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(17, 17, 17, 0.4);
+    background-color: rgba(17, 17, 17, 0.518);
     opacity: 1;
     overflow-y: auto;
     transition: opacity var(---animation);
+    backdrop-filter: blur(2px);
 }
 
 .heard-backdrop.isHidden {
