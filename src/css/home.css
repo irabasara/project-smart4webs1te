@@ -31,7 +31,10 @@
     flex-wrap: wrap;
     flex-direction: column;
     align-items: flex-start;
-    gap: 18px;
+}
+
+.wrapper {
+    margin-bottom: 40px;
 }
 
 .home-title-book {
@@ -39,8 +42,7 @@
     font-weight: 700;
     line-height: 1.19;
     letter-spacing: -1.28px;
-    /* margin-bottom: 40px;
-    margin-left: 20px; */
+    margin-bottom: 40px;
 }
 
 .books {
@@ -58,7 +60,6 @@
     border: 2px solid #4F2EE8;
     margin-left: auto;
     margin-top: 8px;
-    margin-bottom: 40px;
     padding: 14px 28px;
     align-items: center;
     width: 124px;
@@ -78,14 +79,18 @@
     cursor: pointer;
 }
 
-.js-list-bestBooks,
-.js-list-allBooks {
+.js-list-bestBooks, .js-list-allBooks {
     width: 335px;
     list-style: none;
+    margin-bottom: 40px;
 }
 
-.js-list-allBooks:not:last-child {
-    margin-bottom: 20px;
+.js-list-allBooks {
+    margin-bottom: 40px;
+}
+
+.js-list-allBooks:last-child {
+    margin-bottom: 0px;
 }
 
 .js-list-name {
@@ -126,6 +131,10 @@
     margin-bottom: 40px;
 }
 
+.js-coverAllBooks:last-child {
+    margin-bottom: 0;
+}
+
 .js-add-name-category {
     font-size: 26px;
     font-weight: 400;
@@ -148,7 +157,7 @@
         font-size: 48px;
         line-height: 1.08;
         letter-spacing: -1.92px;
-        /* margin-left: 32px; */
+        margin-bottom: 0;
     }
 
     .js-cover-block {
@@ -173,16 +182,18 @@
     .js-list-bestBooks,
     .js-list-allBooks {
         width: calc((100% - 50px) / 3);
+        margin-bottom: 0;
     }
 
     .js-btn-bestBooks {
-        margin-top: 32px;
+        margin-top: 20px;
     }
 
     .js-coverAllBooks {
         display: flex;
         flex-wrap: wrap;
-        gap: 25px;
+        flex-direction: row;
+        margin-bottom: 0;
     }
 
     .js-add-name-category {
@@ -191,6 +202,19 @@
         letter-spacing: -1.92px;
         margin-left: 32px;
     }
+
+    .js-container-bestBooks {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px 25px;
+        margin-top: 40px;
+    }
+
+    .wrapper {
+        margin-bottom: 0;
+        width: 704px;
+    }
+
 }
 
 @media screen and (min-width: 1440px) {
@@ -199,10 +223,6 @@
         width: 996px;
         margin: 40px 24px 40px 40px;
     }
-/* 
-    .home-title-book {
-        margin-left: 40px;
-    } */
 
     .js-overlow-bestBooks {
         gap: 24px;
@@ -219,19 +239,18 @@
         width: calc((100% - 96px) / 5);
     }
 
-    .js-coverAllBooks {
-        gap: 24px;
-        margin-bottom: 80px;
-    }
+    .js-container-bestBooks {
+        gap: 40px 24px;
+        }
 
-    .js-add-name-category {
-        margin-left: 40px;
+    .wrapper {
+        width: 996px;
     }
 }
 
 @media screen and (max-width: 767px) {
 
-    .js-list-bestBooks:nth-of-type(n + 4) {
+    .js-list-bestBooks:nth-of-type(n + 2) {
         display: none;
     }
 }
