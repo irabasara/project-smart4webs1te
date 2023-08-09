@@ -36,7 +36,7 @@ function generateBookCardMarkup(booksArray) {
 
         <button class="book-card-delete">
         <svg class="book-card-icon">
-        <use href="img/sprite.svg#icon-trash"></use>
+        <use href="/project-smart4webs1te/src/img/sprite.svg#icon-trash"></use>
         </svg>
         </button>
       </div>
