@@ -41,7 +41,7 @@ function onOpenCategory(e) {
          allCat.classList.remove('categories__item--active');
           const allBooks = data.map(({ book_image, title, author, _id }) => {
           return `<li class="js-list-allBooks id=${_id}">
-          <img src="${book_image}" alt="${title}" loading="lazy" class="img-bestBooks"/>
+          <img src="${book_image}" alt="${title}" data-id="${_id}" loading="lazy" class="img-bestBooks"/>
           <h3 class="js-named-bestBooks">${title}</h3>
           <p class="js-autor-bestBooks">${author}</p>
           </li>`}).join('')
