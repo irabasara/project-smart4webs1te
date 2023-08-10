@@ -81,9 +81,13 @@
 	.categories {
 		margin: 40px auto;
 		width: 335px;
+		height: 230px;
 		font-size: 16px;
 		line-height: 18px;
 	}
+		.categories__item+.categories__item {
+			margin-top: 24px;
+		}
 }
 
 @media (min-width: 768px){
