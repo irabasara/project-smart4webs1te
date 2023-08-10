@@ -36,7 +36,7 @@ export function markupList(books) {
             <img src="${book_image}" alt="${title}" data-id="${_id}" loading="lazy" class="img-bestBooks"/>
             <h3 class="js-named-bestBooks">${title}</h3>
             <p class="js-autor-bestBooks">${author}</p>
-            <div class="card-hover-categories"><p class="card-text-hover">quick view</p></div>
+            <div class="card-hover-categories" data-id="${_id}"><p class="card-text-hover">quick view</p></div>
         </li>`}).join('');
 }
 
@@ -57,7 +57,7 @@ function onLoadSeeMore(e) {
     Loading.remove()
   }
   
-  if (e.target.classList.contains('js-btn-bestBooks')) {
+  if (e.target.classList.contains('js-btn-bestBooks') || e.target.classList.contains('card-hover-categories') || e.target.classList.contains('card-text-hover')) {
     let seeMoreCategory = e.target.dataset.js;
     refsBooks.container.innerHTML = "";
     getBooksAPI(`category?category=${seeMoreCategory}`)
@@ -69,7 +69,7 @@ function onLoadSeeMore(e) {
           <img src="${book_image}" alt="${title}" data-id="${_id}" loading="lazy" class="img-bestBooks"/>
           <h3 class="js-named-bestBooks">${title}</h3>
           <p class="js-autor-bestBooks">${author}</p>
-          <div class="card-hover-categories"><p class="card-text-hover">quick view</p></div>
+          <div class="card-hover-categories" data-id="${_id}"><p class="card-text-hover">quick view</p></div>
           </li>`}).join('')
     //     return `<div class="wrapper_2">
     //     <ul class="js-cover-AllBooks">${markupList(books)}</ul>
@@ -97,4 +97,3 @@ export function onHome(e) {
   refsBooks.container.innerHTML = "";
   window.location.assign('./')
 }
-
