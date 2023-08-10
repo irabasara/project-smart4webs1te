@@ -34,7 +34,7 @@ export function markupList(books) {
             <img src="${book_image}" alt="${title}" data-id="${_id}" loading="lazy" class="img-bestBooks"/>
             <h3 class="js-named-bestBooks">${title}</h3>
             <p class="js-autor-bestBooks">${author}</p>
-            <div class="card-hover-categories" data-id="${_id}"><p class="card-text-hover">quick view</p></div>
+            <div class="card-hover-categories" data-id="${_id}"><p class="card-text-hover" data-id="${_id}">quick view</p></div>
         </li>`}).join('');
 }
 
@@ -48,14 +48,17 @@ export function markupBlock(data) {
 }
   
 function onLoadSeeMore(e) {
+
   e.preventDefault();
-  if (e.target.classList.contains('img-bestBooks')) {
+  console.log('e.target', e.target)
+  if (e.target.classList.contains('card-hover-categories')|| e.target.classList.contains('card-text-hover')) {
     const id = e.target.dataset.id;
+    console.log('id', id)
     e.target.addEventListener('click', openModal(id));
     Loading.remove()
   }
   
-  if (e.target.classList.contains('js-btn-bestBooks') || e.target.classList.contains('card-hover-categories') || e.target.classList.contains('card-text-hover')) {
+  if (e.target.classList.contains('js-btn-bestBooks')) {
     let seeMoreCategory = e.target.dataset.js;
     refsBooks.container.innerHTML = "";
     getBooksAPI(`category?category=${seeMoreCategory}`)
@@ -67,7 +70,7 @@ function onLoadSeeMore(e) {
           <img src="${book_image}" alt="${title}" data-id="${_id}" loading="lazy" class="img-bestBooks"/>
           <h3 class="js-named-bestBooks">${title}</h3>
           <p class="js-autor-bestBooks">${author}</p>
-          <div class="card-hover-categories" data-id="${_id}"><p class="card-text-hover">quick view</p></div>
+          <div class="card-hover-categories" data-id="${_id}"><p class="card-text-hover" data-id="${_id}">quick view</p></div>
           </li>`}).join('')
         refsBooks.container.insertAdjacentHTML('afterbegin', `<h2 class="home-title-book">${titleCat.slice(0, titleCat.length - 1).join(" ")} <span class="books">${titleCat.pop()}
           </span></h2> `)
