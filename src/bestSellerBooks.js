@@ -6,7 +6,6 @@ export const refsBooks = {
 bestBooks: document.querySelector('.home-title-book'),
 container: document.querySelector('.js-container-bestBooks'),
 nameCat: document.querySelector('.js-add-name-category'),
-cover: document.querySelector('.js-coverAllBooks'),
 btnBack: document.querySelector('.back')
 }
 
@@ -16,7 +15,6 @@ refsBooks.container.addEventListener('click', onLoadSeeMore);
 refsBooks.btnBack.addEventListener('click', onHome)
 
 homeStart()
-
 
 export function homeStart() {
 return getBooksAPI('top-books')
@@ -71,24 +69,17 @@ function onLoadSeeMore(e) {
           <p class="js-autor-bestBooks">${author}</p>
           <div class="card-hover-categories" data-id="${_id}"><p class="card-text-hover">quick view</p></div>
           </li>`}).join('')
-    //     return `<div class="wrapper_2">
-    //     <ul class="js-cover-AllBooks">${markupList(books)}</ul>
-    //     <btn class="js-btn-bestBooks">Back</btn></div>`
-    // }).join('')
-        refsBooks.container.insertAdjacentHTML('beforebegin', `<h2 class="home-title-book">${titleCat.slice(0, titleCat.length - 1).join(" ")} <span class="books">${titleCat.pop()}
+        refsBooks.container.insertAdjacentHTML('afterbegin', `<h2 class="home-title-book">${titleCat.slice(0, titleCat.length - 1).join(" ")} <span class="books">${titleCat.pop()}
           </span></h2> `)
         refsBooks.container.insertAdjacentHTML('beforeend', allBooks);
         refsBooks.btnBack.classList.remove('is-hidden')
-        // refsBooks.bestBooks.classList.add('is-hidden')
     Loading.remove()
           if (data === 0) {
             Notiflix.Notify.failure('There are no books in this category');
         }
         })
           .catch(error => console.error(error))
-          
-  } return
-
+    } 
 }
 
 export function onHome(e) {

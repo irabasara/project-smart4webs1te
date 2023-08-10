@@ -17,7 +17,7 @@
 }
 
 @media screen and (max-width: 767px){
-   .btn-user-out-mob{
+   /* .btn-user-out-mob{
     button.btn-user-out {
             width: 118px;
             background: var(--white);
@@ -34,7 +34,7 @@
             line-height: 1.29;
             letter-spacing: -0.56px;
         }
-   }
+   } */
     .sign-btn.is-hidden{
         display: none;
     }
@@ -44,27 +44,55 @@
         gap: 9px;
         align-items: center;
         fill: #FFF;
+    }
+       
+         .nav-user-menu{
+      position: relative;
+      height: 100%;
+         }
+        .nav-user-menu.is-hidden{
         display: none;
-    }
-    .user-name{
+        }
+        .nav-user-menu .btn-user-out-mob {
+        width: 118px;
+        stroke: var(--accent-color);
+        position: absolute;
+        top: 70%;
+        left: 20px;
+        background: var(--white);
+        height: 48px;
+        border-radius: 18px;
+        border: 1.5px solid #111;
+        gap: 4px;
+        padding: 14px;
+        display: flex;
+        color: #111;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.29;
+        letter-spacing: -0.56px;
+         }
+        .user-name{
         color: #FFF;
-            font-size: 22px;
-            font-style: normal;
-            line-height: normal;
-            letter-spacing: -0.44px;
-    }
+        font-style: normal;
+        text-transform: uppercase;
+        line-height: normal;
+        letter-spacing: -0.44px;
+        font-size: 22px;
+        }
         .menu-nav{
          margin-top: 20vh;
         }
    
         .menu-nav-list {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
+        justify-content: center;
+        display: flex;
+        gap: 16px;
+        flex-direction: column;
+        align-items: center;
         }
-    
+        
         .menu-nav-link.active,
                 .menu-nav-shop.active {
             background: var(--accent-color);
@@ -94,6 +122,8 @@
             letter-spacing: -0.56px;
             text-transform: uppercase;
         }
+           
+        
 }
 
 
@@ -149,6 +179,9 @@ font-family: DM Sans;
 font-size: 14px;
 line-height: 1.28;
 letter-spacing: -0.56px;
+}
+.sign-btn.is-hidden{
+    display: none;
 }
 
 .svg-arrow {

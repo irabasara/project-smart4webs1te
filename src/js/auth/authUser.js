@@ -2,6 +2,7 @@
 import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword, updateProfile, signOut } from "firebase/auth";
 import { app } from "./firebase-app";
 import { Notify } from "notiflix";
+import { userProfile } from "./user-profile";
 
 const auth = getAuth(app);
 
@@ -10,6 +11,7 @@ export let user = {
   email: '',
   isSignedIn: false,
 };
+
 
 export async function authUser(email,password) {
  await createUserWithEmailAndPassword(auth, email, password)
@@ -20,7 +22,8 @@ export async function authUser(email,password) {
       })
       user.userId = userCur.uid;
       user.isSignedIn = true;
-    localStorage.setItem('USER', JSON.stringify(user))
+      localStorage.setItem('USER', JSON.stringify(user))
+      userProfile(user.name)
     Notify.success(`New user ${user.name} created`);
     })
    
@@ -36,6 +39,8 @@ export async function signInUser(email,password) {
       user.name = userCur.displayName;
       user.userId = userCur.uid;
       user.isSignedIn = true;
+      localStorage.setItem('USER', JSON.stringify(user))
+      userProfile(user.name)
        Notify.success(`Sign in is succses, ${user.name} `);
     })
    .catch(error => {
@@ -44,16 +49,16 @@ export async function signInUser(email,password) {
     });
 }
 
-// export async function logOutUser() {
-//   await signOut(auth).then(() => {
-//       user.isSignedIn = false;
-//       localStorage.removeItem('USER')
-//       Notify.success(`Sign-out successful`);
-//   }).catch((error) => {
-//       console.log('error', error)
-//   alert(error.message)
-// });
-// }
+export async function logOutUser() {
+  await signOut(auth).then(() => {
+      user.isSignedIn = false;
+      localStorage.removeItem('USER')
+      Notify.success(`Sign-out successful`);
+  }).catch((error) => {
+      console.log('error', error)
+  alert(error.message)
+});
+}
 
 
 
