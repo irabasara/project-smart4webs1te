@@ -16,7 +16,6 @@ allCat.classList.add('categories__item--active');
 
 getBooksAPI('category-list').then(({ data }) => {
   renderAllCategories(data);
-    // Loading.remove()
 });
 
 function renderAllCategories(data) {
@@ -51,8 +50,6 @@ function onOpenCategory(e) {
           .join(" ")} <span class="books">${titleCat
           .pop()}</span></h2>`)
       refsBooks.container.insertAdjacentHTML('beforeend', allBooks);
-      //     // refsBooks.bestBooks.textContent = renderCategory;
-      //     // refsBooks.bestBooks.classList.remove('is-hidden')
       refsBooks.btnBack.classList.add('is-hidden')
 
   Loading.remove();
