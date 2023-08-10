@@ -16,7 +16,6 @@ refsBooks.btnBack.addEventListener('click', onHome)
 
 homeStart()
 
-
 export function homeStart() {
 return getBooksAPI('top-books')
   .then(({ data }) => {
@@ -68,24 +67,17 @@ function onLoadSeeMore(e) {
           <h3 class="js-named-bestBooks">${title}</h3>
           <p class="js-autor-bestBooks">${author}</p>
           </li>`}).join('')
-    //     return `<div class="wrapper_2">
-    //     <ul class="js-cover-AllBooks">${markupList(books)}</ul>
-    //     <btn class="js-btn-bestBooks">Back</btn></div>`
-    // }).join('')
         refsBooks.container.insertAdjacentHTML('afterbegin', `<h2 class="home-title-book">${titleCat.slice(0, titleCat.length - 1).join(" ")} <span class="books">${titleCat.pop()}
           </span></h2> `)
         refsBooks.container.insertAdjacentHTML('beforeend', allBooks);
         refsBooks.btnBack.classList.remove('is-hidden')
-        // refsBooks.bestBooks.classList.add('is-hidden')
     Loading.remove()
           if (data === 0) {
             Notiflix.Notify.failure('There are no books in this category');
         }
         })
           .catch(error => console.error(error))
-          
-  } return
-
+    } 
 }
 
 export function onHome(e) {
