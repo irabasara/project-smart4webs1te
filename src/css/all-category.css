@@ -26,10 +26,6 @@
     background-color: var(--background-main);
 }
 
-/* .categories__inner {
-	margin-right: 28px;
-} */
-
 .categories__list {
     display: block;
 	margin: 0;
@@ -37,9 +33,7 @@
 }
 
 .categories__list:first-child{
-	/* font-weight: 500; */
 		color: var(--main-color);
-		/* text-transform: uppercase; */
 } 
 
 .categories__item + .categories__item {
@@ -114,7 +108,4 @@
 	.categories__list{
 		padding-left: 40px;
 	}
-		/* .container {
-			margin-left: 50px;
-		} */
 }

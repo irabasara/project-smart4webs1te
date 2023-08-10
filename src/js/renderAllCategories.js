@@ -28,7 +28,6 @@ function renderAllCategories(data) {
 
 function onOpenCategory(e) {
   e.preventDefault();
-
     if (e.target.classList.contains('categories__item')) {
       let renderCategory = e.target.dataset.category;
       refsBooks.container.innerHTML = "";
@@ -43,6 +42,7 @@ function onOpenCategory(e) {
           <img src="${book_image}" alt="${title}" data-id="${_id}" loading="lazy" class="img-bestBooks"/>
           <h3 class="js-named-bestBooks">${title}</h3>
           <p class="js-autor-bestBooks">${author}</p>
+          <div class="card-hover-categories" data-id="${_id}"><p class="card-text-hover" data-id="${_id}">quick view</p></div>
           </li>`}).join('')
         
       refsBooks.container.insertAdjacentHTML('afterbegin', `<h2 class="home-title-book">${titleCat

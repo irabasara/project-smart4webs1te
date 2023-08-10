@@ -181,7 +181,7 @@
     }
 
     .img-bestBooks {
-        max-width: 218px;
+        width: 218px;
         height: 316px;
     }
 
@@ -232,10 +232,10 @@
 
     .home-title-book {                
         width: 996px;
-}
+    }
 
     .img-bestBooks {
-        max-width: 180px;
+        width: 180px;
         height: 256px;
     }
 
@@ -265,5 +265,45 @@
     .js-list-bestBooks:nth-of-type(n + 4) {
         display: none;
     }
+}
+
+.card-hover-categories {
+    width: 100%;
+    height: 70px;
+    background-color: var(--accent-color);
+    border-radius: 0px 0px 8px 8px;
+    position: relative;
+    bottom: 50px;
+    left: 0;
+    transform: translateY(0);   
+    visibility: hidden; 
+    opacity: 0;
+    pointer-events: none;
+    color: var(--main-textcolor);
+    font-size: 14px;
+    line-height: 1.28;
+    letter-spacing: -0.56px;
+    text-transform: uppercase;
+    transition: opacity var(---animation);
     
 }
+.js-list-allBooks:hover .card-hover-categories,
+.js-list-bestBooks:hover .card-hover-categories {
+    transform: translateY(-70px);
+    visibility: visible;
+    opacity: 1;
+    pointer-events: visible;
+    cursor: pointer;
+}
+
+.js-list-bestBooks {
+    overflow: hidden;
+}
+
+.card-text-hover {
+    text-align: center;
+    padding-top: 26px;
+}
+
+
+
