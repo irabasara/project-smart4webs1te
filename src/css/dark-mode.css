@@ -29,7 +29,6 @@
   width: 42px;
   height: 27px;
   border: none;
-  /* transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); */
   background: url(/img/switcher-left.svg);
 }
 .theme-switcher.active,
@@ -38,22 +37,21 @@
 }
 
 .menu-nav-shop,
-.menu-nav-link {
-  color: var(--white);
-}
-
-/* .dark .menu-nav-shop, */
+.menu-nav-link,
 .dark .logo-text,
 .dark .header-nav-link,
 .dark .header-nav-shop,
 .dark .home-title-book,
 .dark .js-named-bestBooks,
 .dark .js-btn-bestBooks,
-.dark .menu-nav-shop,
 .dark .shopping-header,
 .dark .book-description,
 .dark .book-title,
-.dark .shopping-header {
+.dark .shopping-header,
+.dark .modal-content-title,
+.dark .modal-content-abst,
+.dark .modal-add-btn,
+.dark .modal-remove-btn {
   color: var(--white);
 }
 
@@ -66,19 +64,23 @@
   color: #fff9;
 }
 
+.dark .modal-text {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 .dark .empty-list-text {
   color: rgba(255, 255, 255, 0.6);
 }
 
 .dark .mob-close,
-.dark .icon-menu-openburger {
+.dark .icon-menu-openburger,
+.dark .modal-svg-close {
   stroke: var(--white);
 }
 
 .dark header {
   border-radius: 0px 0px 8px 8px;
   border: 1.5px solid var(--white);
-  /* background-color: var(--main-textcolor); */
 }
 
 .theme-switch.active {
@@ -90,7 +92,10 @@
   background-color: var(--white);
 }
 
-.dark {
+.dark,
+.dark .modal-wrap,
+.dark .modal-add-btn,
+.dark .modal-remove-btn {
   background-color: var(--background-dark);
 }
 
@@ -115,7 +120,6 @@
 }
 
 .dark .categories::-webkit-scrollbar-track {
-  /* background: 0 0; */
   background-color: var(--background-dark);
 }
 
@@ -169,8 +173,3 @@
 .active .cart-icon-white {
   display: none;
 }
-
-/* .dark .header-nav-link.active,
-.dark .header-nav-shop.active {
-  color: var(--main-textcolor);
-} */

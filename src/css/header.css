@@ -1,5 +1,5 @@
 /**!-------------------------media-mobile----------------------------!*/
-.is-hidden{
+.is-hidden {
   opacity: 0;
   display: none;
 }
@@ -15,24 +15,25 @@ button.btn-user-out {
   padding: 14px;
   display: flex;
   justify-content: space-between;
-          color: #111;
-          font-size: 14px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 1.29;
-            letter-spacing: -0.56px;
+  color: #111;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.29;
+  letter-spacing: -0.56px;
 }
 .text-btn-out {
-  color: #111;
+  color: var(--main-textcolor);
+  font-weight: bold;
 }
-.header-nav{
+.header-nav {
   display: none;
 }
 .header {
   max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 18px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 18px 20px;
   display: flex;
   align-items: center;
   height: 64px;
@@ -70,15 +71,12 @@ button.btn-user-out {
   stroke: #111111;
 }
 
-
 /**!-------------------------media-tabl----------------------------!*/
 
-
-@media screen and (min-width: 768px){
-
+@media screen and (min-width: 768px) {
   .header {
-      padding-right: 32px;
-        padding-left: 32px;
+    padding-right: 32px;
+    padding-left: 32px;
     display: flex;
     align-items: center;
     height: 72px;
@@ -93,9 +91,9 @@ button.btn-user-out {
     gap: 8px;
     margin-right: 40px;
   }
-    .header-nav{
-      display: block;
-    }
+  .header-nav {
+    display: block;
+  }
   .header-nav-list {
     display: flex;
     align-items: center;
@@ -116,7 +114,8 @@ button.btn-user-out {
     border-radius: 36px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
-  .header-nav-shop,.header-nav-link {
+  .header-nav-shop,
+  .header-nav-link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -140,7 +139,6 @@ button.btn-user-out {
   .btn-toggle {
     background: none;
     border: none;
-    
   }
   .btns {
     gap: 24px;
@@ -148,7 +146,103 @@ button.btn-user-out {
 
   .user-form {
     display: grid;
+  }
+  .btn-user {
+    width: 184px;
+    height: 48px;
+    border-radius: 36px;
+    border: 1.5px solid #111;
+    background: var(--main-color);
+    gap: 90px;
+    padding: 14px;
+    display: flex;
+  }
+  .btn-user-sign {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 22px;
+    width: 184px;
+    height: 48px;
+    border-radius: 18px;
+    border: 1.5px solid #111;
+    background: var(--main-color);
+    padding: 15px 14px 15px 14px;
+    stroke: var(--white);
+    fill: var(--white);
+  }
+  .btn-user-sign.is-hidden {
+    display: none;
+  }
+  .icon-scroll-top {
+    /* transform: rotate(90%) */
+    rotate: 180deg;
+  }
 
+  .text-btn {
+    color: #fff;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.29;
+    letter-spacing: -0.56px;
+  }
+
+  .btn-user-click {
+    stroke: var(--accent-color);
+  }
+}
+
+/**!-------------------------media-desktop----------------------------!*/
+
+@media screen and (min-width: 1440px) {
+  .header {
+    max-width: 1440px;
+    display: flex;
+    align-items: center;
+    height: 72px;
+    border-radius: 0px 0px 8px 8px;
+    border: 1.5px solid #111;
+    background: var(--white);
+  }
+  .header-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 76px;
+  }
+
+  .header-nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .header-nav-shop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    color: #111;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.29;
+    letter-spacing: -0.56px;
+    text-transform: uppercase;
+  }
+
+  .btns {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+  .btn-toggle {
+    background: none;
+    border: none;
   }
   .btn-user {
     width: 184px;
@@ -157,126 +251,23 @@ button.btn-user-out {
     border: 1.5px solid #111;
     background: var(--main-color);
     gap: 90px;
-    padding: 14px;
+    padding: 15px 14px 15px 14px;
     display: flex;
   }
-    .btn-user-sign {
-      position: relative;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      text-transform: uppercase;
-      font-size: 22px;
-      width: 184px;
-      height: 48px;
-      border-radius: 18px;
-      border: 1.5px solid #111;
-      background: var(--main-color);
-      padding: 15px 14px 15px 14px;
-      stroke: var(--white);
-      fill: var(--white);
-    }
-        .btn-user-sign.is-hidden{
-          display: none;
-        }
-     .icon-scroll-top{
-      /* transform: rotate(90%) */
-      rotate: 180deg;
-     }
-
-    
-        
-  
-  .text-btn {
-  color: #FFF;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.29;
-  letter-spacing: -0.56px;
+  .btn-user.is-hidden {
+    display: none;
   }
-  
+
+  .text-btn {
+    color: #fff;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.29;
+    letter-spacing: -0.56px;
+  }
+
   .btn-user-click {
     stroke: var(--accent-color);
   }
-  }
-
-  /**!-------------------------media-desktop----------------------------!*/
-
-@media screen and (min-width: 1440px){
-
-.header {
-  max-width: 1440px;
-  display: flex;
-  align-items: center;
-  height: 72px;
-  border-radius: 0px 0px 8px 8px;
-  border: 1.5px solid #111;
-  background: var(--white);
-}
-.header-logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-right: 76px;
-}
-
-.header-nav-list {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-}
-
-.header-nav-shop {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-  color: #111;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.29;
-  letter-spacing: -0.56px;
-  text-transform: uppercase;
-}
-
-.btns {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-}
-.btn-toggle {
-  background: none;
-  border: none;
-}
-.btn-user {
-  width: 184px;
-  height: 48px;
-  border-radius: 18px;
-  border: 1.5px solid #111;
-  background: var(--main-color);
-  gap: 90px;
-  padding: 15px 14px 15px 14px;
-  display: flex;
-}
-.btn-user.is-hidden{
-  display: none;
-}
-
-
-
-.text-btn {
-color: #FFF;
-font-size: 14px;
-font-style: normal;
-font-weight: 500;
-line-height: 1.29;
-letter-spacing: -0.56px;
-}
-
-.btn-user-click {
-  stroke: var(--accent-color);
-}
 }
