@@ -1,4 +1,4 @@
-import{a as k,b as m,c as b}from"./footer-eb9947bd.js";function f(e){let o='<ul class="shopping-list">';e.map(t=>{const{_id:i,book_image:l,title:c,description:n,author:d,list_name:p,buy_links:s}=t,u=r("Amazon",s),g=r("Apple Books",s),h=r("Bookshop",s);o+=` <li class="book-card" id="${i}">
+import{a as k,b as m,c as b}from"./footer-259eba89.js";function f(e){let o='<ul class="shopping-list">';e.map(t=>{const{_id:i,book_image:l,title:c,description:n,author:d,list_name:p,buy_links:s}=t,u=r("Amazon",s),g=r("Apple Books",s),h=r("Bookshop",s);o+=` <li class="book-card" id="${i}">
       <div class="shopping-image-thumb">
         <img src="${l}" alt="" />
       </div>
