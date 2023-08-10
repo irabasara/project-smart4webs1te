@@ -1,6 +1,12 @@
+main {
+    min-height: calc(100vh - 144px - 40px);
+    margin-bottom: 40px;
+}
+
 .footer {
     position: relative;
     max-width: 1440px;
+    width: 100%;
     height: 72px;
     margin: 0 auto;
     border-top: 1px #888 solid;
@@ -139,6 +145,11 @@
     transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+@media screen and (max-width: 768px) {
+    main {
+        min-height: calc(100vh - 64px + 72px);
+    }
+}
 
 @media screen and (max-width: 560px) {
     .heard-container.active {
