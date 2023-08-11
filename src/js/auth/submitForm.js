@@ -1,7 +1,4 @@
-
-
 import { Report } from "notiflix";
-import { closeModal } from "../modal";
 import { refs } from "../refs";
 import { authUser, signInUser,user } from "./authUser";
 
@@ -16,10 +13,6 @@ function handleFormAuth(event) {
 
   user.name = name.value;
   user.email = email.value;
-
-  // if (!email.value || !password.value ) {
-  //   Notify.failure('please fill all fields')
-  // }
   
   if (refs.submitButton.textContent === 'Sign up') {
     if (!email.value || !password.value || !name.value) {
@@ -38,7 +31,6 @@ function handleFormAuth(event) {
   }
   
   event.currentTarget.reset();
-  closeModal()
 }
 
 

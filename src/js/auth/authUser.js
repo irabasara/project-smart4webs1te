@@ -1,9 +1,12 @@
-
 import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword, updateProfile, signOut } from "firebase/auth";
 import { app } from "./firebase-app";
-import { Notify } from "notiflix";
+import { Notify, Report } from "notiflix";
 import { userProfile } from "./user-profile";
+import { closeModal } from "../modal";
 
+const notifyOption = {
+  position:'center-top',
+}
 const auth = getAuth(app);
 
 export let user = {
@@ -24,12 +27,18 @@ export async function authUser(email,password) {
       user.isSignedIn = true;
       localStorage.setItem('USER', JSON.stringify(user))
       userProfile(user.name)
-    Notify.success(`New user ${user.name} created`);
+    Notify.success(`New user ${user.name} created`,notifyOption);
     })
    
-    .catch(error => {
-       alert(error.message)
-    });
+   .catch(error => {
+     if (error.message === 'Firebase: Error (auth/email-already-in-use).') {
+       Notify.failure('this user is already regulated', notifyOption);
+     } else {
+        Notify.failure(error.message, notifyOption)
+     }
+   });
+  if(user.isSignedIn)closeModal()
+  
 }  
 
 export async function signInUser(email,password) {
@@ -41,22 +50,22 @@ export async function signInUser(email,password) {
       user.isSignedIn = true;
       localStorage.setItem('USER', JSON.stringify(user))
       userProfile(user.name)
-       Notify.success(`Sign in is succses, ${user.name} `);
+       Notify.success(`Sign in is succses, ${user.name} `,notifyOption);
     })
    .catch(error => {
-      console.log('error', error)
-       alert(error.message)
-    });
+         Report.failure('wrong password or email',notifyOption)
+   });
+  if(user.isSignedIn)closeModal()
+  
 }
 
 export async function logOutUser() {
   await signOut(auth).then(() => {
       user.isSignedIn = false;
       localStorage.removeItem('USER')
-      Notify.success(`Sign-out successful`);
+      Notify.success(`Sign-out successful`,notifyOption);
   }).catch((error) => {
-      console.log('error', error)
-  alert(error.message)
+    Notify.failure(error.message,notifyOption)
 });
 }
 

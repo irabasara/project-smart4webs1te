@@ -15,7 +15,6 @@ export async function getBooksAPI(endPoint) {
     return response;
   } catch (error) {
     Loading.remove()
-
     console.error(error);
   }
 }

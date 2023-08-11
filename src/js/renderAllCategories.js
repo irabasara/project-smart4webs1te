@@ -1,7 +1,6 @@
 
 import { getBooksAPI } from './getBoorkAPI';
 import { refsBooks, onHome, markupList } from '../bestSellerBooks';
-import { all } from 'axios';
 import { Loading } from 'notiflix';
 
 

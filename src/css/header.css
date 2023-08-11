@@ -5,7 +5,7 @@
 }
 button.btn-user-out {
   position: absolute;
-  top: 11%;
+  top: 56px;
   width: 184px;
   background: var(--white);
   height: 48px;
@@ -47,9 +47,6 @@ button.btn-user-out {
   gap: 8px;
   margin-right: 144px;
 }
-/* .header-nav-list {
-  display: none;
-} */
 .user-form {
   display: none;
 }
@@ -148,7 +145,6 @@ button.btn-user-out {
     display: grid;
   }
   .btn-user {
-    width: 184px;
     height: 48px;
     border-radius: 36px;
     border: 1.5px solid #111;
@@ -165,8 +161,8 @@ button.btn-user-out {
     text-transform: uppercase;
     font-size: 22px;
     width: 184px;
-    height: 48px;
-    border-radius: 18px;
+    height: 40px;
+    border-radius: 36px;
     border: 1.5px solid #111;
     background: var(--main-color);
     padding: 15px 14px 15px 14px;
@@ -177,7 +173,6 @@ button.btn-user-out {
     display: none;
   }
   .icon-scroll-top {
-    /* transform: rotate(90%) */
     rotate: 180deg;
   }
 
@@ -247,7 +242,7 @@ button.btn-user-out {
   .btn-user {
     width: 184px;
     height: 48px;
-    border-radius: 18px;
+    border-radius: 36px;
     border: 1.5px solid #111;
     background: var(--main-color);
     gap: 90px;

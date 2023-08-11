@@ -7,8 +7,8 @@
     background-color: var(--main-color);
     opacity: 1;
     overflow: hidden;
-    transition: opacity var(--animation),
-        visibility var(--animation);
+    transition: opacity var(---animation),
+        visibility var(---animation);
 }
  .backdrop.is-hidden-auth {
     opacity: 0;
@@ -28,7 +28,7 @@
             border-radius: 18px;
             border: 2px solid var(--main-textcolor);
             transform: translateX(-50%) translateY(-50%) scale(1);
-            transition: transform var(--animation);
+            transition: transform var(---animation);
         }
     
         .auth-close-btn {
@@ -42,7 +42,7 @@
             border: none;
             background-color: transparent;
             transform: scale(1);
-            transition: stroke var(--animation);
+            transition: stroke var(---animation);
         }
     
         .auth-close-btn:hover,
@@ -90,7 +90,7 @@
             line-height: 112.5%;
             letter-spacing: -0.16px;
             text-transform: uppercase;
-            transition: background-color var(--animation);
+            transition: background-color var(---animation);
         }
     
         .sign-up:active,
@@ -113,7 +113,7 @@
             line-height: 112.5%;
             letter-spacing: -0.16px;
             text-transform: uppercase;
-            transition: color var(--animation);
+            transition: color var(---animation);
             background-color: transparent;
         }
         .auth-sign-btn button.active{
@@ -126,8 +126,6 @@
         color: var(--background-main);
            
         }
-        
-/* } */
 
 
  @media screen and (min-width: 768px) {
