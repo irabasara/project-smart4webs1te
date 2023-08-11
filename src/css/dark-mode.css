@@ -72,6 +72,10 @@
   background-color: var(--background-dark);
 }
 
+.dark .modal-wrap {
+  border: 2px solid #fff;
+}
+
 .dark .categories__item--active a {
   font-weight: 700;
   color: var(--accent-color);
