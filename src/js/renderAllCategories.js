@@ -1,6 +1,6 @@
 
 import { getBooksAPI } from './getBoorkAPI';
-import { refsBooks, onHome, markupList } from '../bestSellerBooks';
+import { refsBooks, onHome, markupList, scroll} from '../bestSellerBooks';
 import { Loading } from 'notiflix';
 
 
@@ -50,7 +50,7 @@ function onOpenCategory(e) {
           .pop()}</span></h2>`)
       refsBooks.container.insertAdjacentHTML('beforeend', allBooks);
       refsBooks.btnBack.classList.add('is-hidden')
-
+  scroll()
   Loading.remove();
 
           if (data === 0) {
@@ -60,5 +60,4 @@ function onOpenCategory(e) {
         .catch(error => console.error(error))
 } 
 }
-
 
