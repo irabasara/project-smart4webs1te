@@ -74,6 +74,7 @@ function onLoadSeeMore(e) {
           </span></h2> `)
         refsBooks.container.insertAdjacentHTML('beforeend', allBooks);
         refsBooks.btnBack.classList.remove('is-hidden')
+        scroll()
     Loading.remove()
           if (data === 0) {
             Notiflix.Notify.failure('There are no books in this category');
@@ -88,4 +89,17 @@ export function onHome(e) {
   refsBooks.btnBack.classList.add('is-hidden')
   refsBooks.container.innerHTML = "";
   window.location.assign('./')
+}
+
+export function scroll() {
+  const { height: aside } = document
+    .querySelector(".aside-wrapper")
+    .getBoundingClientRect();
+
+  if (window.innerWidth < 768) {
+    window.scrollBy({
+      top: aside,
+      behavior: "smooth",
+    });
+  }
 }
