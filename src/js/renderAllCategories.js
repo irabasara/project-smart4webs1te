@@ -1,6 +1,6 @@
 
 import { getBooksAPI } from './getBoorkAPI';
-import { refsBooks, onHome, markupList, scroll} from '../bestSellerBooks';
+import { refsBooks, onHome, scroll} from '../bestSellerBooks';
 import { Loading } from 'notiflix';
 
 

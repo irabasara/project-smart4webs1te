@@ -74,7 +74,6 @@ function onLoadSeeMore(e) {
           </span></h2> `)
         refsBooks.container.insertAdjacentHTML('beforeend', allBooks);
         refsBooks.btnBack.classList.remove('is-hidden')
-        scroll()
     Loading.remove()
           if (data === 0) {
             Notiflix.Notify.failure('There are no books in this category');
