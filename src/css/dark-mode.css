@@ -141,3 +141,9 @@
 .dark .js-btn-bestBooks {
   background-color: var(--background-dark);
 }
+
+.dark .js-btn-bestBooks:hover, 
+.dark .js-btn-bestBooks:focus {
+  background-color: var(--accent-color);
+  color: #000;
+}

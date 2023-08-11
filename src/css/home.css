@@ -82,14 +82,17 @@
     overflow: hidden;
 }
 
-.js-btn-bestBooks:hover {
+.js-btn-bestBooks:hover,
+.js-btn-bestBooks:focus {
     cursor: pointer;
+    background-color: var(--main-color);
+    color: var(--white);
 }
 
 .js-list-bestBooks, .js-list-allBooks {
     width: 335px;
     list-style: none;
-        position: relative;
+    position: relative;
 }
 
 .js-list-allBooks {

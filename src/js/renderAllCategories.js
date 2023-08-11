@@ -1,6 +1,6 @@
 
 import { getBooksAPI } from './getBoorkAPI';
-import { refsBooks, onHome, scroll} from '../bestSellerBooks';
+import { refsBooks, onHome } from '../bestSellerBooks';
 import { Loading } from 'notiflix';
 
 
@@ -59,5 +59,18 @@ function onOpenCategory(e) {
        })
         .catch(error => console.error(error))
 } 
+}
+
+function scroll() {
+  const { height: aside } = document
+    .querySelector(".aside-wrapper")
+    .getBoundingClientRect();
+
+  if (window.innerWidth < 768) {
+    window.scrollBy({
+      top: aside,
+      behavior: "smooth",
+    });
+  }
 }
 
