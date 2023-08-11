@@ -50,10 +50,8 @@ export function markupBlock(data) {
 function onLoadSeeMore(e) {
 
   e.preventDefault();
-  console.log('e.target', e.target)
   if (e.target.classList.contains('card-hover-categories')|| e.target.classList.contains('card-text-hover')) {
     const id = e.target.dataset.id;
-    console.log('id', id)
     e.target.addEventListener('click', openModal(id));
     Loading.remove()
   }

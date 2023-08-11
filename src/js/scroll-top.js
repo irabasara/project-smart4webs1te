@@ -1,4 +1,4 @@
-// import {refs} from './refs'
+
 const scrollTop = document.querySelector('.scroll');
 
 scrollTop.addEventListener('click', onScrollTopClick)

@@ -1,9 +1,7 @@
-import { app } from './js/auth/firebase-app';
 
 import amazon from './img/amazon.png';
 import appleshop from './img/appleshop.png';
 import boockshop from './img/boockshop.png';
-import trash from '/img/sprite.svg#trash';
 
 function generateBookCardMarkup(booksArray) {
   let markup = '<ul class="shopping-list">';

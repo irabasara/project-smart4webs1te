@@ -1,12 +1,6 @@
 import { refs } from "../refs";
 import { logOutUser, user } from "./authUser";
 
-// localStorage.setItem('USER', JSON.stringify({
-//   name: '',
-//   email: '',
-//   isSignedIn: false,
-// }))
-
 const userLS = JSON.parse(localStorage.getItem("USER") || '{}')
 
 refs.userProfileBtn.addEventListener('click', addLogOutBtn)

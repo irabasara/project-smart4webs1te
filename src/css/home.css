@@ -12,7 +12,6 @@
 }
 
 .container-home {
-    /* padding: 0 24px; */
     max-width: 375px;
         padding-left: 20px;
         padding-right: 20px;
@@ -90,6 +89,7 @@
 .js-list-bestBooks, .js-list-allBooks {
     width: 335px;
     list-style: none;
+        position: relative;
 }
 
 .js-list-allBooks {
@@ -273,13 +273,9 @@
     height: 70px;
     background-color: var(--accent-color);
     border-radius: 0px 0px 8px 8px;
-    position: relative;
-    bottom: 50px;
-    left: 0;
-    transform: translateY(0);   
-    visibility: hidden; 
+    position: absolute;
+    transform: translateY(-170%);  
     opacity: 0;
-    pointer-events: none;
     color: var(--main-textcolor);
     font-size: 14px;
     line-height: 1.28;
@@ -290,10 +286,7 @@
 }
 .js-list-allBooks:hover .card-hover-categories,
 .js-list-bestBooks:hover .card-hover-categories {
-    transform: translateY(-70px);
-    visibility: visible;
     opacity: 1;
-    pointer-events: visible;
     cursor: pointer;
 }
 

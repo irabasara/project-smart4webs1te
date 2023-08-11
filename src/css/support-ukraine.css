@@ -39,17 +39,14 @@
 
 ::-webkit-scrollbar-track {
     background: #888;
-    /* Колір фону треку */
 }
 
 ::-webkit-scrollbar-thumb {
     background: #c9c5c5;
-    /* Колір скроллбара */
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
-    /* Колір скроллбара при наведенні */
 }
 
 .support-ukraine-list {
