@@ -74,7 +74,8 @@ function onLoadSeeMore(e) {
           </span></h2> `)
         refsBooks.container.insertAdjacentHTML('beforeend', allBooks);
         refsBooks.btnBack.classList.remove('is-hidden')
-    Loading.remove()
+        Loading.remove()
+        scroll_seeMore()
           if (data === 0) {
             Notiflix.Notify.failure('There are no books in this category');
         }
@@ -98,6 +99,19 @@ export function scroll() {
   if (window.innerWidth < 768) {
     window.scrollBy({
       top: aside,
+      behavior: "smooth",
+    });
+  }
+}
+
+export function scroll_seeMore() {
+  const { height: book } = document
+    .querySelector(".js-list-allBooks")
+    .getBoundingClientRect();
+
+  if (window.innerWidth < 768) {
+    window.scrollBy({
+      bottom: book * 3,
       behavior: "smooth",
     });
   }
