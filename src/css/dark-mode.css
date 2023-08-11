@@ -118,6 +118,10 @@
   display: block;
 }
 
+.active .cart-icon-white {
+  display: none;
+}
+
 .dark .amazon-icon img {
   filter: invert(1);
 }
