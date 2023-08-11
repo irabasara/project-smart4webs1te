@@ -126,5 +126,5 @@
 }
 
 .dark .amazon {
-  filter: contrast(0);
+  filter: contrast(0) invert(1) brightness(2);
 }
