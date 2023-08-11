@@ -126,5 +126,14 @@
 }
 
 .dark .amazon {
-  filter: contrast(0);
+  filter: contrast(0) invert(1) brightness(2);
+}
+
+.dark .modal-svg-close:hover,
+.dark .modal-svg-close:focus {
+  stroke: var(--main-color);
+}
+
+.dark .js-btn-bestBooks {
+  background-color: var(--background-dark);
 }
