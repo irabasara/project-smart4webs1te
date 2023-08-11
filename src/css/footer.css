@@ -14,7 +14,7 @@ main {
 
 .heard-container {
     position: absolute;
-    top: 100%;
+    top: 95%;
     left: 50%;
     transform: translate(-50%, -100%) scale(1);
     width: 70px;
@@ -65,7 +65,7 @@ main {
 }
 
 .heard-container.active {
-    top: -420%;
+    top: -41vh;
     transform: translate(-50%, -50%);
     width: calc(500px - 2%);
     height: 500px;
@@ -75,6 +75,7 @@ main {
         rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
         rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     animation: none;
+    z-index: 12;
 }
 
 .leftpart.active {
@@ -145,6 +146,33 @@ main {
     transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+@media screen and (max-height: 540px) {
+    .heard-container.active {
+        top: -35vh;
+        height: 85vh;
+    }
+
+    .rigthpart.active {
+        height: 85vh;
+    }
+
+    .leftpart.active {
+        height: 85vh;
+    }
+
+    .center.active {
+        padding: 0;
+        height: 68vh;
+    }
+
+    .center.active ul {
+        height: 82%;
+        margin: 0 auto;
+        width: 80%;
+        overflow-y: scroll;
+    }
+}
+
 @media screen and (max-width: 768px) {
     main {
         min-height: calc(100vh - 64px + 72px);
@@ -180,6 +208,7 @@ main {
     overflow-y: auto;
     transition: opacity var(---animation);
     backdrop-filter: blur(2px);
+    z-index: 11;
 }
 
 .heard-backdrop.isHidden {
@@ -189,17 +218,34 @@ main {
 }
 
 .heard-btn {
+    width: 1px;
+    height: 1px;
+    transition: 0.1s linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    padding: 0px;
+    background-color: transparent;
+    border: none;
+}
+
+.heard-btn.active {
     width: 24px;
     height: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 0;
-    right: 12px;
+    top: 24px;
+    right: 24px;
     padding: 0px;
     background-color: transparent;
     border: none;
+    z-index: 13;
+    transition: 0.2s linear 0.7s;
 }
 
 .heard-close {
