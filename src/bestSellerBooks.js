@@ -6,7 +6,8 @@ export const refsBooks = {
 bestBooks: document.querySelector('.home-title-book'),
 container: document.querySelector('.js-container-bestBooks'),
 nameCat: document.querySelector('.js-add-name-category'),
-btnBack: document.querySelector('.back')
+btnBack: document.querySelector('.back'),
+chooseCat: document.querySelector('.categories__link')
 }
 
 refsBooks.btnBack.classList.add('is-hidden');
@@ -61,6 +62,8 @@ function onLoadSeeMore(e) {
     refsBooks.container.innerHTML = "";
     getBooksAPI(`category?category=${seeMoreCategory}`)
       .then(({ data }) => {
+        currentCategory(seeMoreCategory);
+        refsBooks.chooseCat.classList.remove('categories__item--active')
         const titleCat = seeMoreCategory.split(" ");
         const allBooks = data.map(({ book_image, title, author, _id }) => {
           return `
@@ -74,6 +77,7 @@ function onLoadSeeMore(e) {
           </span></h2> `)
         refsBooks.container.insertAdjacentHTML('beforeend', allBooks);
         refsBooks.btnBack.classList.remove('is-hidden')
+        scrollTop() 
     Loading.remove()
           if (data === 0) {
             Notiflix.Notify.failure('There are no books in this category');
@@ -90,15 +94,17 @@ export function onHome(e) {
   window.location.assign('./')
 }
 
-export function scroll() {
-  const { height: aside } = document
+function currentCategory(data) {
+  document.querySelector('.categories__item--active').classList.remove(`categories__item--active`);
+  document.querySelector(`li[data-category="${data}"]`).classList.add(`categories__item--active`);
+};
+
+function scrollTop() {
+    const { height: aside } = document
     .querySelector(".aside-wrapper")
     .getBoundingClientRect();
 
-  if (window.innerWidth < 768) {
-    window.scrollBy({
-      top: aside,
-      behavior: "smooth",
-    });
-  }
+    if (window.innerWidth < 768) {
+        window.scrollBy(0, -aside)
+    }
 }
