@@ -100,7 +100,7 @@
 .book-genre {
   width: 165px;
   height: 14px;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 
   overflow: hidden;
   text-overflow: ellipsis;
@@ -166,6 +166,7 @@
     font-size: 18px;
     line-height: 1.33;
     letter-spacing: -0.36px;
+    margin-bottom: 20px;
   }
   .shopping-header {
     font-size: 48px;
@@ -179,7 +180,7 @@
     width: 522px;
   }
   .book-genre {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
     width: auto;
   }
   .book-card {
@@ -221,7 +222,7 @@
 @media screen and (min-width: 1440px) {
   .container.shopping {
     margin: 0px;
-    padding: 24px;
+    padding: 40px 0;
 
     max-width: 100%;
     width: 996px;
@@ -232,13 +233,14 @@
     justify-content: center;
     align-items: start;
     max-width: 1440px;
+    gap: 40px;
   }
   .book-card {
     width: 996px;
   }
   .shopping-support {
     display: block;
-    padding-top: 24px;
+    padding-top: 40px;
     width: 356px;
   }
   .book-description {

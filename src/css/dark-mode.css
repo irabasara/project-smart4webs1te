@@ -84,7 +84,10 @@
 
 .dark .categories__link:hover,
 .dark .categories__link:focus,
-.dark .categories__link:active {
+.dark .categories__link:active,
+.dark .categories__link--active:hover,
+.dark .categories__link--active:focus,
+.dark .categories__link--active:active {
   color: var(--accent-color);
 }
 
