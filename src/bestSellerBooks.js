@@ -63,6 +63,7 @@ function onLoadSeeMore(e) {
     getBooksAPI(`category?category=${seeMoreCategory}`)
       .then(({ data }) => {
         currentCategory(seeMoreCategory);
+      
         refsBooks.chooseCat.classList.remove('categories__item--active')
         const titleCat = seeMoreCategory.split(" ");
         const allBooks = data.map(({ book_image, title, author, _id }) => {
@@ -94,7 +95,7 @@ export function onHome(e) {
   window.location.assign('./')
 }
 
-function currentCategory(data) {
+export function currentCategory(data) {
   document.querySelector('.categories__item--active').classList.remove(`categories__item--active`);
   document.querySelector(`li[data-category="${data}"]`).classList.add(`categories__item--active`);
 };
@@ -104,7 +105,11 @@ function scrollTop() {
     .querySelector(".aside-wrapper")
     .getBoundingClientRect();
 
-    if (window.innerWidth < 768) {
+  if (window < 768) {
+    return
+  } else {
         window.scrollBy(0, -aside)
-    }
-}
+    } 
+  }
+
+

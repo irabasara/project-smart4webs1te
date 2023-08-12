@@ -1,6 +1,6 @@
 
 import { getBooksAPI } from './getBoorkAPI';
-import { refsBooks, onHome } from '../bestSellerBooks';
+import { refsBooks, onHome, currentCategory } from '../bestSellerBooks';
 import { Loading } from 'notiflix';
 
 
@@ -35,7 +35,8 @@ function onOpenCategory(e) {
       
       getBooksAPI(`category?category=${renderCategory}`)
         .then(({ data }) => {
-         allCat.classList.remove('categories__item--active');
+          allCat.classList.remove('categories__item--active');
+          currentCategory(renderCategory);
           const allBooks = data.map(({ book_image, title, author, _id }) => {
           return `<li class="js-list-allBooks id=${_id}">
           <img src="${book_image}" alt="${title}" data-id="${_id}" loading="lazy" class="img-bestBooks"/>
