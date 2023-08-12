@@ -39,7 +39,7 @@ function handleSignInForm() {
   refs.submitButton.textContent = 'sign in';
   refs.signUpButton.classList.remove('active');
   refs.signInButton.classList.add('active');
-
+  refs.checkboxInput.classList.add('checkbox-sign');
 }
 
 function handleSignUpForm() {
@@ -47,5 +47,5 @@ function handleSignUpForm() {
   refs.submitButton.textContent = 'Sign up';
   refs.signUpButton.classList.add('active');
   refs.signInButton.classList.remove('active');
-
+  refs.checkboxInput.classList.remove('checkbox-sign');
 }
