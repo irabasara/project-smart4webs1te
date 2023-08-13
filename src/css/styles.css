@@ -19,6 +19,7 @@
 @import url('./scroll-top.css');
 @import url('./mob-menu.css');
 @import url('./dark-mode.css');
+@import url('./show-hide-password.css');
 
 :root {
   --white: #fff;

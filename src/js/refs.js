@@ -1,7 +1,7 @@
 export const refs = {
   scrollTop: document.querySelector('.scroll'),
   openModalBtn: document.querySelector('#js-modal-open'),
-  openMobileModalBtn:document.querySelector('#js-mobile-modal-open'),
+  openMobileModalBtn: document.querySelector('#js-mobile-modal-open'),
   closeModalBtn: document.querySelector('#js-modal-close'),
   modal: document.querySelector('#js-modal'),
   userLogOut: document.querySelector('.btn-user-out'),
@@ -14,6 +14,8 @@ export const refs = {
   nameInput: document.querySelector('#input-name'),
   submitButton: document.querySelector('#submit-sign'),
   body: document.body,
+  passwordInput: document.querySelector('input[name="password"]'),
+  checkboxInput: document.querySelector('input[name="checkbox"]'),
   // mob-menu
   openMenuBtn: document.querySelectorAll('[data-menu-open]'),
   closeMenuBtn: document.querySelector('[data-menu-close]'),
@@ -21,10 +23,8 @@ export const refs = {
   homeLinkMobile: document.querySelector('.menu-nav-link'),
   shopLinkMobile: document.querySelector('.menu-nav-shop'),
   menuNav: document.querySelector('.nav-user-menu'),
-    // header
+  // header
   homeLink: document.querySelector('.header-nav-link'),
   shopLink: document.querySelector('.header-nav-shop'),
   headerNav: document.querySelector('.header-nav'),
-  
-}
-
+};
