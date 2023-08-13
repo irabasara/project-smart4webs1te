@@ -33,9 +33,9 @@ export function markupList(books) {
   return books.map(({ book_image, title, author, _id }) => {
     return `<li class="js-list-bestBooks" id="${_id}">
             <img src="${book_image}" alt="${title}" data-id="${_id}" loading="lazy" class="img-bestBooks"/>
+            <div class="card-hover-categories" data-id="${_id}"><p class="card-text-hover" data-id="${_id}">quick view</p></div>
             <h3 class="js-named-bestBooks">${title}</h3>
             <p class="js-autor-bestBooks">${author}</p>
-            <div class="card-hover-categories" data-id="${_id}"><p class="card-text-hover" data-id="${_id}">quick view</p></div>
         </li>`}).join('');
 }
 
@@ -70,9 +70,9 @@ function onLoadSeeMore(e) {
           return `
           <li class="js-list-allBooks" id="${_id}">
           <img src="${book_image}" alt="${title}" data-id="${_id}" loading="lazy" class="img-bestBooks"/>
+          <div class="card-hover-categories" data-id="${_id}"><p class="card-text-hover" data-id="${_id}">quick view</p></div>
           <h3 class="js-named-bestBooks">${title}</h3>
           <p class="js-autor-bestBooks">${author}</p>
-          <div class="card-hover-categories" data-id="${_id}"><p class="card-text-hover" data-id="${_id}">quick view</p></div>
           </li>`}).join('')
         refsBooks.container.insertAdjacentHTML('afterbegin', `<h2 class="home-title-book">${titleCat.slice(0, titleCat.length - 1).join(" ")} <span class="books">${titleCat.pop()}
           </span></h2> `)
